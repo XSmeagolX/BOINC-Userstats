@@ -62,6 +62,7 @@
 		<!--  Highcharts -->
 		<script src = "https://code.highcharts.com/stock/highstock.js"></script>
 		<script src = "https://code.highcharts.com/modules/exporting.js"></script>
+		<script src = "https://code.highcharts.com/modules/no-data-to-display.js"></script>
 
 		<!--  Moment.js local -->
 		<script src = "./assets/js/moment/moment-with-locales.min.js"></script>

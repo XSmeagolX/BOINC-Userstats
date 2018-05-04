@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `boinc_werte` (
 	PRIMARY KEY (`id`),
 	KEY `project_shortname` (`project_shortname`),
 	KEY `time_stamp` (`time_stamp`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=182981 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `boinc_werte_day` (
 	PRIMARY KEY (`id`),
 	KEY `project_shortname` (`project_shortname`),
 	KEY `time_stamp` (`time_stamp`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59829 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -110,7 +110,8 @@
 
 	$output_project_html = "";
 	$query_getProjectOutputPerHour = mysqli_query($db_conn,"SELECT time_stamp, credits FROM boinc_werte WHERE project_shortname = '" .$projectid. "'");
-	if ( !$query_getProjectOutputPerHour || mysqli_num_rows($query_getProjectOutputPerHour) === 0 ) { 
+	if ( !$query_getProjectOutputPerHour ) { 
+#	if ( !$query_getProjectOutputPerHour || mysqli_num_rows($query_getProjectOutputPerHour) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
@@ -126,6 +127,7 @@
 	$output_project_gesamt_pendings_html = "";
 	$output_project_gesamt_html = "";
 	$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
+/*	if ( !$query_getProjectOutputPerDay) { */
 /*	if ( !$query_getProjectOutputPerDay || mysqli_num_rows($query_getProjectOutputPerDay) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
@@ -171,7 +173,8 @@
 		if ($project_total_credits > 0) {
 		
 		$query_getProjectOutput1h = mysqli_query($db_conn,"SELECT sum(credits) AS sum1h FROM boinc_werte WHERE project_shortname = '" .$shortname. "' and time_stamp>'" .$einsh. "'");
-		if ( !$query_getProjectOutput1h || mysqli_num_rows($query_getProjectOutput1h) === 0 ) {
+		if ( !$query_getProjectOutput1h ) {
+#		if ( !$query_getProjectOutput1h || mysqli_num_rows($query_getProjectOutput1h) === 0 ) {
 			$connErrorTitle = "Datenbankfehler";
 			$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 									Es bestehen wohl Probleme mit der Datenbankanbindung.";
@@ -183,7 +186,8 @@
 		$sum1h_total += $table_row["sum1h"];
 		
 		$query_getProjectOutput2h = mysqli_query($db_conn,"SELECT sum(credits) AS sum2h FROM boinc_werte WHERE project_shortname = '" .$shortname. "' and time_stamp>'" .$zweih. "'");
-		if ( !$query_getProjectOutput2h || mysqli_num_rows($query_getProjectOutput2h) === 0 ) { 
+		if ( !$query_getProjectOutput2h ) { 
+#		if ( !$query_getProjectOutput2h || mysqli_num_rows($query_getProjectOutput2h) === 0 ) { 
 			$connErrorTitle = "Datenbankfehler";
 			$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 									Es bestehen wohl Probleme mit der Datenbankanbindung.";
@@ -195,7 +199,8 @@
 		$sum2h_total += $table_row["sum2h"];
 		
 		$query_getProjectOutput6h = mysqli_query($db_conn,"SELECT sum(credits) AS sum6h FROM boinc_werte WHERE project_shortname = '" .$shortname. "' and time_stamp>'" .$sechsh. "'");
-		if ( !$query_getProjectOutput6h || mysqli_num_rows($query_getProjectOutput6h) === 0 ) { 
+		if ( !$query_getProjectOutput6h ) { 
+#		if ( !$query_getProjectOutput6h || mysqli_num_rows($query_getProjectOutput6h) === 0 ) { 
 			$connErrorTitle = "Datenbankfehler";
 			$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 									Es bestehen wohl Probleme mit der Datenbankanbindung.";
@@ -207,7 +212,8 @@
 		$sum6h_total += $table_row["sum6h"];
 		
 		$query_getProjectOutput12h = mysqli_query($db_conn,"SELECT sum(credits) AS sum12h FROM boinc_werte WHERE project_shortname = '" .$shortname. "' and time_stamp>'" .$zwoelfh. "'");
-		if ( !$query_getProjectOutput12h || mysqli_num_rows($query_getProjectOutput12h) === 0 ) { 
+		if ( !$query_getProjectOutput12h ) { 
+#		if ( !$query_getProjectOutput12h || mysqli_num_rows($query_getProjectOutput12h) === 0 ) { 
 			$connErrorTitle = "Datenbankfehler";
 			$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 									Es bestehen wohl Probleme mit der Datenbankanbindung.";
@@ -221,7 +227,8 @@
 		$tagesanfang = mktime(1, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
 		
 		$query_getProjectOutputToday = mysqli_query($db_conn,"SELECT sum(credits) AS sum_today FROM boinc_werte WHERE project_shortname = '" .$shortname. "' and time_stamp > '" .$tagesanfang. "'");
-		if ( !$query_getProjectOutputToday || mysqli_num_rows($query_getProjectOutputToday) === 0 ) { 
+		if ( !$query_getProjectOutputToday ) { 
+#		if ( !$query_getProjectOutputToday || mysqli_num_rows($query_getProjectOutputToday) === 0 ) { 
 			$connErrorTitle = "Datenbankfehler";
 			$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 									Es bestehen wohl Probleme mit der Datenbankanbindung.";
@@ -236,7 +243,8 @@
 		$gestern_ende = mktime(2, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
 
 		$query_getProjectOutputYesterday = mysqli_query($db_conn,"SELECT sum(credits) AS sum_yesterday FROM boinc_werte WHERE project_shortname = '" .$shortname. "' AND time_stamp > '" .$gestern_anfang. "' AND time_stamp < '" .$gestern_ende. "'");
-		if ( !$query_getProjectOutputYesterday || mysqli_num_rows($query_getProjectOutputYesterday) === 0 ) { 
+		if ( !$query_getProjectOutputYesterday ) { 
+#		if ( !$query_getProjectOutputYesterday || mysqli_num_rows($query_getProjectOutputYesterday) === 0 ) { 
 			$connErrorTitle = "Datenbankfehler";
 			$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
 									Es bestehen wohl Probleme mit der Datenbankanbindung.";

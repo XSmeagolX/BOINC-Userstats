@@ -1,5 +1,8 @@
 Version 5.0.2: 
 ==============
+- Das Error-Management für neue Nutzer der BOINC-Userstats wurde verbessert (Issue #21)
+  Sofern noch keine Änderungen an den Credits bei den Projekten vorhanden waren, wurde lediglich der Header und Footer angezeigt.
+  Nun sollte die Tabelle angezeigt werden und ein Hinweis in den Charts erfolgen, wenn noch keine Daten zum Anzeigen vorhanden sind.
 - Integration einer Update-Prüfung
   Diese ist standardmäßig deaktiviert. Zum Aktivieren dieses Features muss in der ./settings/settings.php die Variable $setUpdatecheck auf true gesetzt werden.
   Auch bei deaktivierter Option kann jederzeit über den Aufruf der check_update.php im Browser eine Prüfung erfolgen.
