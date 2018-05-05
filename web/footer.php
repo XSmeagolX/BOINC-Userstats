@@ -1,5 +1,5 @@
 			<footer class = "footer bg-dark">
-				<div class = text-light">
+				<div class = "text-light">
 						<div class = "row">
 							<div class = "col-12 col-md-6 mx-auto texthellgrau text-center align-self-center">
 							Diese Seite verwendet <a href = "https://www.highcharts.com"><i class = "fa fa-copyright"></i> Highcharts</a><br>

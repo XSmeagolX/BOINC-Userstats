@@ -19,7 +19,8 @@
 				resetZoom: "Zoom zurücksetzen",
 				resetZoomTitle: "Zoom zurücksetzen",
 				thousandsSep: ".",
-				decimalPoint: ","
+				decimalPoint: ",",
+				noData: "Es liegen zur Zeit noch nicht genug Daten zum Anzeigen der Charts vor"
 			}
 		});
 	</script>

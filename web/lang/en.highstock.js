@@ -19,7 +19,8 @@
 				resetZoom: "Reset Zoom",
 				resetZoomTitle: "Reset Zoom",
 				thousandsSep: ",",
-				decimalPoint: "."
+				decimalPoint: ".",
+				noData: "You do not have any data to display this chart at the moment"
 			}
 		});
 	</script>
