@@ -57,59 +57,57 @@
 		</div>
 	</div>
 
-	<?php
-		if ($showHostsEndofTasks) { echo '
-			<hr>
-			<div class = "container-fluid">
-					<b>Computer:</b>
-			</div>				
-			<div>
-				<table id = "table_computer" class = "table table-sm table-striped table-hover table-responsive-xs" width = "100%">
-					<thead>
-						<tr>
-							<th class="text-left align-middle dunkelgrau textgrau"><b>Name</b></th>
-							<th class="text-left align-middle dunkelgrau textgrau">Prozessor</th>
-							<th class="text-left align-middle dunkelgrau textgrau d-none d-sm-table-cell">Cores (Threads)</th>
-							<th class="text-left align-middle dunkelgrau textgrau d-none d-sm-table-cell">Takt</th>
-							<th class="text-left align-middle dunkelgrau textgrau d-none d-sm-table-cell">RAM</th>
-							<th class="text-left align-middle dunkelgrau textgrau">GPU</th>							
-						</tr>
-					</thead>		
-					<tbody>
-						<tr>
-							<td class="text-left align-middle"><b>PC01:</b></td>
-							<td class="text-left align-middle">Intel(R) Core(TM) i7-4930K</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "12">6 (12)</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "3.4">@ 3.4 GHz</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "16">16 GB RAM</td>
-							<td class="text-left align-middle" data-order = "770">NVIDIA GeForce GTX 770 (4095MB)</td>							
-						</tr>
-						<tr>
-							<td class="text-left align-middle"><b>PC02:</b></td>
-							<td class="text-left align-middle">Intel(R) Core(TM) i7-4930K</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "12">6 (12)</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "3.4">@ 3.4 GHz</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "16">16 GB RAM</td>
-							<td class="text-left align-middle" data-order = "770">NVIDIA GeForce GTX 770 (4095MB)</td>							
-						</tr>
-						<tr>
-							<td class="text-left align-middle"><b>PC03:</b></td>
-							<td class="text-left align-middle">Intel(R) Core(TM) i7-3970X</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "12">6 (12)</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "3.5">@ 3.5 GHz</td>
-							<td class="text-left align-middle d-none d-sm-table-cell" data-order = "16">16 GB RAM</td>
-							<td class="text-left align-middle" data-order = "770">NVIDIA GeForce GTX 770 (4095MB)</td>							
-						</tr>
-					</tbody>
-					<tfooter>
-						<tr>
-							<td class="text-center align-middle" colspan = "6"><small>Dies ist nur eine beispielhafte Auflistung. Bitte editiere die tasks.php, um deine PC-Konfigurationen anzuzeigen</small></td>					
-						</tr>
-					</tfooter>
-				</table>		
-			</div>	
-		';}
-	?>
+	<?php if ($showHostsEndofTasks): ?>
+		<hr>
+		<div class = "container-fluid">
+				<b>Computer:</b>
+		</div>				
+		<div>
+			<table id = "table_computer" class = "table table-sm table-striped table-hover table-responsive-xs" width = "100%">
+				<thead>
+					<tr>
+						<th class="text-left align-middle dunkelgrau textgrau"><b>Name</b></th>
+						<th class="text-left align-middle dunkelgrau textgrau">Prozessor</th>
+						<th class="text-left align-middle dunkelgrau textgrau d-none d-sm-table-cell">Cores (Threads)</th>
+						<th class="text-left align-middle dunkelgrau textgrau d-none d-sm-table-cell">Takt</th>
+						<th class="text-left align-middle dunkelgrau textgrau d-none d-sm-table-cell">RAM</th>
+						<th class="text-left align-middle dunkelgrau textgrau">GPU</th>							
+					</tr>
+				</thead>		
+				<tbody>
+					<tr>
+						<td class="text-left align-middle"><b>PC01:</b></td>
+						<td class="text-left align-middle">Intel(R) Core(TM) i7-4930K</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "12">6 (12)</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "3.4">@ 3.4 GHz</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "16">16 GB RAM</td>
+						<td class="text-left align-middle" data-order = "770">NVIDIA GeForce GTX 770 (4095MB)</td>							
+					</tr>
+					<tr>
+						<td class="text-left align-middle"><b>PC02:</b></td>
+						<td class="text-left align-middle">Intel(R) Core(TM) i7-4930K</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "12">6 (12)</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "3.4">@ 3.4 GHz</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "16">16 GB RAM</td>
+						<td class="text-left align-middle" data-order = "770">NVIDIA GeForce GTX 770 (4095MB)</td>							
+					</tr>
+					<tr>
+						<td class="text-left align-middle"><b>PC03:</b></td>
+						<td class="text-left align-middle">Intel(R) Core(TM) i7-3970X</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "12">6 (12)</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "3.5">@ 3.5 GHz</td>
+						<td class="text-left align-middle d-none d-sm-table-cell" data-order = "16">16 GB RAM</td>
+						<td class="text-left align-middle" data-order = "770">NVIDIA GeForce GTX 770 (4095MB)</td>							
+					</tr>
+				</tbody>
+				<tfooter>
+					<tr>
+						<td class="text-center align-middle" colspan = "6"><small>Dies ist nur eine beispielhafte Auflistung. Bitte editiere die tasks.php, um deine PC-Konfigurationen anzuzeigen</small></td>					
+					</tr>
+				</tfooter>
+			</table>		
+		</div>	
+	<?php endif; ?>
 
 	<script>
 		(function($) {

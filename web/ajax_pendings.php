@@ -60,7 +60,8 @@
 					);
 					$xml_string_pendings = "false";
 					$pendings_gesamt = 0;
-					while ($row = mysqli_fetch_assoc($query)) {
+					
+					while ($row = mysqli_fetch_assoc($query)):
 						$xml_string_pendings = @file_get_contents($row['url'] . "pending.php?format=xml&authenticator=" . $row['authenticator'], 0, $ctx);
 						if ($xml_string_pendings == false) {
 							$projectname = $row['project'];
@@ -79,19 +80,19 @@
 						$pendings_gesamt = $pendings_gesamt + $pending_credits;
 						$sql_pendings = "UPDATE boinc_grundwerte SET pending_credits = '" . $pending_credits . "' WHERE project_shortname = '" . $row['project_shortname'] . "'";
 						mysqli_query($db_conn, $sql_pendings);
+						?>
 						
-						if ($pending_credits > 0) {
-							echo "<tr><td>" . $projectname . "</td>";
-							echo "<td class = 'text-left'>" . number_format($pending_credits, 0, $dec_point, $thousands_sep) . "</td></tr>";
-						}
-					}
-					echo "<tfoot>
-							<tr>
-								<td class = 'dunkelblau textblau'>" . $text_total_pendings . "</td>";
-					echo "		<td class = 'dunkelblau textblau text-left'>" . number_format($pendings_gesamt, 0, $dec_point, $thousands_sep) . "</td>
-							</tr>
-						</tfoot>";
-				?>
+						<?php if ($pending_credits > 0): ?>
+							<tr><td><?=$projectname ?></td>
+							<td class = 'text-left'><?=number_format($pending_credits, 0, $dec_point, $thousands_sep) ?></td></tr>
+						<?php endif; ?>
+					<?php endwhile; ?>
+					<tfoot>
+						<tr>
+							<td class = 'dunkelblau textblau'><?=$text_total_pendings ?></td>
+							<td class = 'dunkelblau textblau text-left'><?=number_format($pendings_gesamt, 0, $dec_point, $thousands_sep) ?></td>
+						</tr>
+					</tfoot>
 			</tbody>
 		</table>
 		<div class = "alert alert-danger" role = "alert">

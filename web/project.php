@@ -127,14 +127,14 @@
 	$output_project_gesamt_pendings_html = "";
 	$output_project_gesamt_html = "";
 	$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
-/*	if ( !$query_getProjectOutputPerDay) { */
-/*	if ( !$query_getProjectOutputPerDay || mysqli_num_rows($query_getProjectOutputPerDay) === 0 ) { 
-		$connErrorTitle = "Datenbankfehler";
-		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
-								Es bestehen wohl Probleme mit der Datenbankanbindung.";
-		include "./errordocs/db_initial_err.php";
-		exit();
-	} */
+#	if ( !$query_getProjectOutputPerDay) { 
+#	if ( !$query_getProjectOutputPerDay || mysqli_num_rows($query_getProjectOutputPerDay) === 0 ) { 
+#		$connErrorTitle = "Datenbankfehler";
+#		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
+#								Es bestehen wohl Probleme mit der Datenbankanbindung.";
+#		include "./errordocs/db_initial_err.php";
+#		exit();
+#	} 
 	while($row = mysqli_fetch_assoc($query_getProjectOutputPerDay)){
 		$timestamp1 = ($row["time_stamp"] - 3601) * 1000;
 		$output_project_gesamt_html.= "[(" .$timestamp1. "), " .$row["total_credits"]. "], ";	
@@ -290,8 +290,7 @@
 	include("./assets/js/highcharts/output_project_year.js"); 
 ?>
 
-<?php 
-	if ($novalues) {
+<?php if ($novalues) {
 		echo '
 		<div class = "alert danger-lastupdate" role = "alert">
 			<div class = "container">
@@ -338,12 +337,9 @@
 		<nav>
 			<div class = "nav nav-tabs nav-space justify-content-center nav-tabs-userstats">
 				<a class = "nav-item nav-link active" id = "projekte-tab" data-toggle = "tab" href = "#projekte" role = "tab" aria-controls = "projekte" aria-selected = "true"><i class = "fa fa-table"></i> <?php echo "$tabs_project" ?></a>
-				<?php
-					if ($showWCGDetails) { echo '
-							<a class = "nav-item nav-link" id = "wcgdetails-tab" data-toggle = "tab" href = "#wcgdetails" role = "tab" aria-controls = "wcgdetails" aria-selected = "false"><i class = "fa fa-table"></i> Details</a>
-					';
-					}
-				?>
+			<?php if ($showWCGDetails): ?>
+				<a class = "nav-item nav-link" id = "wcgdetails-tab" data-toggle = "tab" href = "#wcgdetails" role = "tab" aria-controls = "wcgdetails" aria-selected = "false"><i class = "fa fa-table"></i> Details</a>
+			<?php endif; ?>
 				<a class = "nav-item nav-link" id = "gesamt-tab" data-toggle = "tab" href = "#gesamt" role = "tab" aria-controls = "gesamt" aria-selected = "false"><i class = "fa fa-area-chart"></i> <?php echo "$tabs_total" ?></a>
 				<a class = "nav-item nav-link" id = "stunde-tab" data-toggle = "tab" href = "#stunde" role = "tab" aria-controls = "stunde" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_hour" ?></a>
 				<a class = "nav-item nav-link" id = "tag-tab" data-toggle = "tab" href = "#tag" role = "tab" aria-controls = "tag" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_day" ?></a>
@@ -364,53 +360,51 @@
 							<th class = "dunkelgrau textgrau text-center align-middle"><?php echo "$project_project" ?></th>
 							<th class = "dunkelgrau textgrau text-center align-middle"><?php echo "$tr_tb_cr" ?></th>
 							<th class = "dunkelgrau textgrau d-none d-sm-table-cell text-center align-middle">%</th>
-							<th class = "dunkelgrau textgrau d-none d-sm-table-cell text-center align-middle"><?php echo "$tr_tb_01" ?></th>
-							<th class = "dunkelgrau textgrau d-none d-lg-table-cell text-center align-middle"><?php echo "$tr_tb_02" ?></th>
-							<th class = "dunkelgrau textgrau d-none d-lg-table-cell text-center align-middle"><?php echo "$tr_tb_06" ?></th>
-							<th class = "dunkelgrau textgrau d-none d-md-table-cell text-center align-middle"><?php echo "$tr_tb_12" ?></th>
-							<th class = "dunkelgruen textgruen d-none d-sm-table-cell text-center align-middle"><?php echo $tr_tb_to; ?></th>
-							<th class = "dunkelgelb textgelb d-none d-sm-table-cell text-center align-middle"><?php echo $tr_tb_ye; ?></th>
-							<th class = "dunkelrot textrot d-none d-md-table-cell text-center align-middle"><?php echo $tr_tb_pe; ?></th>
+							<th class = "dunkelgrau textgrau d-none d-sm-table-cell text-center align-middle"><?=$tr_tb_01 ?></th>
+							<th class = "dunkelgrau textgrau d-none d-lg-table-cell text-center align-middle"><?=$tr_tb_02 ?></th>
+							<th class = "dunkelgrau textgrau d-none d-lg-table-cell text-center align-middle"><?=$tr_tb_06 ?></th>
+							<th class = "dunkelgrau textgrau d-none d-md-table-cell text-center align-middle"><?=$tr_tb_12 ?></th>
+							<th class = "dunkelgruen textgruen d-none d-sm-table-cell text-center align-middle"><?=$tr_tb_to ?></th>
+							<th class = "dunkelgelb textgelb d-none d-sm-table-cell text-center align-middle"><?=$tr_tb_ye ?></th>
+							<th class = "dunkelrot textrot d-none d-md-table-cell text-center align-middle"><?=$tr_tb_pe ?></th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php
-							foreach($table as $table_row){
-								echo "<tr>";
-								if ($table_row["project_status"]=== "1") { echo "
-										<td class = 'text-center align-middle'><a href = '" .$table_row["project_home_link"] . "'>" .$table_row["project_name"] . "</a>";
-								} else { echo "
-										<td class = 'text-center align-middle'>" .$table_row["project_name"] . "</td>";
-								};
-								echo "	<td class = 'text-center align-middle'>" .number_format($table_row["total_credits"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'd-none d-sm-table-cell text-center align-middle'>" . $table_row["proz_anteil"] . "</td>
-										<td class = 'd-none d-sm-table-cell text-center align-middle'>" .number_format($table_row["sum1h"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'd-none d-lg-table-cell text-center align-middle'>" .number_format($table_row["sum2h"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'd-none d-lg-table-cell text-center align-middle'>" .number_format($table_row["sum6h"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'd-none d-md-table-cell text-center align-middle'>" .number_format($table_row["sum12h"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'gruen textgruen d-none d-sm-table-cell text-center align-middle'>" .number_format($table_row["sum_today"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'gelb textgelb d-none d-sm-table-cell text-center align-middle'>" .number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep). "</td>
-										<td class = 'rot textrot d-none d-md-table-cell text-center align-middle'>" .number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep). "</td>
-									</tr>";
-							}
-						?>
+						<?php foreach($table as $table_row): ?>
+							<tr>
+								<?php if ($table_row["project_status"]=== "1"): ?>
+										<td class = 'text-center align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><?=$table_row["project_name"] ?></a>
+								<?php else: ?>
+										<td class = 'text-center align-middle'><?=$table_row["project_name"] ?></td>
+								<?php endif; ?>
+										<td class = 'text-center align-middle'><?=number_format($table_row["total_credits"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'd-none d-sm-table-cell text-center align-middle'><?=$table_row["proz_anteil"] ?></td>
+										<td class = 'd-none d-sm-table-cell text-center align-middle'><?=number_format($table_row["sum1h"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'd-none d-lg-table-cell text-center align-middle'><?=number_format($table_row["sum2h"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'd-none d-lg-table-cell text-center align-middle'><?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'd-none d-md-table-cell text-center align-middle'><?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'gruen textgruen d-none d-sm-table-cell text-center align-middle'><?=number_format($table_row["sum_today"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'gelb textgelb d-none d-sm-table-cell text-center align-middle'><?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></td>
+										<td class = 'rot textrot d-none d-md-table-cell text-center align-middle'><?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></td>
+									</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
 
-			<?php
-			if ($showWCGDetails) { echo '
+		<?php
+		if ($showWCGDetails): ?>
 			<div id = "wcgdetails" class = "tab-pane fade" role = "tabpanel" aria-labelledby = "wcgdetails-tab">
 				<div class = "container">
 					<div class = "row justify-content-md-center">
-						' . $tr_hp_loadProjectDetails . '
+						<?=$tr_hp_loadProjectDetails ?>
 					</div>
 					<div class = "row justify-content-md-center">
 						<i class = "fa fa-spinner fa-pulse fa-2x fa-fw"></i> 
 					</div>
 				</div>
-			</div>'; }
-			?>
+			</div>
+		<?php endif; ?>
 
 			<div id = "gesamt" class = "tab-pane fade" role = "tabpanel" aria-labelledby = "gesamt-tab">
 				<div id = "output_project"></div>
@@ -440,18 +434,18 @@
 			<div id = "badges" class = "tab-pane fade text-center" role = "tabpanel" aria-labelledby = "badges-tab">
 				<div>
 					<br>
-					<?php
-						if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges) echo $no_badge ."<br>";
-						if ($showUserBadges) {
-							echo '<img src = "' . $linkUserBadges . '" class = "img-fluid center-block"><br>';
-						};
-						if ($showWcgLogo) {
-							echo '<img src = "' . $linkWcgSig . '" class = "img-fluid center-block"><br>';
-						};
-						if ($showSgWcgBadges) {
-							echo '<img src = "' . $linkSgWcgBadges . '" class = "img-fluid center-block"><br>';
-						};
-					?>
+					<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?><?=$no_badge ?>
+					<br>
+					<?php endif; ?>
+					<?php if ($showUserBadges): ?>
+						<img src = "<?=$linkUserBadges ?>" class = "img-fluid center-block"><br>
+					<?php endif; ?>
+					<?php if ($showWcgLogo): ?>
+						<img src = "<?=$linkWcgSig ?>" class = "img-fluid center-block"><br>
+					<?php endif; ?>
+					<?php if ($showSgWcgBadges): ?>
+						<img src = "<?=$linkSgWcgBadges ?>" class = "img-fluid center-block"><br>
+					<?php endif; ?>
 					<br>
 				</div>
 			</div>				

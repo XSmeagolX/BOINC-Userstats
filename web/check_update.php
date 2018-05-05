@@ -76,41 +76,35 @@
     
     <div id = "updateCheck" class = "flex1">
 	
-<?php
-			if ($update_available) {
-				echo '
+<?php if ($update_available): ?>
 				<div class = "alert danger-lastupdate" role = "alert">
 					<div class = "container">
-						' . $text_update_info_true . '
+						<?=$text_update_info_true ?>
 					</div>
 				</div>
 				<div class = "container">
 					<div class = "row justify-content-center"><p class = "textrot"><i class="fa fa-5x fa-times-circle-o"></i></p></div>
-					<div class = "row justify-content-center"><p class = "textrot">' . $output . '</p>
+					<div class = "row justify-content-center"><p class = "textrot"><?=$output ?></p>
 					</div>
 					<div class = "row justify-content-center">
 						<a href="https://github.com/XSmeagolX/BOINC-Userstats/releases/latest">https://github.com/XSmeagolX/BOINC-Userstats/releases/latest</a>
 					</div>
 				</div>
-				';
-			} else {
-					echo '
+<?php else: ?>
 					<div class = "alert info-lastupdate" role = "alert">
 						<div class = "container">
-							' . $text_update_info_false . '
+							<?=$text_update_info_false ?>
 						</div>
 					</div>
 					<div class = "container">
 						<div class = "row justify-content-center"><p class = "textgruen"><i class="fa fa-5x fa-check-circle-o"></i></p></div>
-						<div class = "row justify-content-center"><p class = "textgruen">' . $output . '</p>
+						<div class = "row justify-content-center"><p class = "textgruen"><?=$output ?></p>
 						</div>
 						<div class = "row justify-content-center">
 							<a href="https://github.com/XSmeagolX/BOINC-Userstats/releases/latest">https://github.com/XSmeagolX/BOINC-Userstats/releases/latest</a>
 						</div>
 					</div>
-					';
-			}
-?>
+<?php endif; ?>
 
 	</div>
 
