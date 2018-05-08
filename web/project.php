@@ -430,12 +430,11 @@
 				<div id = "output_project_year"></div>
 			</div>
 
-
 			<div id = "badges" class = "tab-pane fade text-center" role = "tabpanel" aria-labelledby = "badges-tab">
 				<div>
 					<br>
-					<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?><?=$no_badge ?>
-					<br>
+					<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?>
+						<?=$no_badge ?><br>
 					<?php endif; ?>
 					<?php if ($showUserBadges): ?>
 						<img src = "<?=$linkUserBadges ?>" class = "img-fluid center-block"><br>
@@ -449,6 +448,7 @@
 					<br>
 				</div>
 			</div>				
+
 		</div>
 
 		<script>

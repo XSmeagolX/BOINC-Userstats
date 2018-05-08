@@ -503,19 +503,21 @@
 			<div id = "badges" class = "tab-pane fade text-center" role = "tabpanel" aria-labelledby = "badges-tab">
 				<div>
 					<br>
-			<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges) echo $no_badge ."<br>";
-				if ($showUserBadges): ?>
-					<img src = "' . $linkUserBadges . '" class = "img-fluid center-block"><br>
-				<?php endif; ?>
-				<?php if ($showWcgLogo): ?>
-					<img src = "' . $linkWcgSig . '" class = "img-fluid center-block"><br>
-				<?php endif; ?>
-				<?php if ($showSgWcgBadges): ?>
-					<img src = "' . $linkSgWcgBadges . '" class = "img-fluid center-block"><br>
-				<?php endif; ?>
+					<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?>
+						<?=$no_badge ?><br>
+					<?php endif; ?>
+					<?php if ($showUserBadges): ?>
+						<img src = "<?=$linkUserBadges ?>" class = "img-fluid center-block"><br>
+					<?php endif; ?>
+					<?php if ($showWcgLogo): ?>
+						<img src = "<?=$linkWcgSig ?>" class = "img-fluid center-block"><br>
+					<?php endif; ?>
+					<?php if ($showSgWcgBadges): ?>
+						<img src = "<?=$linkSgWcgBadges ?>" class = "img-fluid center-block"><br>
+					<?php endif; ?>
 					<br>
 				</div>
-			</div>
+			</div>	
 
 		</div>
 
