@@ -91,19 +91,19 @@
 					</div>
 				</div>
 <?php else: ?>
-					<div class = "alert info-lastupdate" role = "alert">
-						<div class = "container">
-							<?=$text_update_info_false ?>
-						</div>
-					</div>
+				<div class = "alert info-lastupdate" role = "alert">
 					<div class = "container">
-						<div class = "row justify-content-center"><p class = "textgruen"><i class="fa fa-5x fa-check-circle-o"></i></p></div>
-						<div class = "row justify-content-center"><p class = "textgruen"><?=$output ?></p>
-						</div>
-						<div class = "row justify-content-center">
-							<a href="https://github.com/XSmeagolX/BOINC-Userstats/releases/latest">https://github.com/XSmeagolX/BOINC-Userstats/releases/latest</a>
-						</div>
+						<?=$text_update_info_false ?>
 					</div>
+				</div>
+				<div class = "container">
+					<div class = "row justify-content-center"><p class = "textgruen"><i class="fa fa-5x fa-check-circle-o"></i></p></div>
+					<div class = "row justify-content-center"><p class = "textgruen"><?=$output ?></p>
+					</div>
+					<div class = "row justify-content-center">
+						<a href="https://github.com/XSmeagolX/BOINC-Userstats/releases/latest">https://github.com/XSmeagolX/BOINC-Userstats/releases/latest</a>
+					</div>
+				</div>
 <?php endif; ?>
 
 	</div>

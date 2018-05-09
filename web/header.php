@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang = "<?php echo $lang; ?>">
+<html lang = "<?=$lang; ?>">
 	<head>
-		<title><?php echo $text_hp_title; ?></title>
+		<title><?=$text_hp_title; ?></title>
 
 		<!-- Icons -->
 		<link rel="shortcut icon" type="image/x-icon" href="./assets/images/icons/favicon.ico"/>
@@ -90,7 +90,7 @@
 							<?php else: ?>
 								<h1 class = "title"><font color = "white"><?=$text_header_motto ?></font></h1>
 							<?php endif; ?>
-							<h3><font color = "white"><?=$boinc_username ?><font size = '3'><?=$text_header_ot ?></font><?=$boinc_teamname ?></font></h3>
+							<h3><font color = "white"><?=$boinc_username ?><font size = '3'> <?=$text_header_ot ?></font> <?=$boinc_teamname ?></font></h3>
 						</div>
 					</div>
 				</div>

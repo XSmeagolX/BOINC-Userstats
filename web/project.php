@@ -290,49 +290,38 @@
 	include("./assets/js/highcharts/output_project_year.js"); 
 ?>
 
-<?php if ($novalues) {
-		echo '
+<?php if ($novalues): ?>
 		<div class = "alert danger-lastupdate" role = "alert">
 			<div class = "container">
-				' . $text_info_project_novalues .'
+				<?=$text_info_project_novalues?>
 			</div>
 		</div>
-		';		
-	}
-	elseif ($status == "2") {
-		echo '
+
+<?php elseif ($status == "2"): ?>
 		<div class = "alert danger-lastupdate" role = "alert">
 			<div class = "container">
-				' . $text_info_project_retired .'
+				<?=$text_info_project_retired?>
 			</div>
 		</div>
-		';	
-	} elseif ($status == "0") {
-		echo '
+<?php elseif ($status == "0"): ?>
 		<div class = "alert warning-lastupdate" role = "alert">
 			<div class = "container">
-				' . $text_info_noupdate. '
+				<?=$text_info_noupdate?>
 			</div>
 		</div>
-		';
-	} elseif ($datum < $datum_start) {
-		echo '
+<?php elseif ($datum < $datum_start): ?>
 		<div class = "alert warning-lastupdate" role = "alert">
 			<div class = "container">
-				' . $text_info_update_inprogress .  $lastupdate_start .' (' . $my_timezone . ')
+				<?=$text_info_update_inprogress?><?=$lastupdate_start?><font size="1">(<?=$my_timezone?>)</font>
 			</div>
 		</div>
-		';
-	} else {
-		echo '
+<?php else: ?>
 		<div class = "alert info-lastupdate" role = "alert">
 			<div class = "container">
-				<b>' . $text_header_lu . ':</b> ' . $lastupdate_start . ' - ' . $lastupdate . ' (' . $my_timezone . ')
+				<b><?=$text_header_lu?></b>: <?=$lastupdate_start?> - <?=$lastupdate?> <font size="1">(<?=$my_timezone?>)</font>
 			</div>
 		</div>
-		';
-	}
-?>
+<?php endif; ?>
 
 		<nav>
 			<div class = "nav nav-tabs nav-space justify-content-center nav-tabs-userstats">

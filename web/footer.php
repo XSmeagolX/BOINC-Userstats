@@ -29,8 +29,8 @@
 							Angaben gemäß § 5 TMG:<br>
 							<br>
 							<u>Kontakt:</u><br>
-							<?php echo $hp_username; ?><br>
-							<strong>E-Mail: </strong><?php echo $hp_email; ?>
+							<?=$hp_username; ?><br>
+							<strong>E-Mail: </strong><?=$hp_email; ?>
 						</div>
 						<div class = "modal-footer">
 							<button type = "button" class = "btn btn-default btn-simple" data-dismiss = "modal">OK</button>
