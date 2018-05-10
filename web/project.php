@@ -12,6 +12,7 @@
 	$sum12h_total = 0;
 	$sum_today_total = 0;
 	$sum_yesterday_total = 0;
+	$novalues = false;
 
 	$query_getUserData = mysqli_query($db_conn,"SELECT * FROM boinc_user");
 	if ( !$query_getUserData || mysqli_num_rows($query_getUserData) === 0 ) { 

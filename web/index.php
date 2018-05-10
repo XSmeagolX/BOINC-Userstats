@@ -368,12 +368,12 @@
 				<?php if ($hasactiveProject): ?>
 					<?php foreach ($table as $table_row): ?>
 						<tr>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><?=$table_row["project_name"] ?></a></td>
 						<?php if ($table_row["user_stats_vorhanden"] === "1"): ?>
-							<td class = 'textprimaer align-middle text-center align-middle'><a href = '<?=$table_row["project_link"] ?>'><i class = 'textprimaer fa fa-bar-chart'></i></a></td>
+							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><i class = 'textgrau fa fa-bar-chart'></i> <?=$table_row["project_name"] ?></a></td>
 						<?php else: ?>
-							<td class = 'text-muted align-middle text-center align-middle'><a href = '<?=$table_row["project_link"] ?>'><i class = 'text-muted fa fa-bar-chart'></i></a></td>
+							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><i class = 'text-muted fa fa-bar-chart'></i> <?=$table_row["project_name"] ?></a></td>
 						<?php endif; ?>
+							<td class = 'textprimaer align-middle text-center align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><i class = 'text-muted fa fa-home'></i></a></td>
 							<td class = 'align-middle'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
 						<?php if ($table_row["sum1h"] != ""): ?>

@@ -1,5 +1,5 @@
 <?php
-
+	$didVersionEdit = false;
 	if ($setUpdatecheck) {
 		$xml_string = false;
 		$xml_string = @file_get_contents ("https://boinc-userstats.de/latest_release.xml", 0, $ctx);

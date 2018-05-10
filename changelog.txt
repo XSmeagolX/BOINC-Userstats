@@ -19,6 +19,8 @@ Version 5.0.2:
   Eine Liste möglicher Eintragungen ist hier zu finden: http://php.net/manual/timezones.php
 - Die Tooltips bei verkürzten Texten in der tasks.php wurden neu formatiert und die Verzögerung bis zur Darstellung minimiert.
 - Die Farbe für die Punkte vom Vortag wurde von blau auf gelb geändert
+- Die Verlinkung zu den Detail-Statistiken und zur Projekt-Homepage wurden ausgetauscht.
+  Der Link über dem Projektnamen führt nun zu den Detail-Statistiken. Für die Projekt-Homepage wurde ein Haus gebaut.
 - Codeanpassungen
 
 geänderte bzw. neu hinzugefügte Dateien:
