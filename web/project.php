@@ -362,13 +362,13 @@
 						<div class="col-sm-12 col-lg-4 mb-1 text-right">
 										<h1><?=number_format($table_row["total_credits"],0,$dec_point,$thousands_sep) ?></h1>
 										<div class = "text-sm"><?=$table_row["proz_anteil"] ?><?=$text_proz_anteil?></div>
-										<div class = "h3 textgruen">heute: <?=number_format($table_row["sum_today"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "text-sm">-1h: <?=number_format($table_row["sum1h"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "text-sm">-2h: <?=number_format($table_row["sum2h"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "text-sm">-6h: <?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "text-sm">-12h: <?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "h4 textgelb">gestern: <?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "text-sm textrot">Pendings: <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "h3 textgruen"><font size = "1">heute:</font> <?=number_format($table_row["sum_today"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm text-muted"><font size = "1">-1h:</font> <?=number_format($table_row["sum1h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm text-muted"><font size = "1">-2h:</font> <?=number_format($table_row["sum2h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm text-muted"><font size = "1">-6h:</font> <?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm text-muted"><font size = "1">-12h:</font> <?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "h4 textgelb"><font size = "1">gestern:</font> <?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm textrot"><font size = "1">Pendings:</font> <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
 						</div>
 					</div>
 					<?php endforeach; ?>				
