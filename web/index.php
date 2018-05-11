@@ -440,7 +440,7 @@
 
 					<?php foreach ($table_retired as $table_row_retired): ?>
 						<tr class = 'collapse retiredProjects'>
-							<td class = 'text-muted text-sm align-middle'><a href = '<?=$table_row_retired["project_link"] ?>'><i class = 'fa fa-bar-chart'></i> <?=$table_row_retired["project_name"] ?></a></td>
+							<td class = 'text-muted text-sm align-middle'><a href = '<?=$table_row_retired["project_link"] ?>'><?=$table_row_retired["project_name"] ?> <i class = 'fa fa-bar-chart'></i></a></td>
 							<td class = 'align-middle text-center text-muted align-middle'></td>
 							<td class = 'text-muted text-sm align-middle'><b><?=number_format($table_row_retired["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'><?=number_format($table_row_retired["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
