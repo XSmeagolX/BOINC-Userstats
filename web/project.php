@@ -286,6 +286,7 @@
 	include("./assets/js/highcharts/output_project.js");
 	include("./assets/js/highcharts/output_project_hour.js");
 	include("./assets/js/highcharts/output_project_day.js");
+	include("./assets/js/highcharts/output_project_day_inline.js");
 	include("./assets/js/highcharts/output_project_week.js");
 	include("./assets/js/highcharts/output_project_month.js");
 	include("./assets/js/highcharts/output_project_year.js"); 
@@ -344,43 +345,36 @@
 
 			<div id = "projekte" class = "tab-pane fade show active" role = "tabpanel" aria-labelledby = "projekte-tab">
 				<br>
-				<table id = "table_project" class = "table table-sm table-striped table-hover table-responsive-xs table-200" width = "100%">	
-					<thead>
-						<tr>
-							<th class = "dunkelgrau textgrau text-center align-middle"><?php echo "$project_project" ?></th>
-							<th class = "dunkelgrau textgrau text-center align-middle"><?php echo "$tr_tb_cr" ?></th>
-							<th class = "dunkelgrau textgrau d-none d-sm-table-cell text-center align-middle">%</th>
-							<th class = "dunkelgrau textgrau d-none d-sm-table-cell text-center align-middle"><?=$tr_tb_01 ?></th>
-							<th class = "dunkelgrau textgrau d-none d-lg-table-cell text-center align-middle"><?=$tr_tb_02 ?></th>
-							<th class = "dunkelgrau textgrau d-none d-lg-table-cell text-center align-middle"><?=$tr_tb_06 ?></th>
-							<th class = "dunkelgrau textgrau d-none d-md-table-cell text-center align-middle"><?=$tr_tb_12 ?></th>
-							<th class = "dunkelgruen textgruen d-none d-sm-table-cell text-center align-middle"><?=$tr_tb_to ?></th>
-							<th class = "dunkelgelb textgelb d-none d-sm-table-cell text-center align-middle"><?=$tr_tb_ye ?></th>
-							<th class = "dunkelrot textrot d-none d-md-table-cell text-center align-middle"><?=$tr_tb_pe ?></th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach($table as $table_row): ?>
-							<tr>
+				<div class="container flex-column align-items-start">
+					<div class="d-flex w-100 mb-3">
+
+					<?php foreach($table as $table_row): ?>
+					<div class = "row w-100">
+						<div class="col-sm-12 col-lg-8 mb-1 text-left">
 								<?php if ($table_row["project_status"]=== "1"): ?>
-										<td class = 'text-center align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><?=$table_row["project_name"] ?></a>
+										<h1><a href = '<?=$table_row["project_home_link"] ?>'><?=$table_row["project_name"] ?></a></h1>
 								<?php else: ?>
-										<td class = 'text-center align-middle'><?=$table_row["project_name"] ?></td>
+										<?=$table_row["project_name"] ?>
 								<?php endif; ?>
-										<td class = 'text-center align-middle'><?=number_format($table_row["total_credits"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'd-none d-sm-table-cell text-center align-middle'><?=$table_row["proz_anteil"] ?></td>
-										<td class = 'd-none d-sm-table-cell text-center align-middle'><?=number_format($table_row["sum1h"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'd-none d-lg-table-cell text-center align-middle'><?=number_format($table_row["sum2h"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'd-none d-lg-table-cell text-center align-middle'><?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'd-none d-md-table-cell text-center align-middle'><?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'gruen textgruen d-none d-sm-table-cell text-center align-middle'><?=number_format($table_row["sum_today"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'gelb textgelb d-none d-sm-table-cell text-center align-middle'><?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></td>
-										<td class = 'rot textrot d-none d-md-table-cell text-center align-middle'><?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></td>
-									</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
+								<div class = "d-none d-lg-flex" id = "output_project_day_inline" style = "height:200px;">
+								</div>
+						</div>
+						<div class="col-sm-12 col-lg-4 mb-1 text-right">
+										<h1><?=number_format($table_row["total_credits"],0,$dec_point,$thousands_sep) ?></h1>
+										<div class = "text-sm"><?=$table_row["proz_anteil"] ?><?=$text_proz_anteil?></div>
+										<div class = "h3 textgruen">heute: <?=number_format($table_row["sum_today"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm">-1h: <?=number_format($table_row["sum1h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm">-2h: <?=number_format($table_row["sum2h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm">-6h: <?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm">-12h: <?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "h4 textgelb">gestern: <?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></div>
+										<div class = "text-sm textrot">Pendings: <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
+						</div>
+					</div>
+					<?php endforeach; ?>				
+				</div>
 			</div>
+		</div>
 
 		<?php
 		if ($showWCGDetails): ?>

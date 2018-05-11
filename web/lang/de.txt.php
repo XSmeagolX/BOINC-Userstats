@@ -91,6 +91,7 @@
 	$tr2_hp_mi = "weitere Informationen";
 	$tr2_hp_privcomp = "keine Host Infos veröffentlicht";
 	$td_hp_retired_info = "---------Projekt beendet---------";
+	$text_proz_anteil = "% Anteil an Gesamtpunkten";
 	
 	$wcg_detail_team_history = "Team (Historie)";
 	$wcg_detail_team = "Team Name";

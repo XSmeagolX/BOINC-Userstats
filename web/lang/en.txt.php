@@ -91,6 +91,7 @@
 	$tr2_hp_mi = "more Information";
 	$tr2_hp_privcomp = "no public host information";
 	$td_hp_retired_info = "---------Project retired---------";
+	$text_proz_anteil = "% of total credits";
 	
 	$wcg_detail_team_history = "Team (History)";
 	$wcg_detail_team = "Team Name";

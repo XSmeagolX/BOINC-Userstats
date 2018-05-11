@@ -1,4 +1,4 @@
-Version 5.0.2: 
+Version 5.1.0: 
 ==============
 - Das Error-Management für neue Nutzer der BOINC-Userstats wurde verbessert (Issue #21)
   Sofern noch keine Änderungen an den Credits bei den Projekten vorhanden waren, wurde lediglich der Header und Footer angezeigt.
@@ -21,6 +21,7 @@ Version 5.0.2:
 - Die Farbe für die Punkte vom Vortag wurde von blau auf gelb geändert
 - Die Verlinkung zu den Detail-Statistiken und zur Projekt-Homepage wurden ausgetauscht.
   Der Link über dem Projektnamen führt nun zu den Detail-Statistiken. Für die Projekt-Homepage wurde ein Haus gebaut.
+- Die Projekt-Detail-Ansicht fühlte sich altmodisch und hat einen neuen Haarschnitt erhalten. Sie fühlt sich in ihrem neuen Look nun wesentlich wohler.
 - Codeanpassungen
 
 geänderte bzw. neu hinzugefügte Dateien:
@@ -29,6 +30,7 @@ geänderte bzw. neu hinzugefügte Dateien:
     - ./assets/css/userstats_layout.css
     - ./assets/css/userstats_style.css
     - ./assets/js/highcharts/global_settings.php
+    - ./assets/js/highcharts/output_project_day_inline.js (neu)
     - ./assets/js/moment/moment-timezone-with-data-2012-2022.js (neu)
     - ./assets/js/moment/moment-with-locales.min.js (neu)
     - ./lang/de.txt.php
