@@ -12,7 +12,6 @@ Version 5.1.0:
   Zudem wurde das "Popup" etwas kleiner gestaltet und die Schrift entsprechend dem "Kleingedruckten" verkleinert.
 - Es wurde ein Problem behoben, dass wenn ein Projekt neu hinzugefügt wurde, die Projekt-Details erst am Tag danach angezeigt wurden. 
   Zudem erscheint bei neu hinzugefügten Projekten eine Info, falls noch keine validen Arbeitspakete abgeliefert wurden.
-- Pending Credits sind nicht mehr Bestanteil des BOINC-Server Projektes (depreciated) und werden in zukünftigen Versionen entfernt.
 - es wurde ein Problem mit der Umstellung Sommer-/Winterzeit behoben (Daylight Savings).
   Durch die Integration von moment.js erfolgt die Anzeige entsprechend der Voreingestellten Zeitzone (bislang bis zum Jahr 2022) incl. evtl. Zeitumstellungen nun automatisch.
   Ein manuelles Anpassen ist somit nicht erforderlich. Dazu muss die Zeitzone in der settings.php ($my_timezone) im Format Kontinent/Stadt (z.B. Europe/Berlin) gesetzt werden.
@@ -23,6 +22,9 @@ Version 5.1.0:
   Der Link über dem Projektnamen führt nun zu den Detail-Statistiken. Für die Projekt-Homepage wurde ein Haus gebaut.
 - Die Projekt-Detail-Ansicht fühlte sich altmodisch und hat einen neuen Haarschnitt erhalten. Sie fühlt sich in ihrem neuen Look nun wesentlich wohler.
 - Codeanpassungen
+
+Hinweis: 
+- Pending Credits sind nicht mehr Bestanteil des BOINC-Server Projektes (depreciated) und werden in zukünftigen Versionen entfernt.
 
 geänderte bzw. neu hinzugefügte Dateien:
     - ../changelog.txt
