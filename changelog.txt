@@ -1,6 +1,8 @@
 Version 5.1.X: (noch nicht veröffentlicht)
 ==============
 - Wegen datenschutzrechtlicher Änderungen beim WCG ist der WCG-Badge-Abruf bei SETI.Germany nicht mehr möglich und wurde aus dem Badge-Feature dieser Stats entfernt
+- Wegen datenschutzrechtlicher Änderungen beim WCG wurden die Detail-Statistiken des Projekts aus diesen Stats entfernt. Ein Abruf dieser Daten ist leider so nicht mehr möglich.
+
 
 geänderte bzw. neu hinzugefügte Dateien:
     - ../changelog.txt
