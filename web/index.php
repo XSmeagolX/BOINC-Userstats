@@ -503,7 +503,7 @@
 			<div id = "badges" class = "tab-pane fade text-center" role = "tabpanel" aria-labelledby = "badges-tab">
 				<div>
 					<br>
-					<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?>
+					<?php if (!$showUserBadges AND !$showWcgLogo): ?>
 						<?=$no_badge ?><br>
 					<?php endif; ?>
 					<?php if ($showUserBadges): ?>
@@ -511,9 +511,6 @@
 					<?php endif; ?>
 					<?php if ($showWcgLogo): ?>
 						<img src = "<?=$linkWcgSig ?>" class = "img-fluid center-block"><br>
-					<?php endif; ?>
-					<?php if ($showSgWcgBadges): ?>
-						<img src = "<?=$linkSgWcgBadges ?>" class = "img-fluid center-block"><br>
 					<?php endif; ?>
 					<br>
 				</div>

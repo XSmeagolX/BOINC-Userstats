@@ -84,15 +84,6 @@
 	$showWcgLogo = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
 	$linkWcgSig = "http://wcgsig.com/653215.gif"; //Hier den Link zu deinem WCG-Logo von http://wcgsig.com einfuegen
 	
-	// SG-WCG-Badges
-	// Die Badge-Grafik kann man auch per cronjob 1x täglich in sein Webverzeichnis kopieren und dann hier relativ verlinken.
-	// Hier kannst du die WCG-Badges des Badge-Generators von SETI.Germany integrieren. 
-	// Hinter badge_ folgt dein WCG-Name, danach _ gefolgt von der Anzahl an Reihen. 0 steht für alle Badges in einer Reihe (halte ich am sinnvollsten)
-	// You can fetch this signature by a daylie cronjog as well and link them as a relative link
-	// to configure this signature change your WCG-Name (XSmeagolX) and the number of rows (0) that should be used
-	$showSgWcgBadges = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
-	$linkSgWcgBadges = "https://www.seti-germany.de/wcg/badge_XSmeagolX_0.png"; // WCG-Badges von XSmeagolX, alle in einer Reihe
-	
 	// Hier dein Teamname und die URL zu der Homepage deines Teams eintragen
 	// Your Teamname, Homepage of your team
 	// Falls die Links zum Dev nicht angezeigt werden sollen, oder man ist Mitglied eines anderen Teams,
