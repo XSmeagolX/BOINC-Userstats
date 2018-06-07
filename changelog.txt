@@ -1,3 +1,17 @@
+Version 5.1.X: (noch nicht veröffentlicht)
+==============
+- Wegen datenschutzrechtlicher Änderungen beim WCG ist der WCG-Badge-Abruf bei SETI.Germany nicht mehr möglich und wurde aus dem Badge-Feature dieser Stats entfernt
+
+geänderte bzw. neu hinzugefügte Dateien:
+    - ../changelog.txt
+    - ./settings/settings.php
+    - index.php
+    - project.php
+
+
+
+
+
 Version 5.1.0: 
 ==============
 - Das Error-Management für neue Nutzer der BOINC-Userstats wurde verbessert (Issue #21)
