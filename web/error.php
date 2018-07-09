@@ -72,38 +72,38 @@
 		case "403": 
 			$error_description = "403 Forbidden"; 
 			$err_de = "Zugriff verweigert!</br>".
-			($REDIRECT_URL != "") 
+			(($REDIRECT_URL != "") 
 			? "Der Zugriff auf das angeforderte Verzeichnis ist nicht m&ouml;glich. Entweder ist kein Index-Dokument vorhanden oder das Verzeichnis ist zugriffsgesch&uuml;tzt." 
-			: "Der Zugriff auf das angeforderte Objekt ist nicht m&ouml;glich. Entweder kann es vom Server nicht gelesen werden oder es ist zugriffsgesch&uuml;tzt.";
+			: "Der Zugriff auf das angeforderte Objekt ist nicht m&ouml;glich. Entweder kann es vom Server nicht gelesen werden oder es ist zugriffsgesch&uuml;tzt.");
 			$err_en = "Access forbidden!</br>".
-			($REDIRECT_URL != "") 
+			(($REDIRECT_URL != "") 
 			? "You don't have permission to access the requested directory. There is either no index document or the directory is read-protected." 
-			: "You don't have permission to access the requested object. It is either read-protected or not readable by the server.";
+			: "You don't have permission to access the requested object. It is either read-protected or not readable by the server.");
 			$err_fr = "Acc&egrave;s interdit!</br>".
-			($REDIRECT_URL != "") 
+			(($REDIRECT_URL != "") 
 			? "Vous n'avez pas le droit d'acc&eacute;der au r&eacute;pertoire demand&eacute;. Soit il n'y a pas de document index soit le r&eacute;pertoire est prot&eacute;g&eacute;." 
-			: "Vous n'avez pas le droit d'acc&eacute;der &agrave; l'objet demand&eacute;. Soit celui-ci est prot&eacute;g&eacute;, soit il ne peut &ecirc;tre lu par le serveur.";
+			: "Vous n'avez pas le droit d'acc&eacute;der &agrave; l'objet demand&eacute;. Soit celui-ci est prot&eacute;g&eacute;, soit il ne peut &ecirc;tre lu par le serveur.");
 			break;
 		case "404": 
 			$error_description = "404 Not Found"; 
 			$err_de = "Objekt nicht gefunden!".
 			"</br>Der angeforderte URL konnte auf dem Server nicht gefunden werden.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "Der Link auf der <a href='".$HTTP_REFERER."'>verweisenden Seite</a> scheint falsch oder nicht mehr aktuell zu sein. Bitte informieren Sie den Autor ".
 			"<a href='".$HTTP_REFERER."'>dieser Seite</a> &uuml;ber den Fehler." 
-			: "Sofern Sie den URL manuell eingegeben haben, &uuml;berpr&uuml;fen Sie bitte die Schreibweise und versuchen Sie es erneut.";
+			: "Sofern Sie den URL manuell eingegeben haben, &uuml;berpr&uuml;fen Sie bitte die Schreibweise und versuchen Sie es erneut.");
 			$err_en = "Object not found!<br>".
 			"The requested URL was not found on this server.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "The link on the <a href='".$HTTP_REFERER."'>referring page</a> seems to be wrong or outdated. Please inform the author of ".
 			"<a href='".$HTTP_REFERER."'>that page</a> about the error." 
-			: "If you entered the URL manually please check your spelling and try again.";
+			: "If you entered the URL manually please check your spelling and try again.");
 			$err_fr = "Objet non trouv&eacute;!<br>".
 			"L'URL demand&eacute;e n'a pas pu &ecirc;tre trouv&eacute;e sur ce serveur.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "La r&eacute;f&eacute;rence sur <a href='".$HTTP_REFERER."'>la page cit&eacute;e</a> semble &ecirc;tre erron&eacute;e ou perim&eacute;e. Nous vous prions d'informer l'auteur de ".
 			"<a href='".$HTTP_REFERER."'>cette page</a> de cette erreur." 
-			: "Si vous avez tap&eacute; l'URL &agrave; la main, veuillez v&eacute;rifier l'orthographe et r&eacute;essayer.";
+			: "Si vous avez tap&eacute; l'URL &agrave; la main, veuillez v&eacute;rifier l'orthographe et r&eacute;essayer.");
 			break;
 		case "405": 
 			$error_description = "405 Das Ende des Internets"; 
@@ -113,16 +113,16 @@
 			"Ich wünsche Dir noch viel Spaß im realen Leben, fern ab jeglichen Internets!";
 			$err_en = "Object not found!<br>".
 			"The requested URL was not found on this server.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "The link on the <a href='".$HTTP_REFERER."'>referring page</a> seems to be wrong or outdated. Please inform the author of ".
 			"<a href='".$HTTP_REFERER."'>that page</a> about the error." 
-			: "If you entered the URL manually please check your spelling and try again.";
+			: "If you entered the URL manually please check your spelling and try again.");
 			$err_fr = "Objet non trouv&eacute;!<br>".
 			"L'URL demand&eacute;e n'a pas pu &ecirc;tre trouv&eacute;e sur ce serveur.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "La r&eacute;f&eacute;rence sur <a href='".$HTTP_REFERER."'>la page cit&eacute;e</a> semble &ecirc;tre erron&eacute;e ou perim&eacute;e. Nous vous prions d'informer l'auteur de ".
 			"<a href='".$HTTP_REFERER."'>cette page</a> de cette erreur." 
-			: "Si vous avez tap&eacute; l'URL &agrave; la main, veuillez v&eacute;rifier l'orthographe et r&eacute;essayer.";
+			: "Si vous avez tap&eacute; l'URL &agrave; la main, veuillez v&eacute;rifier l'orthographe et r&eacute;essayer.");
 			break;
 	/*	case "405": 
 			$error_description = "405 Method Not Allowed"; 
@@ -156,22 +156,22 @@
 			$error_description = "410 Gone";
 			$err_de = "Objekt nicht mehr verf&uuml;gbar!<br>".
 			"Der angeforderte URL existiert auf dem Server nicht mehr und wurde dauerhaft entfernt. Eine Weiterleitungsadresse ist nicht verf&uuml;gbar.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "Bitte informieren Sie den Autor der ".
 			"<a href='".$HTTP_REFERER."'>verweisenden Seite</a>, dass der Link nicht mehr aktuell ist." 
-			: "Falls Sie einem Link von einer anderen Seite gefolgt sind, informieren Sie bitte den Autor dieser Seite hier&uuml;ber.";
+			: "Falls Sie einem Link von einer anderen Seite gefolgt sind, informieren Sie bitte den Autor dieser Seite hier&uuml;ber.");
 			$err_en = "Resource is no longer available!<br>".
 			"The requested URL is no longer available on this server and there is no forwarding address.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "Please inform the author of the ".
 			"<a href='".$HTTP_REFERER."'>referring page</a> that the link is outdated." 
-			: "If you followed a link from a foreign page, please contact the author of this page.";
+			: "If you followed a link from a foreign page, please contact the author of this page.");
 			$err_fr = "Cette ressource n'existe plus!<br>".
 			"L'URL demand&eacute;e n'est plus accessible sur ce serveur et il n'y a pas d'adresse de redirection.<br>".
-			($HTTP_REFERER != "") 
+			(($HTTP_REFERER != "") 
 			? "Nous vous prions d'informer l'auteur de ".
 			"<a href='".$HTTP_REFERER."'>la page en question</a> que la r&eacute;f&eacute;rence n'est plus valable." 
-			: "Si vous avez suivi une r&eacute;f&eacute;rence issue d'une page autre, veuillez contacter l'auteur de cette page.";
+			: "Si vous avez suivi une r&eacute;f&eacute;rence issue d'une page autre, veuillez contacter l'auteur de cette page.");
 			break;
 		case "411": 
 			$error_description = "411 Length Required"; 
@@ -221,17 +221,17 @@
 		case "500": 
 			$error_description = "500 Server Error"; 
 			$err_de = "Serverfehler!<br>".
-			($REDIRECT_ERROR_NOTES != "") 
+			(($REDIRECT_ERROR_NOTES != "") 
 			? "Die Anfrage kann nicht beantwortet werden, da im Server ein interner Fehler aufgetreten ist. Fehlermeldung:<br>".$REDIRECT_ERROR_NOTES 
-			: "Die Anfrage kann nicht beantwortet werden, da im Server ein interner Fehler aufgetreten ist. Der Server ist entweder &uuml;berlastet oder ein Fehler in einem CGI-Skript ist aufgetreten.";
+			: "Die Anfrage kann nicht beantwortet werden, da im Server ein interner Fehler aufgetreten ist. Der Server ist entweder &uuml;berlastet oder ein Fehler in einem CGI-Skript ist aufgetreten.");
 			$err_en = "Server error!<br>".
-			($REDIRECT_ERROR_NOTES != "") 
+			(($REDIRECT_ERROR_NOTES != "") 
 			? "The server encountered an internal error and was unable to complete your request. Error message: <br>".$REDIRECT_ERROR_NOTES
-			: "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there was an error in a CGI script.";
+			: "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there was an error in a CGI script.");
 			$err_fr = "Erreur du serveur!<br>".
-			($REDIRECT_ERROR_NOTES != "") 
+			(($REDIRECT_ERROR_NOTES != "") 
 			? "Le serveur a &eacute;t&eacute; victime d'une erreur interne et n'a pas &eacute;t&eacute; capable de faire aboutir votre requ&ecirc;te. Message d'erreur: <br>".$REDIRECT_ERROR_NOTES 
-			: "Le serveur a &eacute;t&eacute; victime d'une erreur interne et n'a pas &eacute;t&eacute; capable de faire aboutir votre requ&ecirc;te. Soit le server est surcharg&eacute; soit il s'agit d'une erreur dans le script CGI.";
+			: "Le serveur a &eacute;t&eacute; victime d'une erreur interne et n'a pas &eacute;t&eacute; capable de faire aboutir votre requ&ecirc;te. Soit le server est surcharg&eacute; soit il s'agit d'une erreur dans le script CGI.");
 			break;
 		case "501": 
 			$error_description = "501 Not Implemented"; 
