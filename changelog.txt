@@ -7,9 +7,12 @@ Version 5.1.X: (noch nicht veröffentlicht)
 geänderte bzw. neu hinzugefügte Dateien:
     - ../changelog.txt
     - ./settings/settings.php
+    - ./assets/css/userstats_layout.css
     - error.php
     - index.php
+    - nav.php
     - project.php
+    - version.php
 
 
 
