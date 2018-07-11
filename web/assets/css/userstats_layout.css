@@ -200,6 +200,6 @@ table.dataTable thead .sorting::before, table.dataTable thead .sorting_asc::befo
 
 /* Buttons
 ****************/
-.dropdown a.nav-link.btn.focus, .dropdown a.nav-link.btn:focus {
-	box-shadow: 0 0 0 0 #000;
+.btn.focus, .btn:focus {
+	box-shadow: none !important;
 }
