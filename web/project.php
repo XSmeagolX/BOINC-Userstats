@@ -336,30 +336,32 @@
 				<div class="container flex-column align-items-start">
 					<div class="d-flex w-100 mb-3">
 
-					<?php foreach($table as $table_row): ?>
+<?php foreach($table as $table_row): ?>
 					<div class = "row w-100">
 						<div class="col-sm-12 col-lg-8 mb-1 text-left">
-								<?php if ($table_row["project_status"]=== "1"): ?>
+<?php if ($table_row["project_status"]=== "1"): ?>
 										<h1><a href = '<?=$table_row["project_home_link"] ?>'><?=$table_row["project_name"] ?></a></h1>
-								<?php else: ?>
-										<?=$table_row["project_name"] ?>
-								<?php endif; ?>
+<?php else: ?>
+										<h1><?=$table_row["project_name"] ?></h1>
+<?php endif; ?>
 								<div class = "d-none d-lg-flex" id = "output_project_day_inline" style = "height:200px;">
 								</div>
 						</div>
 						<div class="col-sm-12 col-lg-4 mb-1 text-right">
-										<h1><?=number_format($table_row["total_credits"],0,$dec_point,$thousands_sep) ?></h1>
+										<h1><font size = "1">Gesamt:</font> <?=number_format($table_row["total_credits"],0,$dec_point,$thousands_sep) ?></h1>
 										<div class = "text-sm"><?=$table_row["proz_anteil"] ?><?=$text_proz_anteil?></div>
+<?php if ($table_row["project_status"] === "1"): ?>
 										<div class = "h3 textgruen"><font size = "1">heute:</font> <?=number_format($table_row["sum_today"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "text-sm text-muted"><font size = "1">-1h:</font> <?=number_format($table_row["sum1h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "text-sm text-muted"><font size = "1">-2h:</font> <?=number_format($table_row["sum2h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "text-sm text-muted"><font size = "1">-6h:</font> <?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "text-sm text-muted"><font size = "1">-12h:</font> <?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "h4 textgelb"><font size = "1">gestern:</font> <?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></div>
-										<div class = "text-sm textrot"><font size = "1">Pendings:</font> <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
+										<div clss = "text-sm textrot"><font size = "1">Pendings:</font> <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
+<?php endif; ?>
 						</div>
 					</div>
-					<?php endforeach; ?>				
+<?php endforeach; ?>				
 				</div>
 			</div>
 		</div>
@@ -391,15 +393,15 @@
 			<div id = "badges" class = "tab-pane fade text-center" role = "tabpanel" aria-labelledby = "badges-tab">
 				<div>
 					<br>
-					<?php if (!$showUserBadges AND !$showWcgLogo): ?>
+<?php if (!$showUserBadges AND !$showWcgLogo): ?>
 						<?=$no_badge ?><br>
-					<?php endif; ?>
-					<?php if ($showUserBadges): ?>
+<?php endif; ?>
+<?php if ($showUserBadges): ?>
 						<img src = "<?=$linkUserBadges ?>" class = "img-fluid center-block"><br>
-					<?php endif; ?>
-					<?php if ($showWcgLogo): ?>
+<?php endif; ?>
+<?php if ($showWcgLogo): ?>
 						<img src = "<?=$linkWcgSig ?>" class = "img-fluid center-block"><br>
-					<?php endif; ?>
+<?php endif; ?>
 					<br>
 				</div>
 			</div>				
