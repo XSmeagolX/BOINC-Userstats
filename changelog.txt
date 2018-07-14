@@ -1,6 +1,5 @@
 Version 5.1.X: (noch nicht veröffentlicht)
 ==============
-- Wegen datenschutzrechtlicher Änderungen beim WCG wurden die Detail-Statistiken des Projekts aus diesen Stats entfernt. Ein Abruf dieser Daten ist leider so nicht mehr möglich.
 - Es wurde ein Fehler beim Anzeigen der Error-Seiten behoben. Nun sollten auch die richtigen Meldungen erscheinen, sofern ein falscher Link direkt aufgerufen werden sollte
 - Das Link für weitere Infos in der Navbar wurde nun besser positioniert
 - Je nach Projekt-Status werden in den Projekt-Details nun mehr oder weniger Angaben zu den errechneten Punkten ausgegeben.

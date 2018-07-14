@@ -272,6 +272,15 @@
 	if (file_exists("./lang/" . $lang . ".highstock.js")) include "./lang/" . $lang . ".highstock.js";
 	else include "./lang/en.highstock.js";
 
+	$showWCGDetails = false;
+	if ($table_row["project_name"] == "World Community Grid" || $table_row["project_name"] == "WCG" || $table_row["project_name"] == "WCGrid") {
+		if ($wcg_verification === NULL || $wcg_verification === "") {
+			$showWCGDetails = false; 
+		} else {
+			$showWCGDetails = true;
+		}
+	} 
+
 	include("./assets/js/highcharts/global_settings.php");
 	include("./assets/js/highcharts/highcharts_color.php");
 	include("./assets/js/highcharts/output_project.js");
@@ -319,6 +328,9 @@
 		<nav>
 			<div class = "nav nav-tabs nav-space justify-content-center nav-tabs-userstats">
 				<a class = "nav-item nav-link active" id = "projekte-tab" data-toggle = "tab" href = "#projekte" role = "tab" aria-controls = "projekte" aria-selected = "true"><i class = "fa fa-table"></i> <?php echo "$tabs_project" ?></a>
+<?php if ($showWCGDetails): ?>
+				<a class = "nav-item nav-link" id = "wcgdetails-tab" data-toggle = "tab" href = "#wcgdetails" role = "tab" aria-controls = "wcgdetails" aria-selected = "false"><i class = "fa fa-table"></i> Details</a>
+<?php endif; ?>
 				<a class = "nav-item nav-link" id = "gesamt-tab" data-toggle = "tab" href = "#gesamt" role = "tab" aria-controls = "gesamt" aria-selected = "false"><i class = "fa fa-area-chart"></i> <?php echo "$tabs_total" ?></a>
 				<a class = "nav-item nav-link" id = "stunde-tab" data-toggle = "tab" href = "#stunde" role = "tab" aria-controls = "stunde" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_hour" ?></a>
 				<a class = "nav-item nav-link" id = "tag-tab" data-toggle = "tab" href = "#tag" role = "tab" aria-controls = "tag" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_day" ?></a>
@@ -366,6 +378,19 @@
 			</div>
 		</div>
 
+<?php if ($showWCGDetails): ?>
+			<div id = "wcgdetails" class = "tab-pane fade" role = "tabpanel" aria-labelledby = "wcgdetails-tab">
+				<div class = "container">
+					<div class = "row justify-content-md-center">
+						<?=$tr_hp_loadProjectDetails ?>
+					</div>
+					<div class = "row justify-content-md-center">
+						<i class = "fa fa-spinner fa-pulse fa-2x fa-fw"></i> 
+					</div>
+				</div>
+			</div>
+<?php endif; ?>
+
 			<div id = "gesamt" class = "tab-pane fade" role = "tabpanel" aria-labelledby = "gesamt-tab">
 				<div id = "output_project"></div>
 			</div>
@@ -410,7 +435,39 @@
 			</div>					
 
 		</div>
-		
+
+		<script>
+			$(document).on('click','#wcgdetails-tab',function(){
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("wcgdetails").innerHTML =
+							this.responseText;
+							$('#table_wcgteams, #table_wcg').DataTable( {
+								fixedHeader: {
+											headerOffset: 56
+										},
+								language: {
+									decimal: "<?php echo $dec_point; ?>",
+									thousands: "<?php echo $thousands_sep; ?>",
+									search:	"<?php echo $text_search; ?>"
+								},
+								columnDefs: [ {
+									targets: 'no-sort',
+									orderable: false,
+								}],
+								order: [[ 1, "asc" ],[ 0, "asc" ]],
+								paging: false,
+								info: false,
+								searching: false
+							} );
+					}
+				};
+				xhttp.open("GET", "./ajax_wcg_detail.php", true);
+				xhttp.send(); 
+			} );
+		</script>
+
 		<script>
 			$(document).ready(function() {
 				$('#table_project').DataTable( {
