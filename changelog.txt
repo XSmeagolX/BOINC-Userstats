@@ -1,7 +1,8 @@
-Version 5.1.X: (noch nicht veröffentlicht)
+Version 5.1.1: (noch nicht veröffentlicht)
 ==============
 - Es wurde ein Fehler beim Anzeigen der Error-Seiten behoben. Nun sollten auch die richtigen Meldungen erscheinen, sofern ein falscher Link direkt aufgerufen werden sollte
 - Das Link für weitere Infos in der Navbar wurde nun besser positioniert
+- Der Link zu den SG-Stats wurde aktualisiert
 - Je nach Projekt-Status werden in den Projekt-Details nun mehr oder weniger Angaben zu den errechneten Punkten ausgegeben.
 
 
@@ -15,8 +16,6 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
     - nav.php
     - project.php
     - version.php
-
-
 
 
 

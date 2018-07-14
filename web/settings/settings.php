@@ -111,7 +111,7 @@
 	// set to "true" will show a link to team statistics of Team SETI.Germany
 	$hasSGStats = true; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist true
 	$linkNameSGStats = "SG-Stats";
-	$linkSGStats = "https://sg.boinc-userstats.de/teamstats/status_index.php"; //Link zu den SG-Stats von XSmeagolX
+	$linkSGStats = "https://stats.seti-germany.de"; //Link zu den SG-Stats von XSmeagolX
 
 	// Hier die URL zu den laufenden WUs, falls Du diese mit Boinctasks veröffentlichst
 	// wenn ja, nutze bitte meine boinctasks-Vorlage
