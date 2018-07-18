@@ -313,15 +313,15 @@
 ?>
 		<nav>
 			<div class = "nav nav-tabs nav-space justify-content-center nav-tabs-userstats">
-				<a class = "nav-item nav-link active" id = "projekte-tab" data-toggle = "tab" href = "#projekte" role = "tab" aria-controls = "projekte" aria-selected = "true"><i class = "fa fa-table"></i> <?php echo "$tabs_projects" ?></a>
-				<a class = "nav-item nav-link" id = "pie-tab" data-toggle = "tab" href = "#pie" role = "tab" aria-controls = "pie" aria-selected = "false"><i class = "fa fa-pie-chart"></i> <?php echo "$tabs_pie" ?></a>
-				<a class = "nav-item nav-link" id = "gesamt-tab" data-toggle = "tab" href = "#gesamt" role = "tab" aria-controls = "gesamt" aria-selected = "false"><i class = "fa fa-area-chart"></i> <?php echo "$tabs_total" ?></a>
-				<a class = "nav-item nav-link" id = "stunde-tab" data-toggle = "tab" href = "#stunde" role = "tab" aria-controls = "stunde" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_hour" ?></a>
-				<a class = "nav-item nav-link" id = "tag-tab" data-toggle = "tab" href = "#tag" role = "tab" aria-controls = "tag" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_day" ?></a>
-				<a class = "nav-item nav-link" id = "woche-tab" data-toggle = "tab" href = "#woche" role = "tab" aria-controls = "woche" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_week" ?></a>
-				<a class = "nav-item nav-link" id = "monat-tab" data-toggle = "tab" href = "#monat" role = "tab" aria-controls = "monat" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_month" ?></a>
-				<a class = "nav-item nav-link" id = "jahr-tab" data-toggle = "tab" href = "#jahr" role = "tab" aria-controls = "jahr" aria-selected = "false"><i class = "fa fa-bar-chart"></i> <?php echo "$tabs_year" ?></a>
-				<a class = "nav-item nav-link" id = "badges-tab" data-toggle = "tab" href = "#badges" role = "tab" aria-controls = "badges" aria-selected = "false"><i class = "fa fa-certificate"></i> <?php echo "$tabs_badge" ?></a>
+				<a class = "nav-item nav-link active" id = "projekte-tab" data-toggle = "tab" href = "#projekte" role = "tab" aria-controls = "projekte" aria-selected = "true"><i class="fas fa-table"></i> <?php echo "$tabs_projects" ?></a>
+				<a class = "nav-item nav-link" id = "pie-tab" data-toggle = "tab" href = "#pie" role = "tab" aria-controls = "pie" aria-selected = "false"><i class="fas fa-chart-pie"></i> <?php echo "$tabs_pie" ?></a>
+				<a class = "nav-item nav-link" id = "gesamt-tab" data-toggle = "tab" href = "#gesamt" role = "tab" aria-controls = "gesamt" aria-selected = "false"><i class="fas fa-chart-area"></i> <?php echo "$tabs_total" ?></a>
+				<a class = "nav-item nav-link" id = "stunde-tab" data-toggle = "tab" href = "#stunde" role = "tab" aria-controls = "stunde" aria-selected = "false"><i class="fas fa-chart-bar"></i> <?php echo "$tabs_hour" ?></a>
+				<a class = "nav-item nav-link" id = "tag-tab" data-toggle = "tab" href = "#tag" role = "tab" aria-controls = "tag" aria-selected = "false"><i class="fas fa-chart-bar"></i> <?php echo "$tabs_day" ?></a>
+				<a class = "nav-item nav-link" id = "woche-tab" data-toggle = "tab" href = "#woche" role = "tab" aria-controls = "woche" aria-selected = "false"><i class="fas fa-chart-bar"></i> <?php echo "$tabs_week" ?></a>
+				<a class = "nav-item nav-link" id = "monat-tab" data-toggle = "tab" href = "#monat" role = "tab" aria-controls = "monat" aria-selected = "false"><i class="fas fa-chart-bar"></i> <?php echo "$tabs_month" ?></a>
+				<a class = "nav-item nav-link" id = "jahr-tab" data-toggle = "tab" href = "#jahr" role = "tab" aria-controls = "jahr" aria-selected = "false"><i class="fas fa-chart-bar"></i> <?php echo "$tabs_year" ?></a>
+				<a class = "nav-item nav-link" id = "badges-tab" data-toggle = "tab" href = "#badges" role = "tab" aria-controls = "badges" aria-selected = "false"><i class="fas fa-certificate"></i> <?php echo "$tabs_badge" ?></a>
 			</div>
 		</nav>
 
@@ -369,11 +369,11 @@
 					<?php foreach ($table as $table_row): ?>
 						<tr>
 						<?php if ($table_row["user_stats_vorhanden"] === "1"): ?>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?> <i class = 'fa fa-bar-chart'></i></a></td>
+							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?> <i class="fas fa-chart-bar"></i></a></td>
 						<?php else: ?>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?> <i class = 'text-muted fa fa-bar-chart'></i></a></td>
+							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?> <i class="text-muted fas fa-chart-bar"></i></a></td>
 						<?php endif; ?>
-							<td class = 'textprimaer align-middle text-center align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><i class = 'text-muted fa fa-home'></i></a></td>
+							<td class = 'textprimaer align-middle text-center align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><i class="text-muted fas fa-home"></i></a></td>
 							<td class = 'align-middle'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
 						<?php if ($table_row["sum1h"] != ""): ?>
@@ -421,8 +421,8 @@
 							<td class = 'dunkelgrau textgrau align-middle'><b><?=$tr_th2_rp ?></b></td>
 							<td class = 'dunkelgrau textgrau align-middle text-center align-middle'>
 								<a class = 'toggle-text' data-toggle = 'collapse' data-target = '.retiredProjects'>
-									<span><i class = 'textrot fa fa-toggle-on fa-lg fa-rotate-180'></i></span>
-									<span class = 'hidden'><i class = 'textgruen fa fa-toggle-on fa-lg'></i></span>
+									<span><i class = 'textrot fas-toggle-on'></i></span>
+									<span class = 'hidden'><i class = 'textgruen fas fa-toggle-off'></i></span>
 								</a>
 							</td>
 							<td class = 'dunkelgrau textgrau align-middle'>
@@ -440,7 +440,7 @@
 
 					<?php foreach ($table_retired as $table_row_retired): ?>
 						<tr class = 'collapse retiredProjects'>
-							<td class = 'text-muted text-sm align-middle'><a href = '<?=$table_row_retired["project_link"] ?>'><?=$table_row_retired["project_name"] ?> <i class = 'fa fa-bar-chart'></i></a></td>
+							<td class = 'text-muted text-sm align-middle'><a href = '<?=$table_row_retired["project_link"] ?>'><?=$table_row_retired["project_name"] ?> <i class="fas fa-chart-bar"></i></a></td>
 							<td class = 'align-middle text-center text-muted align-middle'></td>
 							<td class = 'text-muted text-sm align-middle'><b><?=number_format($table_row_retired["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'><?=number_format($table_row_retired["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>

@@ -105,10 +105,6 @@ table.dataTable {
 	border-collapse: separate !important;
 }
 
-table.dataTable thead .sorting::before, table.dataTable thead .sorting_asc::before, table.dataTable thead .sorting_desc::before, table.dataTable thead .sorting_asc_disabled::before, table.dataTable thead .sorting_desc_disabled::before {
-	content: none;
-}
-
 #table_tasks {
 	width: calc(30px + 100%) !important;
 	margin-left: -15px;

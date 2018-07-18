@@ -48,7 +48,7 @@
 			<?php echo $tr_hp_pendings_03; ?>
 		</div>
 		<div class = "row justify-content-center">
-			<i class = "fa fa-spinner fa-pulse fa-2x fa-fw"></i> 
+			<i class="fas fa-spinner fa-spin fa-5x"></i>
 		</div>
 	</div>
 </div>
