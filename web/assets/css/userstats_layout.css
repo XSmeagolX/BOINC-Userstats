@@ -14,6 +14,10 @@
 	color: rgba(73, 73, 73, 0.815);
 }
 
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
 
 /* Header 
 *****************/
