@@ -27,6 +27,10 @@
 	// Do NOT change the this option, otherwise your data will be calculated wrong!
 	$useUTCHighchartsOption = "true"; // default = "true"
 
+	// Option zum Aktivieren der Highchart Export Funktion in den Charts (JPG, PNG, SVG etc.)
+	// Option to activate Highchart export function in charts (JPG, PNG, SVG etc.)
+	$highchartExport = false; //default = "false"
+
 	// Version einbinden   
 	// Include version
 	include "version.php"; // Den Inhalt dieser Datei nicht verändern!    // Do not change the content of this file

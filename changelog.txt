@@ -2,12 +2,13 @@ Version 5.1.2: (noch nicht veröffentlicht)
 ==============
 - Update Bootstrap von Version 4.0.0 auf Version 4.1.2
 - Update momentjs auf Version 0.5.17
-- Export-Funktion von Highcharts deaktiviert
+- Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts deaktiviert (settings.php -> $useHighchartExport)
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
   - ./assets/js/moment/moment-timezone-with-data-2012-2022.js
   - ./assets/js/moment/moment-with-locales.min.js
+  - ./settings/settings.php
   - header.php
   - version.php (erst mit Release)
 
