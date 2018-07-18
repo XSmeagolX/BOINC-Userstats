@@ -1,4 +1,20 @@
-Version 5.1.1: (noch nicht veröffentlicht)
+Version 5.1.2: (noch nicht veröffentlicht)
+==============
+- Update Bootstrap von Version 4.0.0 auf Version 4.1.2
+- Update momentjs auf Version 0.5.17
+- Export-Funktion von Highcharts deaktiviert
+
+geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
+  - ../changelog.txt
+  - ./assets/js/moment/moment-timezone-with-data-2012-2022.js
+  - ./assets/js/moment/moment-with-locales.min.js
+  - header.php
+  - version.php (erst mit Release)
+
+
+
+
+Version 5.1.1: 
 ==============
 - Es wurde ein Fehler beim Anzeigen der Error-Seiten behoben. Nun sollten auch die richtigen Meldungen erscheinen, sofern ein falscher Link direkt aufgerufen werden sollte
 - Das Link für weitere Infos in der Navbar wurde nun besser positioniert
