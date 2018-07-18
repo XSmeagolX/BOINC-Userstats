@@ -66,7 +66,7 @@
 
 	if ($datum_check === $timestamp_hour) {
 		echo '
-		<div class = "container text-center  flex1">
+		<div class = "container text-center flex1">
 			<h1 class = "title">ACHTUNG -- ATTENTION</h1>
 			<h3 class = "description text-center">Daten dürfen nur 1x pro Stunde abgerufen werden!!<br>Data could be fetched only once per hour!</h3>
 		</div>';

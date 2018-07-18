@@ -8,12 +8,14 @@ Version 5.1.2: (noch nicht veröffentlicht)
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
+  - ../cronjob/cronjob.php
   - ./assets/css/userstats_layout.css
   - ./assets/js/moment/moment-timezone-with-data-2012-2022.js
   - ./assets/js/moment/moment-with-locales.min.js
   - ./settings/settings.php
   - ajax_wcg_detail.php
   - check_update.php
+  - error.php
   - header.php
   - index.php
   - nav.php

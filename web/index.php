@@ -28,7 +28,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-	} elseif  ( mysqli_num_rows($query_getUserData) === 0 ) { 
+	} elseif ( mysqli_num_rows($query_getUserData) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Die Tabelle boinc_user enthält keine Daten.";
 		include "./errordocs/db_initial_err.php";
@@ -59,7 +59,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-	} elseif  ( mysqli_num_rows($query_getTotalCredits) === 0 ) { 
+	} elseif ( mysqli_num_rows($query_getTotalCredits) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Die Tabelle boinc_grundwerte enthält keine Daten.";
 		include "./errordocs/db_initial_err.php";
@@ -75,7 +75,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-	} elseif  ( mysqli_num_rows($query_getTotalPendingCredits) === 0 ) { 
+	} elseif ( mysqli_num_rows($query_getTotalPendingCredits) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Die Tabelle boinc_grundwerte enthält keine Daten.";
 		include "./errordocs/db_initial_err.php";
@@ -96,7 +96,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-	} elseif  ( mysqli_num_rows($query_getAllProjects) === 0 ) { 
+	} elseif ( mysqli_num_rows($query_getAllProjects) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Die Tabelle boinc_grundwerte enthält keine Daten.";
 		include "./errordocs/db_initial_err.php";
@@ -243,7 +243,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-#	} elseif  ( mysqli_num_rows($query_getTotalOutputPerHour) === 0 ) { 
+#	} elseif ( mysqli_num_rows($query_getTotalOutputPerHour) === 0 ) { 
 #		$connErrorTitle = "Datenbankfehler";
 #		$connErrorDescription = "Es noch keine Daten für eine Gesamtberechnung erstellt.";
 #		include "./errordocs/db_initial_err.php";
@@ -264,7 +264,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-#	} elseif  ( mysqli_num_rows($query_getTotalOutputPerDay) === 0 ) { 
+#	} elseif ( mysqli_num_rows($query_getTotalOutputPerDay) === 0 ) { 
 #		$connErrorTitle = "Datenbankfehler";
 #		$connErrorDescription = "Es noch keine Daten für eine Gesamtberechnung erstellt.";
 #		include "./errordocs/db_initial_err.php";
@@ -297,7 +297,7 @@
 		echo '
 		<div class = "alert warning-lastupdate" role = "alert">
 			<div class = "container">
-				' . $text_info_update_inprogress .  $lastupdate_start .' (' . $my_timezone . ')
+				' . $text_info_update_inprogress . $lastupdate_start .' (' . $my_timezone . ')
 			</div>
 		</div>
 		';

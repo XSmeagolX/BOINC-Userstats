@@ -13,7 +13,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-	} elseif  ( mysqli_num_rows($query_getUserData) === 0 ) { 
+	} elseif ( mysqli_num_rows($query_getUserData) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Die Tabelle boinc_user enthält keine Daten.";
 		include "./errordocs/db_initial_err.php";

@@ -196,7 +196,7 @@
 			$err_de = "&Uuml;bergebene Daten zu gro&szlig;!</br>".
 			"Die bei der Anfrage &uuml;bermittelten Daten sind f&uuml;r die ".$REDIRECT_REQUEST_METHOD."-Methode nicht erlaubt oder die Datenmenge hat das Maximum &uuml;berschritten.";
 			$err_en = "Request entity too large!</br>".
-			"The ".$REDIRECT_REQUEST_METHOD."  method does not allow the data transmitted, or the data volume exceeds the capacity limit.";
+			"The ".$REDIRECT_REQUEST_METHOD." method does not allow the data transmitted, or the data volume exceeds the capacity limit.";
 			$err_fr = "Volume de la demande trop grand!</br>".
 			"La m&eacute;thode ".$REDIRECT_REQUEST_METHOD." n'autorise pas le transfert de ces donn&eacute;es ou bien le volume des donn&eacute;es exc&egrave;de la limite de capacit&eacute;.";
 			break;
@@ -279,7 +279,7 @@
 	include("./header.php"); 
 ?>
 
-	<div class = "container text-center  flex1">
+	<div class = "container text-center flex1">
 		<h1 class = "title text-center"><?php echo $error_description; ?></h1>
 		<h5 class = "description text-center">
 			<?php

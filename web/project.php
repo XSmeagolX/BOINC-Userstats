@@ -81,7 +81,7 @@
 								Es bestehen wohl Probleme mit der Datenbankanbindung.";
 		include "./errordocs/db_initial_err.php";
 		exit();
-	} elseif  ( mysqli_num_rows($query_getTotalCredits) === 0 ) { 
+	} elseif ( mysqli_num_rows($query_getTotalCredits) === 0 ) { 
 		$connErrorTitle = "Datenbankfehler";
 		$connErrorDescription = "Die Tabelle boinc_grundwerte enthält keine Daten.";
 		include "./errordocs/db_initial_err.php";
