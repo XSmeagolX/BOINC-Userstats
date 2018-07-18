@@ -67,7 +67,16 @@
 	// Header Hintergrund
 	// Header Background
 	$header_backround_url = "./assets/images/header_background.jpg"; //Hier den Link zu deiner Header-Hintergrundgrafik einfuegen
-	
+
+	// SG-WCG-Badges
+	// Die Badge-Grafik kann man auch per cronjob 1x täglich in sein Webverzeichnis kopieren und dann hier relativ verlinken.
+	// Hier kannst du die WCG-Badges des Badge-Generators von SETI.Germany integrieren. 
+	// Hinter badge_ folgt dein WCG-Name, danach _ gefolgt von der Anzahl an Reihen. 0 steht für alle Badges in einer Reihe (halte ich am sinnvollsten)
+	// You can fetch this signature by a daylie cronjog as well and link them as a relative link
+	// to configure this signature change your WCG-Name (XSmeagolX) and the number of rows (0) that should be used
+	$showSgWcgBadges = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
+	$linkSgWcgBadges = "https://seti-germany.de/wcg/badge_XSmeagolX_0.png"; // WCG-Badges von XSmeagolX, alle in einer Reihe
+
 	// User BOINC-Badges
 	// Die Badge-Grafik kann man auch per cronjob 1x täglich in sein Webverzeichnis kopieren und dann hier relativ verlinken.
 	// Dafür ist die Einrichtung der Badges über die Registrierung auf der Homepage von http://signature.statseb.fr notwendig.
@@ -102,7 +111,7 @@
 	// set to "true" will show a link to team statistics of Team SETI.Germany
 	$hasSGStats = true; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist true
 	$linkNameSGStats = "SG-Stats";
-	$linkSGStats = "https://sg.boinc-userstats.de/teamstats/status_index.php"; //Link zu den SG-Stats von XSmeagolX
+	$linkSGStats = "https://stats.seti-germany.de"; //Link zu den SG-Stats von XSmeagolX
 
 	// Hier die URL zu den laufenden WUs, falls Du diese mit Boinctasks veröffentlichst
 	// wenn ja, nutze bitte meine boinctasks-Vorlage
