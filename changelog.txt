@@ -4,7 +4,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Update momentjs auf Version 0.5.17
 - Update auf datatables Version 1.10.19
 - Integration von fontawesome Version 5
-- Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts deaktiviert (settings.php -> $useHighchartExport)
+- Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts integriert (settings.php -> $useHighchartExport)
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
