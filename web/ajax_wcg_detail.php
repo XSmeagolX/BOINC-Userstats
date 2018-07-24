@@ -144,8 +144,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach($table_team as $table_row): ?>
-					<?php if ($table_row["team_retire_date"] > 0): ?>
+<?php foreach($table_team as $table_row): ?>
+<?php if ($table_row["team_retire_date"] > 0): ?>
 						<tr>
 							<td class = 'text-muted'><?=$table_row["team_name"] ?></td>
 							<td class = 'text-muted text-center'><?=$table_row["team_join_date"] ?></td>
@@ -154,7 +154,7 @@
 							<td class = 'text-muted d-none d-sm-table-cell'><?=number_format($table_row["team_points"],0,$dec_point,$thousands_sep) ?></td>
 							<td class = 'text-muted d-none d-md-table-cell'><?=number_format($table_row["team_results"],0,$dec_point,$thousands_sep) ?></td>
 						</tr>
-					<?php else: ?>
+<?php else: ?>
 						<tr>
 							<td class = 'texthellgruen'><?=$table_row["team_name"] ?></td>
 							<td class = 'texthellgruen text-center'><?=$table_row["team_join_date"] ?></td>
@@ -163,8 +163,8 @@
 							<td class = 'texthellgruen d-none d-sm-table-cell'><?=number_format($table_row["team_points"],0,$dec_point,$thousands_sep) ?></td>
 							<td class = 'texthellgruen d-none d-md-table-cell'><?=number_format($table_row["team_results"],0,$dec_point,$thousands_sep) ?></td>	
 						</tr>
-					<?php endif; ?>					
-				<?php endforeach; ?>
+<?php endif; ?>					
+<?php endforeach; ?>
 			</tbody>
 			<tfoot>
 				<tr>
@@ -195,9 +195,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach($table as $table_row): ?>
-					<?php if ( isset($table_row["project_points"]) && $table_row["project_points"] > 0): ?>
-						<?php if ($table_row["status"] === "Active"): ?>
+<?php foreach($table as $table_row): ?>
+<?php if ( isset($table_row["project_points"]) && $table_row["project_points"] > 0): ?>
+<?php if ($table_row["status"] === "Active"): ?>
 							<tr>
 								<td class = 'texthellgruen align-middle'><?=$table_row["project_longname"] ?></td>
 								<td class = 'texthellgruen text-center d-none d-sm-table-cell align-middle' data-order = '1'><i class="fas fa-square"></i></td>
@@ -206,7 +206,7 @@
 								<td class = 'texthellgruen align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
 								<td class = 'texthellgruen text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
 							</tr>
-						<?php elseif ($table_row["status"] === "Intermittent"): ?>
+<?php elseif ($table_row["status"] === "Intermittent"): ?>
 							<tr>
 								<td class = 'texthellgelb align-middle'><?=$table_row["project_longname"] ?></td>
 								<td class = 'texthellgelb text-center d-none d-sm-table-cell align-middle' data-order = '2'><i class="fas fa-square"></i></td>
@@ -215,7 +215,7 @@
 								<td class = 'texthellgelb align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
 								<td class = 'texthellgelb text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
 							</tr>
-						<?php elseif ($table_row["status"] === "Completed"): ?>
+<?php elseif ($table_row["status"] === "Completed"): ?>
 							<tr>
 								<td class = 'texthellrot align-middle'><?=$table_row["project_longname"] ?></td>
 								<td class = 'texthellrot text-center d-none d-sm-table-cell align-middle' data-order = '3'><i class="fas fa-square"></i></td>
@@ -224,7 +224,7 @@
 								<td class = 'texthellrot align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
 								<td class = 'texthellrot text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
 							</tr>
-						<?php else: ?>
+<?php else: ?>
 							<tr>
 								<td class = 'align-middle'><?=$table_row["project_longname"] ?></td>
 								<td class = 'text-center d-none d-sm-table-cell align-middle' data-order = '3'> - </td>
@@ -233,9 +233,9 @@
 								<td class = 'align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
 								<td class = 'text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
 							</tr>
-						<?php endif; ?>
-					<?php endif; ?>
-				<?php endforeach; ?>
+<?php endif; ?>
+<?php endif; ?>
+<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>

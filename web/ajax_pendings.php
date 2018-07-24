@@ -82,11 +82,11 @@
 						mysqli_query($db_conn, $sql_pendings);
 						?>
 						
-						<?php if ($pending_credits > 0): ?>
+<?php if ($pending_credits > 0): ?>
 							<tr><td><?=$projectname ?></td>
 							<td class = 'text-left'><?=number_format($pending_credits, 0, $dec_point, $thousands_sep) ?></td></tr>
-						<?php endif; ?>
-					<?php endwhile; ?>
+<?php endif; ?>
+<?php endwhile; ?>
 					<tfoot>
 						<tr>
 							<td class = 'dunkelblau textblau'><?=$text_total_pendings ?></td>
