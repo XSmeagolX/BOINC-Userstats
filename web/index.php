@@ -428,7 +428,7 @@
 							<td class = 'dunkelgrau textgrau align-middle text-center align-middle'>
 								<a class = 'toggle-text' data-toggle = 'collapse' data-target = '.retiredProjects'>
 									<span><i class = 'textrot fas fa-toggle-on'></i></span>
-									<span class = 'hidden'><i class = 'textgruen fas fa-toggle-off'></i></span>
+									<span class = 'hidden'><i class = 'textgruen fas fa-toggle-on fa-rotate-180'></i></span>
 								</a>
 							</td>
 							<td class = 'dunkelgrau textgrau align-middle'>
