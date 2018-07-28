@@ -42,7 +42,13 @@
 		$datum_start = $row["lastupdate_start"];
 		$datum = $row["lastupdate"];
 	}
-	
+
+	if ($cpid === "") {
+		$showFreeDCBadges = false;
+	} else {
+		$linkFreeDCBadges = $linkFreeDCBadges.$cpid;
+	}
+
 	if (isset($_GET["lang"])) $lang = $_GET["lang"];
 	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
 
@@ -503,11 +509,14 @@
 			<div id = "badges" class = "tab-pane fade text-center" role = "tabpanel" aria-labelledby = "badges-tab">
 				<div>
 					<br>
-<?php if (!$showUserBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?>
+<?php if (!$showstatsebBadges AND !$showFreeDCBadges AND !$showWcgLogo AND !$showSgWcgBadges): ?>
 						<?=$no_badge ?><br>
 <?php endif; ?>
-<?php if ($showUserBadges): ?>
-						<img src = "<?=$linkUserBadges ?>" class = "img-fluid center-block"><br>
+<?php if ($showstatsebBadges): ?>
+						<img src = "<?=$linkstatsebBadges ?>" class = "img-fluid center-block"><br>
+<?php endif; ?>
+<?php if ($showFreeDCBadges): ?>
+						<img src = "<?=$linkFreeDCBadges ?>" class = "img-fluid center-block"><br>
 <?php endif; ?>
 <?php if ($showWcgLogo): ?>
 						<img src = "<?=$linkWcgSig ?>" class = "img-fluid center-block"><br>

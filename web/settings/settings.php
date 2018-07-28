@@ -86,8 +86,12 @@
 	// Dafür ist die Einrichtung der Badges über die Registrierung auf der Homepage von http://signature.statseb.fr notwendig.
 	// You can fetch this signature by a daylie cronjob as well and link them as a relative link
 	// You need to register and configure a signature on http://signature.statsseb.fr
-	$showUserBadges = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
-	$linkUserBadges = "https://signature.statseb.fr/sig-12.png"; //Hier den Link zu Deinem User-Badge von http://signature.statseb.fr einfuegen
+	// $showUserBadges = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
+	// $linkUserBadges = "https://signature.statseb.fr/sig-12.png"; //Hier den Link zu Deinem User-Badge von http://signature.statseb.fr einfuegen
+	$showstatsebBadges = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
+	$linkstatsebBadges = "https://signature.statseb.fr/sig-12.png"; //Hier den Link zu Deinem User-Badge von http://signature.statseb.fr einfuegen
+	$showFreeDCBadges = false; // true - wenn das Badgebanner von Free-DC angezeigt werden soll. Standard ist false
+	$linkFreeDCBadges = "https://stats.free-dc.org/badgesbanner.php?cpid="; // Der Link zum Badgebanner von Free-DC. Die cpid muss in der boinc_user hinterlegt sein
 	
 	// WCG-Badge-Signatur
 	// Die WCG-Signatur kann man auch per cronjob 1x täglich in sein Webverzeichnis kopieren und dann hier relativ verlinken.

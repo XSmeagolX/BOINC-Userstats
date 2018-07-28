@@ -5,6 +5,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Update auf datatables Version 1.10.19
 - Integration von fontawesome Version 5
 - Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts integriert (settings.php -> $useHighchartExport)
+- Es können nun auch die Badges der eigenen CPID von FreeDC angezeigt werden, sofern die cpid in der Tabelle "boinc_user" eingetragen und die Option aktiviert ist.
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
