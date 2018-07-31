@@ -83,7 +83,7 @@
 					</div>
 				</div>
 				<div class = "container">
-					<div class = "row justify-content-center"><p class = "textrot"><i class="far fa-times-circle"></i></p></div>
+					<div class = "row justify-content-center"><p class = "textrot"><i class="far fa-4x fa-times-circle"></i></p></div>
 					<div class = "row justify-content-center"><p class = "textrot"><?=$output ?></p>
 					</div>
 					<div class = "row justify-content-center">
@@ -97,7 +97,7 @@
 					</div>
 				</div>
 				<div class = "container">
-					<div class = "row justify-content-center"><p class = "textgruen"><i class="far fa-times-circle"></i></p></div>
+					<div class = "row justify-content-center"><p class = "textgruen"><i class="far fa-4x fa-check-circle"></i></p></div>
 					<div class = "row justify-content-center"><p class = "textgruen"><?=$output ?></p>
 					</div>
 					<div class = "row justify-content-center">
