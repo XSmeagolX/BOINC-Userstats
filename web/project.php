@@ -375,7 +375,9 @@
 										<div class = "text-sm text-muted"><font size = "1">-6h:</font> <?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "text-sm text-muted"><font size = "1">-12h:</font> <?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "h4 textgelb"><font size = "1">gestern:</font> <?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></div>
+<?php if ($hasPendings): ?>
 										<div class = "text-sm textrot"><font size = "1">Pendings:</font> <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
+<?php endif; ?>
 <?php endif; ?>
 						</div>
 					</div>

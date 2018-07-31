@@ -38,7 +38,7 @@
 				<th class = "dunkelgrau textgrau text-left"><?php echo $tr_tb_pe ?></th>
 			</thead>
 			<tbody>									
-				<?php
+<?php if ($hasPendings) : 
 					$query = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte WHERE project_status = 1;");
 					if ( !$query ) { 	
 						$connErrorTitle = "Datenbankfehler";
@@ -99,5 +99,12 @@
 			<div class = "container">
 				<?php echo $zero_pendings ?>
 			</div>
-		</div>			
+		</div>
+		<?php else: ?>
+						<tr>
+							<td class = 'dunkelgelb textgelb text-center' colspan ='2'><?=$text_pendings_false ?></td>
+						</tr>
+			</tbody>
+		</table>
+<?php endif; ?>		
 	</div>

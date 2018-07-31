@@ -145,9 +145,9 @@
 	$linkNameWcg = "WCG";
 	$linkWcg = "https://join.worldcommunitygrid.org/?recruiterId=653215&teamId=4VVG5BDPP1";
 
-	// Option zum Anzeigen eines Links zum Aktualisieren der Pending Credits
-	// Option to show Link to refresh pending credits
-	$hasPendings = true; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist false
+	// Option zum Anzeigen eines Links zum Aktualisieren der Pending Credits bzw. zum Anzeigen der Spalte in der Tabelle
+	// Option to show Link to refresh pending credits or show column with pendig credits
+	$hasPendings = false; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist false
 	$linkNamePendings = "Pendings";
 	$linkPendings = "./pendings.php"; // Link zu den laufenden WUs von XSmeagolX
 	

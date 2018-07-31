@@ -5,6 +5,9 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Update auf datatables Version 1.10.18 und bootstrap 4.1.1
 - Integration von fontawesome Version 5
 - Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts integriert (settings.php -> $useHighchartExport)
+- Die Option "$hasPendings" hat nun auch Einfluß auf das Anzeigen der Pending Credits in der Übersicht und den Projekt-Details.
+  Ebenso wird der Abruf der Pending Credits beim gesetztem "false" nun unterbunden.
+  Das Unterbinden dieses Abrufs gilt bislang noch NICHT FÜR DIE cronjob.php
 - Es können nun auch die Badges der eigenen CPID von FreeDC angezeigt werden, sofern die cpid in der Tabelle "boinc_user" eingetragen und die Option aktiviert ist.
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
@@ -13,6 +16,8 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ./assets/css/userstats_layout.css
   - ./assets/js/moment/moment-timezone-with-data-2012-2022.js
   - ./assets/js/moment/moment-with-locales.min.js
+  - ./lang/de.txt.php
+  - ./lang/en.txt.php
   - ./settings/settings.php
   - ajax_pending.php
   - ajax_wcg_detail.php

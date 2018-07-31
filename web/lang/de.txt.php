@@ -68,6 +68,7 @@
 	$tr_ch_pw_header = "Projekt Credits - Woche";
 	$tr_ch_pm_header = "Projekt Credits - Monat";
 	$tr_ch_py_header = "Projekt Credits - Jahr";
+	$text_pendings_false = "Du hast die Option für die Pending Credits deaktiviert!";
 	$tr_hp_pendings_01 = "Die Pending-Credits deiner als aktiv definierten Projekte werden aktualisiert...";
 	$tr_hp_pendings_02 = "Die Pending-Credits deiner als aktiv markierten Projekte wurden in der Datenbank aktualisiert.";
 	$tr_hp_pendings_03 = "Aktualisierung der Pending Credits. Bitte warten...";

@@ -68,6 +68,7 @@
 	$tr_ch_pw_header = "Project Credits per week";
 	$tr_ch_pm_header = "Project Credits per month";
 	$tr_ch_py_header = "Project Credits per year";
+	$text_pendings_false = "The option to show pending credits is deactivated!";
 	$tr_hp_pendings_01 = "The Pending-Credits of all your projects marked active will be refreshed...";
 	$tr_hp_pendings_02 = "Your Pending-Credits were updated in the database.";
 	$tr_hp_pendings_03 = "Refresh your Pending Credits. Please wait...";

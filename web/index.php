@@ -353,7 +353,9 @@
 							<b><?php echo number_format($sum_today_total, 0, $dec_point, $thousands_sep) ?></b></th>
 							<th class = "dunkelgelb textgelb d-none d-sm-table-cell align-middle">
 							<b><?php echo number_format($sum_yesterday_total, 0, $dec_point, $thousands_sep) ?></b></th>
+<?php if ($hasPendings): ?>
 							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle">
+<?php endif; ?>
 							<b><?php echo number_format($sum_pendings, 0, $dec_point, $thousands_sep) ?></b></th>
 						</tr>
 						<tr>
@@ -367,7 +369,9 @@
 							<th class = "dunkelgrau textgrau d-none d-lg-table-cell align-middle"><?php echo $tr_tb_12; ?></th>
 							<th class = "dunkelgruen textgruen d-none d-sm-table-cell align-middle"><?php echo $tr_tb_to; ?></th>
 							<th class = "dunkelgelb textgelb d-none d-sm-table-cell align-middle"><?php echo $tr_tb_ye; ?></th>
+<?php if ($hasPendings): ?>
 							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle"><?php echo $tr_tb_pe; ?></th>
+<?php endif; ?>
 						</tr>
 					</thead>
 					<tbody>
@@ -412,10 +416,12 @@
 <?php else: ?>
 							<td class = 'gelb textgelb d-none d-sm-table-cell align-middle'>-</td>
 <?php endif; ?>
+<?php if ($hasPendings): ?>
 <?php if ($table_row["pending_credits"] >> "0"): ?>
 							<td class = 'rot textrot d-none d-md-table-cell align-middle'><b><?=number_format($table_row["pending_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 <?php else: ?>
 							<td class = 'rot textrot d-none d-md-table-cell align-middle'>-</td>
+<?php endif; ?>
 <?php endif; ?>
 						</tr>
 <?php endforeach; ?>
@@ -440,7 +446,9 @@
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
+<?php if ($hasPendings): ?>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
+<?php endif; ?>
 							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
 						</tr>
 
@@ -455,7 +463,9 @@
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
+<?php if ($hasPendings): ?>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
+<?php endif; ?>
 							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
 						</tr>
 <?php endforeach; ?>
