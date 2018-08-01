@@ -24,7 +24,7 @@
 	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
 	else include "./lang/en.txt.php";
 ?>
-
+<?php if ($hasPendings) : ?>
 	<div class = "alert info-lastupdate" role = "alert">
 		<div class = "container">
 			<b><?php echo $tr_hp_pendings_02; ?></b>
@@ -38,8 +38,8 @@
 				<th class = "dunkelgrau textgrau text-left"><?php echo $tr_tb_pe ?></th>
 			</thead>
 			<tbody>									
-<?php if ($hasPendings) : 
-					$query = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte WHERE project_status = 1;");
+
+			<?php $query = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte WHERE project_status = 1;");
 					if ( !$query ) { 	
 						$connErrorTitle = "Datenbankfehler";
 						$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
@@ -100,11 +100,12 @@
 				<?php echo $zero_pendings ?>
 			</div>
 		</div>
-		<?php else: ?>
-						<tr>
-							<td class = 'dunkelgelb textgelb text-center' colspan ='2'><?=$text_pendings_false ?></td>
-						</tr>
-			</tbody>
-		</table>
-<?php endif; ?>		
 	</div>
+<?php else: ?>
+	<div class = "alert warning-lastupdate" role = "alert">
+		<div class = "container">
+			<b><?php echo $text_pendings_false; ?></b>
+		</div>
+	</div>
+<?php endif; ?>		
+

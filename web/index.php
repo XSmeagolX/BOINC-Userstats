@@ -555,15 +555,12 @@
 					},
 					bSortCellsTop: false,
 					language: {
-						decimal: "<?php echo $dec_point; ?>",
-						thousands: "<?php echo $thousands_sep; ?>",
-						search:	"<?php echo $text_search; ?>"
+                		url: "./lang/<?=$lang?>.dataTables.json"
 					},
 					columnDefs: [ {
 						targets: "no-sort",
 						orderable: false
 						},{
-						targets : [3,4,5,6,7,8,9,10],
 						orderSequence:["desc", "asc"]
 						} ],
 					order: [ 0, "asc" ],
