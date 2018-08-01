@@ -99,7 +99,7 @@
 	// You can fetch this signature by a daylie cronjob as well an link them as a relative link
 	// You need to have a configure your WCG-Signature on wcgsig.com
 	$showWcgLogo = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
-	$linkWcgSig = "http://wcgsig.com/653215.gif"; //Hier den Link zu deinem WCG-Logo von http://wcgsig.com einfuegen
+	$linkWcgSig = "https://wcgsig.com/653215.gif"; //Hier den Link zu deinem WCG-Logo von http://wcgsig.com einfuegen
 	
 	// Hier dein Teamname und die URL zu der Homepage deines Teams eintragen
 	// Your Teamname, Homepage of your team
