@@ -118,7 +118,9 @@
 			$table_row["pending_credits"] = $row["pending_credits"];
 			$table_row["project_home_link"] = $row["project_homepage_url"];
 			$table_row["user_stats_vorhanden"] = $row["project_status"];
-			
+		if ($hasXML) {
+			$table_row["xml"] = $row["xml"];
+		}
 			$query_getOutput1h = mysqli_query($db_conn,"SELECT sum(credits) AS sum1h FROM boinc_werte WHERE project_shortname = '" . $shortname . "' AND time_stamp>'" . $einsh . "'");
 			if ( !$query_getOutput1h ) { 	
 #			if ( !$query_getOutput1h || mysqli_num_rows($query_getOutput1h) === 0 ) { 	
@@ -356,6 +358,9 @@
 							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle">
 							<b><?php echo number_format($sum_pendings, 0, $dec_point, $thousands_sep) ?></b></th>
 <?php endif; ?>
+<?php if ($hasXML): ?>
+							<th class = "dunkelblau textblau d-none d-md-table-cell align-middle"></th>
+<?php endif; ?>
 						</tr>
 						<tr>
 							<th class = "dunkelgrau textgrau align-middle"><?php echo $tr_tb_pr; ?></th>
@@ -369,6 +374,9 @@
 							<th class = "dunkelgelb textgelb d-none d-sm-table-cell align-middle"><?php echo $tr_tb_ye; ?></th>
 <?php if ($hasPendings): ?>
 							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle"><?php echo $tr_tb_pe; ?></th>
+<?php endif; ?>
+<?php if ($hasXML): ?>
+							<th class = "dunkelblau textblau no-sort d-none d-md-table-cell text-center align-middle"><?php echo $tr_tb_xml; ?></th>
 <?php endif; ?>
 						</tr>
 					</thead>
@@ -420,6 +428,13 @@
 							<td class = 'rot textrot d-none d-md-table-cell align-middle'>-</td>
 <?php endif; ?>
 <?php endif; ?>
+<?php if ($hasXML): ?>
+<?php if ($table_row["xml"] != ""): ?>
+							<td class = 'blau textblau d-none d-md-table-cell text-center align-middle'><a href="./<?=$table_row["xml"]?>"><i class="fas fa-download"></i></a></td>
+<?php else: ?>
+							<td class = 'blau textblau d-none d-md-table-cell text-center align-middle'>-</td>
+<?php endif; ?>
+<?php endif; ?>
 						</tr>
 <?php endforeach; ?>
 <?php endif; ?>
@@ -442,10 +457,13 @@
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
+							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
 <?php if ($hasPendings): ?>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
 <?php endif; ?>
+<?php if ($hasXML): ?>
 							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
+<?php endif; ?>
 						</tr>
 
 <?php foreach ($table_retired as $table_row_retired): ?>
@@ -458,10 +476,13 @@
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
+							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
 <?php if ($hasPendings): ?>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
 <?php endif; ?>
+<?php if ($hasXML): ?>
 							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
+<?php endif; ?>
 						</tr>
 <?php endforeach; ?>
 <?php endif; ?>

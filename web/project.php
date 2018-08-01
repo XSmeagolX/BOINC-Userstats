@@ -378,6 +378,13 @@
 <?php if ($hasPendings): ?>
 										<div class = "text-sm textrot"><font size = "1"><?=$tr_tb_pe?>:</font> <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
 <?php endif; ?>
+<?php if ($hasXML): ?>
+<?php if ($table_row["xml"] != ""): ?>
+										<div class = "text-sm textgrau"><a href="./<?=$namesubdirectoryXML?>/<?=$table_row["xml"]?>"><i class="fas fa-download"></i> XML</a></div>
+<?php else: ?>
+										<div class = "text-sm textgrau"></div>
+<?php endif;?>
+<?php endif;?>
 <?php endif; ?>
 						</div>
 					</div>

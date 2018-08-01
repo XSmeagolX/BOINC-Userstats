@@ -150,7 +150,16 @@
 	$hasPendings = false; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist false
 	$linkNamePendings = "Pendings";
 	$linkPendings = "./pendings.php"; // Link zu den laufenden WUs von XSmeagolX
-	
+
+	// Option zum Anzeigen eines Links für den Download der Account-XML
+	// Meist nur für Sammel-Accounts benötigt, wie z.B. SG-Booster
+	// Dazu wird eine neue Spalte namens "xml" mit varchar (100) am Ende der boinc_grundwerte-Tabelle für den Dateinamen zum download aus dem Unterordner xml/
+	// Option to show a Link for downloading Account-XML files
+	// mostly used for team-accounts like SG-Booster
+	// you need to add a column named "xml" with varchar (100) at the end of boinc_grundwerte for the filename stored in subfolder xml/
+	$hasXML = false; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist false
+	$namesubdirectoryXML = "xml"; // true - wenn angezeigt werden soll, ansonten auf false setzen. Standard ist false
+
 	// Update-Check
 	// Option zur automatischen Prüfung, ob ein Update verfügbar ist und dies in der Navbar angezeigt wird.
 	// Option to automatically check for updates and show in Navbar if update is available

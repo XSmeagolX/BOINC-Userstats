@@ -39,6 +39,7 @@
 	$tr_tb_to = "heute";
 	$tr_tb_ye = "gestern";
 	$tr_tb_pe = "Pendings";
+	$tr_tb_xml = "XML";
 	$tr_tb_det = "Detail";
 	$tr_th2_rp = "beendete Projekte";
 	$tr_ch_pie_01 = "BOINC Projekt-Verteilung";

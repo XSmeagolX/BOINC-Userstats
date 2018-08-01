@@ -10,6 +10,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
   Das Unterbinden dieses Abrufs gilt bislang noch NICHT FÜR DIE cronjob.php
 - Es können nun auch die Badges der eigenen CPID von FreeDC angezeigt werden, sofern die cpid in der Tabelle "boinc_user" eingetragen und die Option aktiviert ist.
 - Ein Link zur Projekt-Homepage wurde aus der Übersichts-Tabelle entfernt und ist nun nur noch über die Projekt-Detail-Ansicht verfügbar.
+- Es wurde ein Option für Sammel-Accounts hinzugefügt, so dass die account-xml-Dateien einbezogen werden können, welche im Unterordner xml/ abgespeichert sein müssen.
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
@@ -22,6 +23,7 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ./lang/en.txt.php
   - ./lang/de.datatables.json
   - ./settings/settings.php
+  - ./xml/
   - ajax_pending.php
   - ajax_wcg_detail.php
   - check_update.php
