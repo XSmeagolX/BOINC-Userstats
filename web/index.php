@@ -338,7 +338,6 @@
 					<thead>
 						<tr>
 							<th class = "dunkelblau textblau align-middle"><b><?php echo $text_boinc_total ?></b></th>
-							<th class = "dunkelblau textblau text-center align-middle"><b><?php #echo $tr_th_detail ?></b></th>
 							<th class = "dunkelblau textblau align-middle"><b><?php echo number_format($sum_total, 0, $dec_point, $thousands_sep) ?></b></th>
 							<th class = "dunkelblau textblau d-none d-sm-table-cell align-middle"><b>100%</b></th>
 							<th class = "dunkelblau textblau d-none d-sm-table-cell align-middle">
@@ -355,12 +354,11 @@
 							<b><?php echo number_format($sum_yesterday_total, 0, $dec_point, $thousands_sep) ?></b></th>
 <?php if ($hasPendings): ?>
 							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle">
-<?php endif; ?>
 							<b><?php echo number_format($sum_pendings, 0, $dec_point, $thousands_sep) ?></b></th>
+<?php endif; ?>
 						</tr>
 						<tr>
 							<th class = "dunkelgrau textgrau align-middle"><?php echo $tr_tb_pr; ?></th>
-							<th class = "dunkelgrau textgrau no-sort align-middle text-center align-middle"> </th>
 							<th class = "dunkelgrau textgrau align-middle"><?php echo $tr_tb_cr; ?></th>
 							<th class = "dunkelgrau textgrau d-none d-sm-table-cell align-middle">%</th>
 							<th class = "dunkelgrau textgrau d-none d-sm-table-cell align-middle"><?php echo $tr_tb_01; ?></th>
@@ -379,11 +377,10 @@
 <?php foreach ($table as $table_row): ?>
 						<tr>
 <?php if ($table_row["user_stats_vorhanden"] === "1"): ?>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?> <i class="fas fa-chart-bar"></i></a></td>
+							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a></td>
 <?php else: ?>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?> <i class="text-muted fas fa-chart-bar"></i></a></td>
+							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a></td>
 <?php endif; ?>
-							<td class = 'textprimaer align-middle text-center align-middle'><a href = '<?=$table_row["project_home_link"] ?>'><i class="text-muted fas fa-home"></i></a></td>
 							<td class = 'align-middle'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
 <?php if ($table_row["sum1h"] != ""): ?>
@@ -430,11 +427,10 @@
 					<tfoot>
 <?php if ($hasretiredProject): ?>
 						<tr>
-							<td class = 'dunkelgrau textgrau align-middle'><b><?=$tr_th2_rp ?></b></td>
-							<td class = 'dunkelgrau textgrau align-middle text-center align-middle'>
-								<a class = 'toggle-text' data-toggle = 'collapse' data-target = '.retiredProjects'>
-									<span><i class = 'textrot fas fa-toggle-on'></i></span>
-									<span class = 'hidden'><i class = 'textgruen fas fa-toggle-on fa-rotate-180'></i></span>
+							<td class = 'dunkelgrau textgrau align-middle'><b><?=$tr_th2_rp ?></b>
+								<a class = 'toggle-text aling-middle' data-toggle = 'collapse' data-target = '.retiredProjects'>
+									<span><i class = 'aling-middle textrot fas fa-toggle-on'></i></span>
+									<span class = 'hidden'><i class = 'allign-middle textgruen fas fa-toggle-on fa-rotate-180'></i></span>
 								</a>
 							</td>
 							<td class = 'dunkelgrau textgrau align-middle'>
@@ -454,8 +450,7 @@
 
 <?php foreach ($table_retired as $table_row_retired): ?>
 						<tr class = 'collapse retiredProjects'>
-							<td class = 'text-muted text-sm align-middle'><a href = '<?=$table_row_retired["project_link"] ?>'><?=$table_row_retired["project_name"] ?> <i class="fas fa-chart-bar"></i></a></td>
-							<td class = 'align-middle text-center text-muted align-middle'></td>
+							<td class = 'text-muted text-sm align-middle'><a href = '<?=$table_row_retired["project_link"] ?>'><?=$table_row_retired["project_name"] ?></a></td>
 							<td class = 'text-muted text-sm align-middle'><b><?=number_format($table_row_retired["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'><?=number_format($table_row_retired["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
