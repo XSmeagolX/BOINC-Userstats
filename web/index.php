@@ -430,7 +430,7 @@
 <?php endif; ?>
 <?php if ($hasXML): ?>
 <?php if ($table_row["xml"] != ""): ?>
-							<td class = 'blau textblau d-none d-md-table-cell text-center align-middle'><a href="./<?=$table_row["xml"]?>"><i class="fas fa-download"></i></a></td>
+							<td class = 'blau textblau d-none d-md-table-cell text-center align-middle'><a href="./<?=$namesubdirectoryXML?>/<?=$table_row["xml"]?>"><i class="fas fa-download"></i></a></td>
 <?php else: ?>
 							<td class = 'blau textblau d-none d-md-table-cell text-center align-middle'>-</td>
 <?php endif; ?>
