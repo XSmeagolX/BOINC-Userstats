@@ -175,6 +175,9 @@
 		$table_row["pending_credits"] = $row["pending_credits"];
 		$table_row["project_home_link"] = $row["project_homepage_url"];
 		$table_row["user_stats_vorhanden"] = $row["project_status"];
+		if ($hasXML) {
+			$table_row["xml"] = $row["xml"];
+		}
 		$project_total_credits = $row["total_credits"];
 
 		if ($project_total_credits > 0) {
