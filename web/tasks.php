@@ -62,7 +62,7 @@
 		<div class = "container-fluid">
 				<b>Computer:</b>
 		</div>				
-		<div>
+		<div class = "container-fluid">
 			<table id = "table_computer" class = "table table-sm table-striped table-hover table-responsive-xs" width = "100%">
 				<thead>
 					<tr>
@@ -117,24 +117,6 @@
 			});
 		})(jQuery);
 	</script>
-
-	<script>
-		$('#table_computer').DataTable( {
-			fixedHeader: {
-				headerOffset: 56
-			},
-			language: {
-				decimal: "<?php echo $dec_point; ?>",
-				thousands: "<?php echo $thousands_sep; ?>",
-				search:	"<?php echo $text_search; ?>"
-			},
-			order: [ 0, "asc" ],
-			paging: false,
-			info: false,
-			searching: false
-		} );
-	</script>
-
 
 	<script>
 		$(document).ready(function() {
