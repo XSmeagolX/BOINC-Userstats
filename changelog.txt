@@ -11,6 +11,8 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Es können nun auch die Badges der eigenen CPID von FreeDC angezeigt werden, sofern die cpid in der Tabelle "boinc_user" eingetragen und die Option aktiviert ist.
 - Ein Link zur Projekt-Homepage wurde aus der Übersichts-Tabelle entfernt und ist nun nur noch über die Projekt-Detail-Ansicht verfügbar.
 - Es wurde ein Option für Sammel-Accounts hinzugefügt, so dass die account-xml-Dateien einbezogen werden können, welche im Unterordner xml/ abgespeichert sein müssen.
+- Bei der Nutzung des aktuellen Sourcecodes der Stats von github, wird nun die entsprechende dev-Version anstelle der Release Version angezeigt.
+  Das Anzeigen der Verfügbarkeit von Updates bei Nutzung dieser dev-Versionen findet bislang nur bei Release-Versionen statt.
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
@@ -28,6 +30,7 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ajax_wcg_detail.php
   - check_update.php
   - error.php
+  - footer.php
   - header.php
   - index.php
   - nav.php
