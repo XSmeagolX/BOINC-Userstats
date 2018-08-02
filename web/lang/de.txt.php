@@ -16,7 +16,7 @@
 	$text_update_info_false = "Vielen Dank!";
 	$text_update_info_true = "Achtung!";
 	$linkNameUpdate = "Update verfügbar";
-	$text_edit_version = "Du hast die Datei version.php manuell verändert. Eine Updateprüfung ist somit nicht möglich!";
+	$text_edit_version = "Die Datei version.php wurde manuell verändert. Eine Updateprüfung ist somit nicht möglich!";
 	$text_header_ot = "aus dem Team";
 	$text_header_lu = "letzte Aktualisierung";
 	$text_boinc_total = "BOINC Gesamt";
@@ -69,16 +69,16 @@
 	$tr_ch_pw_header = "Projekt Credits - Woche";
 	$tr_ch_pm_header = "Projekt Credits - Monat";
 	$tr_ch_py_header = "Projekt Credits - Jahr";
-	$text_pendings_false = "Du hast die Option für die Pending Credits deaktiviert!";
-	$tr_hp_pendings_01 = "Die Pending-Credits deiner als aktiv definierten Projekte werden aktualisiert...";
-	$tr_hp_pendings_02 = "Die Pending-Credits deiner als aktiv markierten Projekte wurden in der Datenbank aktualisiert.";
+	$text_pendings_false = "Die Option für die Pending Credits wurde deaktiviert!";
+	$tr_hp_pendings_01 = "Die Pending-Credits der als aktiv definierten Projekte werden aktualisiert...";
+	$tr_hp_pendings_02 = "Die Pending-Credits der als aktiv markierten Projekte wurden in der Datenbank aktualisiert.";
 	$tr_hp_pendings_03 = "Aktualisierung der Pending Credits. Bitte warten...";
-	$tr_hp_tasks_01 = "Deine laufenden Berechnungen werden geladen";
-	$tr_hp_tasks_03 = "Laden deiner laufenden Berechnungen";
-	$tr_hp_index_01 = "Deine Projektübersicht wird geladen";
-	$tr_hp_index_03 = "Laden deiner Projekt-Übersicht";
-	$tr_hp_project_01 = "Deine Projektdaten werden geladen";
-	$tr_hp_project_03 = "Laden deiner Projekt-Daten";
+	$tr_hp_tasks_01 = "Die laufenden Berechnungen werden geladen";
+	$tr_hp_tasks_03 = "Laden der laufenden Berechnungen";
+	$tr_hp_index_01 = "Die Projektübersicht wird geladen";
+	$tr_hp_index_03 = "Laden der Projekt-Übersicht";
+	$tr_hp_project_01 = "Die Projektdaten werden geladen";
+	$tr_hp_project_03 = "Laden der Projekt-Daten";
 	$tr2_hp_pp = "# Projekt";
 	$tr2_hp_pt = "# Team";
 	$tr2_hp_ptotal = "# Total";
@@ -119,7 +119,7 @@
 	$project_of = "von";
 	$project_project = "Projekt";
 	$project_wcg_detail_link = "WCG-Detail-Statistik";
-	$no_badge = "<h5><br>Keine BOINC-Badges eingerichtet</h5><h6><font size = '1'>Damit deine Boinc-Badges angezeigt werden, musst Du diese in den Einstellungen einrichten<br></font></h5>";
+	$no_badge = "<h5><br>Keine BOINC-Badges eingerichtet</h5><h6><font size = '1'>Damit die Boinc-Badges angezeigt werden, müssen diese in den Einstellungen einrichtet werden<br></font></h5>";
 
 	$bt_headline = "Laufende WU's";
 
@@ -135,8 +135,8 @@
 	$tabs_badge = "Badges";
 
 	$text_info_noupdate = "Von diesem aktiven Projekt werden derzeit keine aktuellen Daten abgerufen! (project_status=0)";
-	$text_info_update_inprogress = "<b>Deine Projekte werden derzeit aktualisiert.</b> Dies kann bis zu 2 Minuten dauern (oder mehr). Startzeitpunkt: ";
+	$text_info_update_inprogress = "<b>Die Projekte werden derzeit aktualisiert.</b> Dies kann bis zu 2 Minuten dauern (oder mehr). Startzeitpunkt: ";
 	$text_info_project_retired = "<b>Das Projekt ist in der Datenbank als beendet gekennzeichnet</b>";
-	$text_info_project_novalues = "<b>Von diesem Projekt stehen noch keine Daten in der Datenbank</b>. Bitte warte auf die Validierung deines ersten Arbeitspakets.";
+	$text_info_project_novalues = "<b>Von diesem Projekt stehen noch keine Daten in der Datenbank</b>. Bitte warte auf die Validierung des ersten Arbeitspakets.";
 	$zero_pendings = "Alle weiteren Projekte haben keine Pendings oder exportieren diesen Wert nicht per Web-RPC";
 ?>

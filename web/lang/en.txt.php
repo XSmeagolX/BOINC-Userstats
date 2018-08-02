@@ -9,14 +9,14 @@
 	$text_header_tasks = "Running Tasks of";
 	$text_header_update = "Update-Check";
 	$text_update_nocheck = "The update check is not available at the moment.";
-	$text_update_false = "Your version is up to date.";
-	$text_update_print_version_local = "You are using version ";
+	$text_update_false = "This version is up to date.";
+	$text_update_print_version_local = "current used version ";
 	$text_update_print_version_remote = "The version of the latest release is: ";
 	$text_update_true = "You find the latest release on:";
 	$text_update_info_false = "Thank you for being up-to-date!";
 	$text_update_info_true = "Attention!";
 	$linkNameUpdate = "Update available";
-	$text_edit_version = "You manually edit the file version.php. An update check is not possible!";
+	$text_edit_version = "The file version.php was manually edited. An update check is not possible!";
 	$text_header_ot = "of team";
 	$text_header_lu = "last update";
 	$text_boinc_total = "BOINC combined";
@@ -70,14 +70,14 @@
 	$tr_ch_pm_header = "Project Credits per month";
 	$tr_ch_py_header = "Project Credits per year";
 	$text_pendings_false = "The option to show pending credits is deactivated!";
-	$tr_hp_pendings_01 = "The Pending-Credits of all your projects marked active will be refreshed...";
-	$tr_hp_pendings_02 = "Your Pending-Credits were updated in the database.";
-	$tr_hp_pendings_03 = "Refresh your Pending Credits. Please wait...";
-	$tr_hp_tasks_01 = "Your running tasks are loading...";
-	$tr_hp_tasks_03 = "Loading your running tasks. Please wait...";
-	$tr_hp_index_01 = "Your projects are loading.";
+	$tr_hp_pendings_01 = "The Pending-Credits of all the projects marked active will be refreshed...";
+	$tr_hp_pendings_02 = "The Pending-Credits were updated in the database.";
+	$tr_hp_pendings_03 = "Refreshing Pending Credits. Please wait...";
+	$tr_hp_tasks_01 = "running tasks are loading...";
+	$tr_hp_tasks_03 = "Loading running tasks. Please wait...";
+	$tr_hp_index_01 = "projects are loading.";
 	$tr_hp_index_03 = "Loading projects overview. Please wait...";
-	$tr_hp_project_01 = "Your project data is loading";
+	$tr_hp_project_01 = "project data is loading";
 	$tr_hp_project_03 = "Loading project data. Please wait...";
 	$tr2_hp_pp = "# Project";
 	$tr2_hp_pt = "# Team";
@@ -111,7 +111,7 @@
 	$wcg_detail_status = "Status";
 	$wcg_detail_fehler = "ALERT";
 	$wcg_detail_dbstatus = "Database ERROR";
-	$wcg_detail_dbfehler_text01 = "No values returned from database.</br>There are some problems with your database connection.";
+	$wcg_detail_dbfehler_text01 = "No values returned from database.</br>There are some problems with the database connection.";
 	$wcg_detail_dbfehler_text02 = "No values returned from database.";
 	$wcg_detail_fehler_text01 = "Project status could not be initialized!<br>The servers may be down.";
 	$wcg_detail_fehler_text02 = "Project status could not be initialized!<br>The values were not valid.";
@@ -119,7 +119,7 @@
 	$project_of = "of";
 	$project_project = "Project";
 	$project_wcg_detail_link = "WCG-Detail-Statistics";
-	$no_badge = "<h5><br>No badge configured</h5><h6><font size = '1'>To show your Boinc-Badges, please configure your Badges in the settings file.</font><br></h5>";
+	$no_badge = "<h5><br>No badge configured</h5><h6><font size = '1'>To show Boinc-Badges, please configure the Badges in the settings file.</font><br></h5>";
 
 	$bt_headline = "Running WU's";
 
@@ -136,7 +136,7 @@
 
 	$text_info_noupdate = "No data will be fetched for this active project! (project_status=0)";
 	$text_info_update_inprogress = "<b>Update in progress.</b> This could take up to 2 minutes (or more). The update started at: ";
-	$text_info_project_retired = "<b>This project is marked as retired in your database</b>";
-	$text_info_project_novalues = "<b>This project do not have any data in the database. Please wait for validation of your first workunit.</b>";
+	$text_info_project_retired = "<b>This project is marked as retired in the database</b>";
+	$text_info_project_novalues = "<b>This project do not have any data in the database. Please wait for validation of the first workunit.</b>";
 	$zero_pendings = "All other projects do not have any pending credits or the project does not export this value using WebRPC";
 ?>

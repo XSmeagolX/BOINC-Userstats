@@ -54,13 +54,13 @@
 		$update_available = false;
 		$output = $text_update_nocheck;
 	}
-	elseif($xml == $userstats_version) {
+	elseif($xml == $userstats_release_version) {
 		$update_available = false;
 		$output = $text_update_false;
 	}
-	elseif ($xml > $userstats_version) {
+	elseif ($xml > $userstats_release_version) {
 		$update_available = true;
-		$output = $text_update_print_version_local . $userstats_version . "<br>" .$text_update_print_version_remote . $xml . "<br><br>" .$text_update_true;
+		$output = $text_update_print_version_local . $userstats_release_version . "<br>" .$text_update_print_version_remote . $xml . "<br><br>" .$text_update_true;
 	}
 	else {
 		$update_available = true;

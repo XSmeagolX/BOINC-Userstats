@@ -8,10 +8,10 @@
 			if($xml_string == false) {
 				$update_available = false;
 			}
-			elseif($xml == $userstats_version) {
+			elseif($xml == $userstats_release_version) {
 				$update_available = false;
 			}
-			elseif ($xml > $userstats_version) {
+			elseif ($xml > $userstats_release_version) {
 				$update_available = true;
 			}
 			else {
