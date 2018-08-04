@@ -457,9 +457,9 @@
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
-							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
-<?php if ($hasPendings): ?>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
+<?php if ($hasPendings): ?>
+							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
 <?php endif; ?>
 <?php if ($hasXML): ?>
 							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
@@ -476,9 +476,9 @@
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
-							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
-<?php if ($hasPendings): ?>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
+<?php if ($hasPendings): ?>
+							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
 <?php endif; ?>
 <?php if ($hasXML): ?>
 							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
