@@ -306,12 +306,6 @@
 				<?=$text_info_project_novalues?>
 			</div>
 		</div>
-<?php elseif ($status == "0"): ?>
-		<div class = "alert warning-lastupdate" role = "alert">
-			<div class = "container">
-				<?=$text_info_noupdate?>
-			</div>
-		</div>
 <?php elseif ($datum < $datum_start): ?>
 		<div class = "alert warning-lastupdate" role = "alert">
 			<div class = "container">
@@ -385,6 +379,13 @@
 					</div>
 <?php endforeach; ?>				
 				</div>
+<?php if ($status == "0"): ?>
+				<div class = "alert warning-lastupdate" role = "alert">
+					<div class = "container">
+						<?=$text_info_noupdate?>
+					</div>
+				</div>
+<?php endif; ?>
 			</div>
 		</div>
 
