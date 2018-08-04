@@ -139,4 +139,6 @@
 	$text_info_project_retired = "<b>This project is marked as retired in the database</b>";
 	$text_info_project_novalues = "<b>This project do not have any data in the database. Please wait for validation of the first workunit.</b>";
 	$zero_pendings = "All other projects do not have any pending credits or the project does not export this value using WebRPC";
+
+	$tooltip_project_noupdate = "This project will not be updated";
 ?>

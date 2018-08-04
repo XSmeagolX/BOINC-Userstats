@@ -139,4 +139,6 @@
 	$text_info_project_retired = "<b>Das Projekt ist in der Datenbank als beendet gekennzeichnet</b>";
 	$text_info_project_novalues = "<b>Von diesem Projekt stehen noch keine Daten in der Datenbank</b>. Bitte warte auf die Validierung des ersten Arbeitspakets.";
 	$zero_pendings = "Alle weiteren Projekte haben keine Pendings oder exportieren diesen Wert nicht per Web-RPC";
+
+	$tooltip_project_noupdate = "Von diesem Projekt werden aktuell keine Daten erhoben!";
 ?>
