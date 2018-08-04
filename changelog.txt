@@ -13,6 +13,8 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Es wurde ein Option für Sammel-Accounts hinzugefügt, so dass die account-xml-Dateien einbezogen werden können, welche im Unterordner xml/ abgespeichert sein müssen.
 - Bei der Nutzung des aktuellen Sourcecodes der Stats von github, wird nun die entsprechende dev-Version anstelle der Release Version angezeigt.
   Das Anzeigen der Verfügbarkeit von Updates bei Nutzung dieser dev-Versionen findet bislang nur bei Release-Versionen statt.
+- Das Erkennen von Projekten, die in der Datenbank als inaktiv (project_status = 0) markiert sind, wurde verbessert.
+- Ein Anzeigefehler von beendeten Projekten, die auch keine Credits haben, wurde behoben.
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
@@ -37,7 +39,7 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - pendings.php
   - project.php
   - tasks.php
-  - version.php (erst mit Release)
+  - version.php
 
 
 

@@ -391,7 +391,7 @@
 <?php else: ?>
 							<td class = 'align-middle'>
 								<a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a>
-								<i class="fas fa-exclamation-circle textgelb" data-toggle="tooltip" data-html="true" title="<?=$tooltip_project_noupdate?>"></i>
+								<sup><i class="fas fa-exclamation-circle textgelb" data-toggle="tooltip" data-html="true" title="<?=$tooltip_project_noupdate?>"></i></sup>
 							</td>
 <?php endif; ?>
 							<td class = 'align-middle'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
