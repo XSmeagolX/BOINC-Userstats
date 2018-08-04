@@ -385,9 +385,14 @@
 <?php foreach ($table as $table_row): ?>
 						<tr>
 <?php if ($table_row["user_stats_vorhanden"] === "1"): ?>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a></td>
+							<td class = 'align-middle'>
+								<a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a>
+							</td>
 <?php else: ?>
-							<td class = 'align-middle'><a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a></td>
+							<td class = 'align-middle'>
+								<a href = '<?=$table_row["project_link"] ?>'><?=$table_row["project_name"] ?></a>
+								<i class="fas fa-exclamation-circle textgelb"></i>
+							</td>
 <?php endif; ?>
 							<td class = 'align-middle'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
