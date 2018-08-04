@@ -7,13 +7,6 @@
 	$showUpdateHeader = false;
 	
 	$result_user = mysqli_query($db_conn, "SELECT * FROM boinc_user");
-	if ( !$result_user || mysqli_num_rows($result_user) === 0 ) { 	
-		$connErrorTitle = "Datenbankfehler";
-		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
-			Es bestehen wohl Probleme mit der Datenbankanbindung.";
-		include "./errordocs/db_initial_err.php";
-		exit();
-	}
 	while ($row = mysqli_fetch_assoc($result_user)) {
 		$boinc_username = $row["boinc_name"];
 		$boinc_wcgname = $row["wcg_name"];

@@ -15,17 +15,6 @@
 	}
 
 	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
-	if ( !$query_getUserData ) { 	
-		$connErrorTitle = $wcg_detail_dbstatus;
-		$connErrorDescription = $wcg_detail_dbfehler_text01;
-		include "./errordocs/db_initial_err.php";
-		exit();
-	} elseif ( mysqli_num_rows($query_getUserData) === 0 ) { 
-		$connErrorTitle = $wcg_detail_dbstatus;
-		$connErrorDescription = $wcg_detail_dbfehler_text02;
-		include "./errordocs/db_initial_err.php";
-		exit();
-	}
 	$boinc_wcgname = "";
 	$wcg_verification = "";
 	while ($row = mysqli_fetch_assoc($query_getUserData)) {

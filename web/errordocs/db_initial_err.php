@@ -2,18 +2,6 @@
 	include "./settings/settings.php";
 
 	$query_getUserData = mysqli_query($db_conn, "SELECT * from boinc_user");
-	if ( !$query_getUserData ) { 	
-		$connErrorTitle = "Datenbankfehler";
-		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
-								Es bestehen wohl Probleme mit der Datenbankanbindung.";
-		include "./errordocs/db_initial_err.php";
-		exit();
-	} elseif ( mysqli_num_rows($query_getUserData) === 0 ) { 
-		$connErrorTitle = "Datenbankfehler";
-		$connErrorDescription = "Die Tabelle boinc_user enthält keine Daten.";
-		include "./errordocs/db_initial_err.php";
-		exit();
-	}
 	while ($row = mysqli_fetch_assoc($query_getUserData)) {
 		$boinc_username = $row["boinc_name"];
 		$boinc_wcgname = $row["wcg_name"];
