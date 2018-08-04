@@ -20,7 +20,7 @@
 				resetZoomTitle: "Reset Zoom",
 				thousandsSep: ",",
 				decimalPoint: ".",
-				noData: "You do not have any data to display this chart at the moment"
+				noData: "You do not have any data to display this chart"
 			}
 		});
 	</script>
