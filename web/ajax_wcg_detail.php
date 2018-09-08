@@ -193,7 +193,7 @@
 								<td class = 'texthellgruen d-none d-sm-table-cell align-middle'><?=number_format($table_row["project_points"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'texthellgruen d-none d-md-table-cell align-middle'><?=number_format($table_row["project_results"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'texthellgruen align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
-								<td class = 'texthellgruen text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
+								<td class = 'texthellgruen text-center align-middle'><img src = '<?=$table_row["badge"] ?>' data-toggle="tooltip" data-html="true" title = '<?=$table_row["description"] ?>'></td>
 							</tr>
 <?php elseif ($table_row["status"] === "Intermittent"): ?>
 							<tr>
@@ -202,7 +202,7 @@
 								<td class = 'texthellgelb d-none d-sm-table-cell align-middle'><?=number_format($table_row["project_points"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'texthellgelb d-none d-md-table-cell align-middle'><?=number_format($table_row["project_results"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'texthellgelb align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
-								<td class = 'texthellgelb text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
+								<td class = 'texthellgelb text-center align-middle'><img src = '<?=$table_row["badge"] ?>' data-toggle="tooltip" data-html="true" title = '<?=$table_row["description"] ?>'></td>
 							</tr>
 <?php elseif ($table_row["status"] === "Completed"): ?>
 							<tr>
@@ -211,7 +211,7 @@
 								<td class = 'texthellrot d-none d-sm-table-cell align-middle'><?=number_format($table_row["project_points"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'texthellrot d-none d-md-table-cell align-middle'><?=number_format($table_row["project_results"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'texthellrot align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
-								<td class = 'texthellrot text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
+								<td class = 'texthellrot text-center align-middle'><img src = '<?=$table_row["badge"] ?>' data-toggle="tooltip" data-html="true" title = '<?=$table_row["description"] ?>'></td>
 							</tr>
 <?php else: ?>
 							<tr>
@@ -220,7 +220,7 @@
 								<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row["project_points"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'd-none d-md-table-cell align-middle'><?=number_format($table_row["project_results"],0,$dec_point,$thousands_sep) ?></td>
 								<td class = 'align-middle' data-order = '<?=$table_row["project_runtime_unix"] ?>'><?=$table_row["project_runtime"] ?></td>
-								<td class = 'text-center align-middle'><img title = '<?=$table_row["description"] ?>' src = '<?=$table_row["badge"] ?>' alt = '<?=$table_row["description"] ?>'></td>
+								<td class = 'text-center align-middle'><img src = '<?=$table_row["badge"] ?>' data-toggle="tooltip" data-html="true" title = '<?=$table_row["description"] ?>'></td>
 							</tr>
 <?php endif; ?>
 <?php endif; ?>

@@ -416,4 +416,14 @@
 			} );
 		</script>
 
+
+		<script>
+			(function($) {
+				$(function() {
+				$(document).tooltip({ selector: '[data-toggle="tooltip"]' });
+				});
+			})(jQuery);
+		</script>
+		
+
 <?php include("./footer.php"); ?>
