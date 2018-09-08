@@ -479,7 +479,7 @@
 					},
 					bSortCellsTop: false,
 					language: {
-                		url: "./lang/<?=$lang?>.dataTables.json"
+                		url: "./lang/<?=$lang?>.datatables.json"
 					},
 					columnDefs: [ {
 						targets: "no-sort",
