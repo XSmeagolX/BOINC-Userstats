@@ -3,8 +3,9 @@
     
 	$showProjectHeader = false;
 	$showPendingsHeader = false;
-    $showTasksHeader = false;
-    $showUpdateHeader = true;
+	$showTasksHeader = false;
+	$showUpdateHeader = true;
+	$showErrorHeader = false;
     
 	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
 	while ($row = mysqli_fetch_assoc($query_getUserData)) {

@@ -1,4 +1,9 @@
 <?php
+	$showProjectHeader = false;
+	$showPendingsHeader = false;
+	$showTasksHeader = false;
+	$showUpdateHeader = false;
+	$showErrorHeader = true;
 
 	include "./settings/settings.php";
 
@@ -268,9 +273,11 @@
 ?>
 
 	<div class = "container text-center flex1">
-		<h1 class = "title text-center"><?php echo $error_description; ?></h1>
+<?php if (!$uups_error): ?><h1 class = "title text-center"><?php echo $error_description; ?></h1><?php endif; ?>
 		<h5 class = "description text-center">
 			<?php
+			if ($uups_error) echo $uups_error_description;
+			else
 				if ($lang === "de") echo $err_de;
 				elseif ($lang === "fr") echo $err_fr;
 				else echo $err_en;

@@ -5,6 +5,7 @@
 	$showPendingsHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
+	$showErrorHeader = false;
 
 	$sum1h_total = 0;
 	$sum2h_total = 0;
@@ -15,6 +16,12 @@
 	$novalues = false;
 
 	$query_getUserData = mysqli_query($db_conn,"SELECT * FROM boinc_user");
+	if (!$query_getUserData):
+		$uups_error = true;
+		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_user vorhanden!";
+		include "error.php";
+		exit;
+	endif;
 	while($row = mysqli_fetch_assoc($query_getUserData)){
 		$boinc_username = $row["boinc_name"];
 		$boinc_wcgname = $row["wcg_name"];
@@ -40,6 +47,12 @@
 	$goon = 0;
 	$projectid = addslashes($_GET["projectid"]);
 	$query_check = mysqli_query($db_conn,"SELECT project_shortname FROM boinc_grundwerte" );
+	if (!$query_check):
+		$uups_error = true;
+		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_grundwerte vorhanden!";
+		include "error.php";
+		exit;
+	endif;
 	while ( $row = mysqli_fetch_assoc($query_check) ) {
 		$project_check = $row["project_shortname"];
 		if ( $project_check === $projectid ) { 
@@ -103,7 +116,6 @@
 
 	$query_getProjetData = mysqli_query($db_conn,"SELECT * FROM boinc_grundwerte WHERE project_shortname = '$projectid'");
 	while($row = mysqli_fetch_assoc($query_getProjetData)){
-
 		$shortname = $row["project_shortname"];
 		$table_row["project_name"] = $row["project"];
 		$table_row["total_credits"] = $row["total_credits"];

@@ -5,6 +5,7 @@
 	$showPendingsHeader = true;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
+	$showErrorHeader = false;
 	
 	$result_user = mysqli_query($db_conn, "SELECT * FROM boinc_user");
 	while ($row = mysqli_fetch_assoc($result_user)) {

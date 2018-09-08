@@ -16,6 +16,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Das Erkennen von Projekten, die in der Datenbank als inaktiv (project_status = 0) markiert sind, wurde verbessert.
 - Ein Anzeigefehler von beendeten Projekten, die auch keine Credits haben, wurde behoben.
 - Mit dev-Version 21 wurde das interne error-Management komplett entfernt, um es von Grund auf neu zu gestalten!
+- Mit dev-Version 22 wurde das error-Management neu gestaltet (noch nicht abschließend - nur ein Anfang!)
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt

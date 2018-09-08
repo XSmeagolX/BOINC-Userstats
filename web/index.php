@@ -5,6 +5,7 @@
 	$showPendingsHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
+	$showErrorHeader = false;
 
 	$sum1h_total = 0;
 	$sum2h_total = 0;
@@ -22,6 +23,14 @@
 	$hasretiredProject = false;
 
 	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
+
+	if (!$query_getUserData):
+		$uups_error = true;
+		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_user vorhanden!";
+		include "error.php";
+		exit;
+	endif; 
+
 	while ($row = mysqli_fetch_assoc($query_getUserData)) {
 		$boinc_username = $row["boinc_name"];
 		$boinc_wcgname = $row["wcg_name"];
@@ -60,6 +69,12 @@
 	$zwoelfh = mktime(date("H")-11, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
 	
 	$query_getAllProjects = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte ORDER BY project ASC");
+	if (!$query_getAllProjects):
+		$uups_error = true;
+		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_grundwerte vorhanden!";
+		include "error.php";
+		exit;
+	endif; 
 	while ($row = mysqli_fetch_assoc($query_getAllProjects)) {
 		
 		if ($row["project_status"] <= 1) {
