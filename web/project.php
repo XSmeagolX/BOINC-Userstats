@@ -18,7 +18,7 @@
 	$query_getUserData = mysqli_query($db_conn,"SELECT * FROM boinc_user");
 	if (!$query_getUserData):
 		$uups_error = true;
-		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_user vorhanden!";
+		$uups_error_description = "Es ist keine Tabelle boinc_user vorhanden!";
 		include "error.php";
 		exit;
 	endif;
@@ -49,7 +49,7 @@
 	$query_check = mysqli_query($db_conn,"SELECT project_shortname FROM boinc_grundwerte" );
 	if (!$query_check):
 		$uups_error = true;
-		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_grundwerte vorhanden!";
+		$uups_error_description = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
 		include "error.php";
 		exit;
 	endif;
@@ -87,6 +87,12 @@
 	if ($project_total_credits > 0) {
 		$output_project_html = "";
 		$query_getProjectOutputPerHour = mysqli_query($db_conn,"SELECT time_stamp, credits FROM boinc_werte WHERE project_shortname = '" .$projectid. "'");
+		if (!$query_getProjectOutputPerHour):
+			$uups_error = true;
+			$uups_error_description = "Es ist keine Tabelle boinc_werte vorhanden!";
+			include "error.php";
+			exit;
+		endif;
 		while($row = mysqli_fetch_assoc($query_getProjectOutputPerHour)){
 				$timestamp = ($row["time_stamp"] - 3601) * 1000;
 				$output_project_html.= "[(" .$timestamp. "), " .$row["credits"]. "], ";	
@@ -96,6 +102,12 @@
 		$output_project_gesamt_pendings_html = "";
 		$output_project_gesamt_html = "";
 		$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
+		if (!$query_getProjectOutputPerDay):
+			$uups_error = true;
+			$uups_error_description = "Es ist keine Tabelle boinc_werte_day vorhanden!";
+			include "error.php";
+			exit;
+		endif;
 		while($row = mysqli_fetch_assoc($query_getProjectOutputPerDay)){
 			$timestamp1 = ($row["time_stamp"] - 3601) * 1000;
 			$output_project_gesamt_html.= "[(" .$timestamp1. "), " .$row["total_credits"]. "], ";	

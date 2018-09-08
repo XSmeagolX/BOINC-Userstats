@@ -7,16 +7,6 @@
 
 	include "./settings/settings.php";
 
-	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
-	while ($row = mysqli_fetch_assoc($query_getUserData)) {
-		$boinc_username = $row["boinc_name"];
-		$boinc_wcgname = $row["wcg_name"];
-		$boinc_teamname = $row["team_name"];
-		$cpid = $row["cpid"];
-		$datum_start = $row["lastupdate_start"];
-		$datum = $row["lastupdate"];
-	}
-
 	if (isset($_GET["lang"])) $lang = $_GET["lang"];
 	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
 
@@ -276,7 +266,7 @@
 <?php if (!$uups_error): ?><h1 class = "title text-center"><?php echo $error_description; ?></h1><?php endif; ?>
 		<h5 class = "description text-center">
 			<?php
-			if ($uups_error) echo $uups_error_description;
+			if ($uups_error) echo "<br /><br /><i class='textrot fas fa-exclamation-triangle fa-3x'></i> ".$uups_error_description." <i class='textrot fas fa-exclamation-triangle fa-3x'></i>";
 			else
 				if ($lang === "de") echo $err_de;
 				elseif ($lang === "fr") echo $err_fr;

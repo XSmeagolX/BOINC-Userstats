@@ -26,7 +26,7 @@
 
 	if (!$query_getUserData):
 		$uups_error = true;
-		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_user vorhanden!";
+		$uups_error_description = "Es ist keine Tabelle boinc_user vorhanden!";
 		include "error.php";
 		exit;
 	endif; 
@@ -56,6 +56,12 @@
 	$lastupdate = date("H:i:s", $datum + $timezoneoffset*60);
 	
 	$query_getTotalCredits = mysqli_query($db_conn, "SELECT SUM(total_credits) AS sum_total FROM boinc_grundwerte");
+	if (!$query_getTotalCredits):
+		$uups_error = true;
+		$uups_error_description = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
+		include "error.php";
+		exit;
+	endif; 
 	$row2 = mysqli_fetch_assoc($query_getTotalCredits);
 	$sum_total = $row2["sum_total"];
 	
@@ -71,7 +77,7 @@
 	$query_getAllProjects = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte ORDER BY project ASC");
 	if (!$query_getAllProjects):
 		$uups_error = true;
-		$uups_error_description = "Sorry, keine Daten in der Tabelle boinc_grundwerte vorhanden!";
+		$uups_error_description = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
 		include "error.php";
 		exit;
 	endif; 
@@ -89,6 +95,12 @@
 				$table_row["xml"] = $row["xml"];
 			}
 			$query_getOutput1h = mysqli_query($db_conn,"SELECT sum(credits) AS sum1h FROM boinc_werte WHERE project_shortname = '" . $shortname . "' AND time_stamp>'" . $einsh . "'");
+			if (!$query_getOutput1h):
+				$uups_error = true;
+				$uups_error_description = "Es ist keine Tabelle boinc_werte vorhanden!";
+				include "error.php";
+				exit;
+			endif; 
 			$row2 = mysqli_fetch_assoc($query_getOutput1h);
 			$table_row["sum1h"] = $row2["sum1h"];
 			$sum1h_total += $table_row["sum1h"];
@@ -173,6 +185,12 @@
 	$output_gesamt_html = "";
 	$output_gesamt_pendings_html = "";
 	$query_getTotalOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = 'gesamt'");
+	if (!$query_getTotalOutputPerDay):
+		$uups_error = true;
+		$uups_error_description = "Es ist keine Tabelle boinc_werte_day vorhanden!";
+		include "error.php";
+		exit;
+	endif; 
 	while ($row2 = mysqli_fetch_assoc($query_getTotalOutputPerDay)) {
 			$timestamp2 = ($row2["time_stamp"] - 3601) * 1000;
 			$output_gesamt_html .= "[" . $timestamp2 . ", " . $row2["total_credits"] . "], ";

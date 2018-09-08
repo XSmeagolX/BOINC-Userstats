@@ -19,6 +19,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Mit dev-Version 22 wurde das error-Management neu gestaltet (noch nicht abschließend - nur ein Anfang!)
 - Mit dev-Version 23 wurde der Tooltip in den WCG-Details auf den Badges aktiviert
 - Mit dev-Version 24 wurde ein Fehler in den Spracheinstellungen für DataTables behoben.
+- Mit dev-Version 25 wurde das error-Management erweitert
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt

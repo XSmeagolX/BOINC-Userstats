@@ -8,6 +8,12 @@
 	$showErrorHeader = false;
 
 	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
+	if (!$query_getUserData):
+		$uups_error = true;
+		$uups_error_description = "Es ist keine Tabelle boinc_user vorhanden!";
+		include "error.php";
+		exit;
+	endif; 
 	while ($row = mysqli_fetch_assoc($query_getUserData)) {
 		$boinc_username = $row["boinc_name"];
 		$boinc_wcgname = $row["wcg_name"];
