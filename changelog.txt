@@ -6,10 +6,10 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Integration von fontawesome Version 5
 - Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts integriert (settings.php -> $useHighchartExport)
 - Die Option "$hasPendings" hat nun auch Einfluß auf das Anzeigen der Pending Credits in der Übersicht und den Projekt-Details.
-  Ebenso wird der Abruf der Pending Credits beim gesetztem "false" nun unterbunden.
+  Ebenso wird der manuelle Abruf der Pending Credits beim gesetztem "false" nun unterbunden (pendings.php).
   Das Unterbinden dieses Abrufs gilt bislang noch NICHT FÜR DIE cronjob.php
 - Es können nun auch die Badges der eigenen CPID von FreeDC angezeigt werden, sofern die cpid in der Tabelle "boinc_user" eingetragen und die Option aktiviert ist.
-- Ein Link zur Projekt-Homepage wurde aus der Übersichts-Tabelle entfernt und ist nun nur noch über die Projekt-Detail-Ansicht verfügbar.
+- Der Link zur jeweiligen Projekt-Homepage wurde aus der Übersichts-Tabelle entfernt und ist nun nur noch über die Projekt-Detail-Ansicht verfügbar.
 - Es wurde ein Option für Sammel-Accounts hinzugefügt, so dass die account-xml-Dateien einbezogen werden können, welche im Unterordner xml/ abgespeichert sein müssen.
 - Bei der Nutzung des aktuellen Sourcecodes der Stats von github, wird nun die entsprechende dev-Version anstelle der Release Version angezeigt.
   Das Anzeigen der Verfügbarkeit von Updates bei Nutzung dieser dev-Versionen findet bislang nur bei Release-Versionen statt.
@@ -20,6 +20,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Mit dev-Version 23 wurde der Tooltip in den WCG-Details auf den Badges aktiviert
 - Mit dev-Version 24 wurde ein Fehler in den Spracheinstellungen für DataTables behoben.
 - Mit dev-Version 25 wurde das error-Management erweitert
+- Mit dev-Version 26 wurde das error-Management internationalisiert
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt

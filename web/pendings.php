@@ -10,7 +10,7 @@
 	$result_user = mysqli_query($db_conn, "SELECT * FROM boinc_user");
 	if (!$result_user):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_user vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_user_table;
 		include "error.php";
 		exit;
 	endif; 
@@ -48,7 +48,7 @@
 			<?php echo $tr_hp_pendings_03; ?>
 		</div>
 		<div class = "row justify-content-center">
-			<i class="fas fa-spinner fa-spin fa-5x"></i>
+			<i class="fas fa-spinner fa-spin fa-3x"></i>
 		</div>
 	</div>
 </div>

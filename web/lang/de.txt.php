@@ -4,7 +4,7 @@
 	$text_search= "Filter/Suche";
 	$linkNameOverview = "Projekt-Übersicht";
 	$text_hp_title = "Persönliche Userstatistiken von " .$boinc_username. " aus dem Team " .$boinc_teamname;
-	$text_header_motto = "BOINC-Projekte von";
+	$text_header_motto = "BOINC-Statistiken von";
 	$text_header_pendings = "Pending Credits von";
 	$text_header_tasks = "aktive Berechnungen von";
 	$text_header_update = "Update-Prüfung";
@@ -141,4 +141,9 @@
 	$zero_pendings = "Alle weiteren Projekte haben keine Pendings oder exportieren diesen Wert nicht per Web-RPC";
 
 	$tooltip_project_noupdate = "Von diesem Projekt werden aktuell keine Daten erhoben!";
+
+	$uups_error_description_no_boinc_user_table = "Es ist keine Tabelle boinc_user vorhanden!";
+	$uups_error_description_no_boinc_grundwerte_table = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
+	$uups_error_description_no_boinc_werte_table = "Es ist keine Tabelle boinc_werte vorhanden!";
+	$uups_error_description_no_boinc_werte_day_table = "Es ist keine Tabelle boinc_werte_day vorhanden!";
 ?>

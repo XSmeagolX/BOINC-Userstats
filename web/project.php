@@ -15,10 +15,16 @@
 	$sum_yesterday_total = 0;
 	$novalues = false;
 
+	if (isset($_GET["lang"])) $lang = $_GET["lang"];
+	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+
+	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
+	else include "./lang/en.txt.php";
+
 	$query_getUserData = mysqli_query($db_conn,"SELECT * FROM boinc_user");
 	if (!$query_getUserData):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_user vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_user_table;
 		include "error.php";
 		exit;
 	endif;
@@ -38,18 +44,12 @@
 		$linkFreeDCBadges = $linkFreeDCBadges.$cpid;
 	}
 	
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
-
 	$goon = 0;
 	$projectid = addslashes($_GET["projectid"]);
 	$query_check = mysqli_query($db_conn,"SELECT project_shortname FROM boinc_grundwerte" );
 	if (!$query_check):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
 		include "error.php";
 		exit;
 	endif;
@@ -89,7 +89,7 @@
 		$query_getProjectOutputPerHour = mysqli_query($db_conn,"SELECT time_stamp, credits FROM boinc_werte WHERE project_shortname = '" .$projectid. "'");
 		if (!$query_getProjectOutputPerHour):
 			$uups_error = true;
-			$uups_error_description = "Es ist keine Tabelle boinc_werte vorhanden!";
+			$uups_error_description = $uups_error_description_no_boinc_werte_table;
 			include "error.php";
 			exit;
 		endif;
@@ -104,7 +104,7 @@
 		$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
 		if (!$query_getProjectOutputPerDay):
 			$uups_error = true;
-			$uups_error_description = "Es ist keine Tabelle boinc_werte_day vorhanden!";
+			$uups_error_description = $uups_error_description_no_boinc_werte_day_table;
 			include "error.php";
 			exit;
 		endif;
@@ -321,7 +321,7 @@
 						<?=$tr_hp_loadProjectDetails ?>
 					</div>
 					<div class = "row justify-content-md-center">
-						<i class="fas fa-spinner fa-spin fa-5x"></i> 
+						<i class="fas fa-spinner fa-spin fa-3x"></i> 
 					</div>
 				</div>
 			</div>

@@ -22,11 +22,17 @@
 	$hasactiveProject = false;
 	$hasretiredProject = false;
 
+	if (isset($_GET["lang"])) $lang = $_GET["lang"];
+	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+
+	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
+	else include "./lang/en.txt.php";
+
 	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
 
 	if (!$query_getUserData):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_user vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_user_table;
 		include "error.php";
 		exit;
 	endif; 
@@ -46,19 +52,13 @@
 		$linkFreeDCBadges = $linkFreeDCBadges.$cpid;
 	}
 
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
-
 	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*60);
 	$lastupdate = date("H:i:s", $datum + $timezoneoffset*60);
 	
 	$query_getTotalCredits = mysqli_query($db_conn, "SELECT SUM(total_credits) AS sum_total FROM boinc_grundwerte");
 	if (!$query_getTotalCredits):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
 		include "error.php";
 		exit;
 	endif; 
@@ -77,7 +77,7 @@
 	$query_getAllProjects = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte ORDER BY project ASC");
 	if (!$query_getAllProjects):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
 		include "error.php";
 		exit;
 	endif; 
@@ -97,7 +97,7 @@
 			$query_getOutput1h = mysqli_query($db_conn,"SELECT sum(credits) AS sum1h FROM boinc_werte WHERE project_shortname = '" . $shortname . "' AND time_stamp>'" . $einsh . "'");
 			if (!$query_getOutput1h):
 				$uups_error = true;
-				$uups_error_description = "Es ist keine Tabelle boinc_werte vorhanden!";
+				$uups_error_description = $uups_error_description_no_boinc_werte_table;
 				include "error.php";
 				exit;
 			endif; 
@@ -187,7 +187,7 @@
 	$query_getTotalOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = 'gesamt'");
 	if (!$query_getTotalOutputPerDay):
 		$uups_error = true;
-		$uups_error_description = "Es ist keine Tabelle boinc_werte_day vorhanden!";
+		$uups_error_description = $uups_error_description_no_boinc_werte_day_table;
 		include "error.php";
 		exit;
 	endif; 

@@ -1,10 +1,10 @@
 <?php
 	// English version //
-	$wrong_project = "wrong Projektname";
+	$wrong_project = "wrong project name";
 	$text_search = "Filter/Search";
 	$linkNameOverview = "Project-Overview";
 	$text_hp_title = "Personal Userstats of " .$boinc_username. " from Team " .$boinc_teamname;
-	$text_header_motto = "BOINC-Projects of";
+	$text_header_motto = "BOINC-Statistics of";
 	$text_header_pendings = "Pending Credits of";
 	$text_header_tasks = "Running Tasks of";
 	$text_header_update = "Update-Check";
@@ -141,4 +141,9 @@
 	$zero_pendings = "All other projects do not have any pending credits or the project does not export this value using WebRPC";
 
 	$tooltip_project_noupdate = "This project will not be updated";
+
+	$uups_error_description_no_boinc_user_table = "Table boinc_user does not exist!";
+	$uups_error_description_no_boinc_grundwerte_table = "Table boinc_grundwerte does not exist!";
+	$uups_error_description_no_boinc_werte_table = "Table boinc_werte does not exist!";
+	$uups_error_description_no_boinc_werte_day_table = "Table boinc_werte_day does not exist!";
 ?>
