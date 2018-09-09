@@ -45,7 +45,9 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - tasks.php
   - version.php
 
-
+gelöschte Dateien/Verzeichnisse:
+  - errordocs/
+  - errordocs/db_initial_err.php
 
 
 Version 5.1.1: 
@@ -230,15 +232,12 @@ Solche Versionen sollten ausschließelich in Test-Umgebungen eingesetzt werden!
 
 ToDo:
 -----
-- errormanagement für clean install neu überdenken
 - Link für pendings stets deaktivieren, falls keine authenticators hinterlegt sind
 - Aktualisierungsintervall in tasks_template per Variable setzen
 - Design error.php verschönern
 - layout Suchfeld von dataTables
 - evtl. weitere Detail-Projekt-Module (PG?)
-- Navigation einfügen bei deaktivierter Navbar
 - Erstellung weiterer Templates für Code-Vereinfachung?
-- Integration von fontawesome Version 5
 - SASS
 
 
