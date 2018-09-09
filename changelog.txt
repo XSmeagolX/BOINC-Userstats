@@ -15,12 +15,10 @@ Version 5.1.2: (noch nicht veröffentlicht)
   Das Anzeigen der Verfügbarkeit von Updates bei Nutzung dieser dev-Versionen findet bislang nur bei Release-Versionen statt.
 - Das Erkennen von Projekten, die in der Datenbank als inaktiv (project_status = 0) markiert sind, wurde verbessert.
 - Ein Anzeigefehler von beendeten Projekten, die auch keine Credits haben, wurde behoben.
-- Mit dev-Version 21 wurde das interne error-Management komplett entfernt, um es von Grund auf neu zu gestalten!
-- Mit dev-Version 22 wurde das error-Management neu gestaltet (noch nicht abschließend - nur ein Anfang!)
-- Mit dev-Version 23 wurde der Tooltip in den WCG-Details auf den Badges aktiviert
-- Mit dev-Version 24 wurde ein Fehler in den Spracheinstellungen für DataTables behoben.
-- Mit dev-Version 25 wurde das error-Management erweitert
-- Mit dev-Version 26 wurde das error-Management internationalisiert
+- Das error-Management neu gestaltet
+- Der Tooltip in den WCG-Details auf den Badges aktiviert
+- Ein Fehler in den Spracheinstellungen für DataTables wurde behoben.
+
 
 geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
