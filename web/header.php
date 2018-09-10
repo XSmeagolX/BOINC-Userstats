@@ -80,8 +80,6 @@
 					<h1 class = "title"><font color = "white">UUUUPPSSSSSS.....</font></h1>
 <?php elseif ($showProjectHeader): ?>
 					<h1 class = "title"><font color = "white"><?=$projectname ?></font></h1>
-<?php elseif ($showPendingsHeader): ?>
-					<h1 class = "title"><font color = "white"><?=$text_header_pendings ?></font></h1>
 <?php elseif ($showTasksHeader): ?>
 					<h1 class = "title"><font color = "white"><?=$text_header_tasks ?></font></h1>
 <?php elseif ($showUpdateHeader): ?>

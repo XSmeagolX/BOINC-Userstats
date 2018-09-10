@@ -5,7 +5,6 @@
 	$linkNameOverview = "Projekt-Übersicht";
 	$text_hp_title = "Persönliche Userstatistiken von " .$boinc_username. " aus dem Team " .$boinc_teamname;
 	$text_header_motto = "BOINC-Statistiken von";
-	$text_header_pendings = "Pending Credits von";
 	$text_header_tasks = "aktive Berechnungen von";
 	$text_header_update = "Update-Prüfung";
 	$text_update_nocheck = "Es konnte keine Prüfung durchgeführt werden.";
@@ -21,7 +20,6 @@
 	$text_header_lu = "letzte Aktualisierung";
 	$text_boinc_total = "BOINC Gesamt";
 	$text_total = "Gesamt";
-	$text_total_pendings = "GESAMT Pendings";
 	$tr_hp_loadProjectDetails = "Projekt-Details werden geladen...";
 	$tr_tb_pr = "aktive Projekte";
 	$tr_tb_cr = "Credits";
@@ -38,7 +36,6 @@
 	$tr_tb_12 = "-12h";
 	$tr_tb_to = "heute";
 	$tr_tb_ye = "gestern";
-	$tr_tb_pe = "Pendings";
 	$tr_tb_xml = "XML";
 	$tr_tb_det = "Detail";
 	$tr_th2_rp = "beendete Projekte";
@@ -69,10 +66,6 @@
 	$tr_ch_pw_header = "Projekt Credits - Woche";
 	$tr_ch_pm_header = "Projekt Credits - Monat";
 	$tr_ch_py_header = "Projekt Credits - Jahr";
-	$text_pendings_false = "Die Option für die Pending Credits wurde deaktiviert!";
-	$tr_hp_pendings_01 = "Die Pending-Credits der als aktiv definierten Projekte werden aktualisiert...";
-	$tr_hp_pendings_02 = "Die Pending-Credits der als aktiv markierten Projekte wurden in der Datenbank aktualisiert.";
-	$tr_hp_pendings_03 = "Aktualisierung der Pending Credits. Bitte warten...";
 	$tr_hp_tasks_01 = "Die laufenden Berechnungen werden geladen";
 	$tr_hp_tasks_03 = "Laden der laufenden Berechnungen";
 	$tr_hp_index_01 = "Die Projektübersicht wird geladen";
@@ -138,7 +131,6 @@
 	$text_info_update_inprogress = "<b>Die Projekte werden derzeit aktualisiert.</b> Dies kann bis zu 2 Minuten dauern (oder mehr). Startzeitpunkt: ";
 	$text_info_project_retired = "<b>Das Projekt ist in der Datenbank als beendet gekennzeichnet</b>";
 	$text_info_project_novalues = "<b>Von diesem Projekt stehen noch keine Daten in der Datenbank</b>. Bitte warte auf die Validierung des ersten Arbeitspakets.";
-	$zero_pendings = "Alle weiteren Projekte haben keine Pendings oder exportieren diesen Wert nicht per Web-RPC";
 
 	$tooltip_project_noupdate = "Von diesem Projekt werden aktuell keine Daten erhoben!";
 

@@ -2,7 +2,6 @@
 	include "./settings/settings.php";
 
 	$showProjectHeader = true;
-	$showPendingsHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
 	$showErrorHeader = false;
@@ -99,9 +98,8 @@
 		}
 		$output_project_html = substr($output_project_html,0,-2);
 		
-		$output_project_gesamt_pendings_html = "";
 		$output_project_gesamt_html = "";
-		$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
+		$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
 		if (!$query_getProjectOutputPerDay):
 			$uups_error = true;
 			$uups_error_description = $uups_error_description_no_boinc_werte_day_table;
@@ -111,10 +109,8 @@
 		while($row = mysqli_fetch_assoc($query_getProjectOutputPerDay)){
 			$timestamp1 = ($row["time_stamp"] - 3601) * 1000;
 			$output_project_gesamt_html.= "[(" .$timestamp1. "), " .$row["total_credits"]. "], ";	
-			$output_project_gesamt_pendings_html.= "[(" .$timestamp1. "), " .$row["pending_credits"]. "], ";
 		}
 		$output_project_gesamt_html = substr($output_project_gesamt_html,0,-2);
-		$output_project_gesamt_pendings_html = substr($output_project_gesamt_pendings_html,0,-2);
 		
 		$einsh = mktime(date("H"), 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
 		$zweih = mktime(date("H")-1, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
@@ -122,7 +118,6 @@
 		$zwoelfh = mktime(date("H")-11, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
 	} else {
 		$output_project_html = "";
-		$output_project_gesamt_pendings_html = "";
 		$output_project_gesamt_html = "";
 	}
 
@@ -133,7 +128,6 @@
 		$table_row["total_credits"] = $row["total_credits"];
 		$table_row["project_status"] = $row["project_status"];
 		$pstatus = $row["project_status"];
-		$table_row["pending_credits"] = $row["pending_credits"];
 		$table_row["project_home_link"] = $row["project_homepage_url"];
 		$table_row["user_stats_vorhanden"] = $row["project_status"];
 		if ($hasXML) {
@@ -289,9 +283,6 @@
 										<div class = "text-sm text-muted"><font size = "1">-6h:</font> <?=number_format($table_row["sum6h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "text-sm text-muted"><font size = "1">-12h:</font> <?=number_format($table_row["sum12h"],0,$dec_point,$thousands_sep) ?></div>
 										<div class = "h4 textgelb"><font size = "1"><?=$tr_tb_ye?>:</font> <?=number_format($table_row["sum_yesterday"],0,$dec_point,$thousands_sep) ?></div>
-<?php if ($hasPendings): ?>
-										<div class = "text-sm textrot"><font size = "1"><?=$tr_tb_pe?>:</font> <?=number_format($table_row["pending_credits"],0,$dec_point,$thousands_sep) ?></div>
-<?php endif; ?>
 <?php if ($hasXML): ?>
 <?php if ($table_row["xml"] != ""): ?>
 										<div class = "text-sm textgrau"><a href="./<?=$namesubdirectoryXML?>/<?=$table_row["xml"]?>"><i class="fas fa-download"></i> XML</a></div>

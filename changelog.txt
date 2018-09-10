@@ -1,13 +1,11 @@
 Version 5.1.2: (noch nicht veröffentlicht)
 ==============
+- Wie angekündigt wurden "Pending Credits" aus den Statistiken entfernt
 - Bündelung von CDN auf datatables.net (includiert jquery und bootstrap)
 - Update momentjs auf Version 0.5.17
 - Update auf datatables Version 1.10.18 und bootstrap 4.1.1
 - Integration von fontawesome Version 5
 - Option zum Aktivieren/Deaktivieren Export-Funktion von Highcharts integriert (settings.php -> $useHighchartExport)
-- Die Option "$hasPendings" hat nun auch Einfluß auf das Anzeigen der Pending Credits in der Übersicht und den Projekt-Details.
-  Ebenso wird der manuelle Abruf der Pending Credits beim gesetztem "false" nun unterbunden (pendings.php).
-  Das Unterbinden dieses Abrufs gilt bislang noch NICHT FÜR DIE cronjob.php
 - Es können nun auch die Badges der eigenen CPID von FreeDC angezeigt werden, sofern die cpid in der Tabelle "boinc_user" eingetragen und die Option aktiviert ist.
 - Der Link zur jeweiligen Projekt-Homepage wurde aus der Übersichts-Tabelle entfernt und ist nun nur noch über die Projekt-Detail-Ansicht verfügbar.
 - Es wurde ein Option für Sammel-Accounts hinzugefügt, so dass die account-xml-Dateien einbezogen werden können, welche im Unterordner xml/ abgespeichert sein müssen.
@@ -19,10 +17,16 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Der Tooltip in den WCG-Details auf den Badges aktiviert
 - Ein Fehler in den Spracheinstellungen für DataTables wurde behoben.
 
+Hinweis:
+Im Verzeichnis "database" wurde die Datei "update_db.sql" hinzugefügt.
+Diese Datei beinhaltet sql-code, welcher per phpmyadmin oder über die Konsole in der Datenbank ausgeführt werden kann.
+Damit werden ungenutzte Spalten in den Tabellen gelöscht.
+Mit der Ausführung des sql-codes werden ALLE PENDING-Credits sowie Daten früherer Features (z.B. Platzierungen usw.) aus der Datenbank entfernt, da diese nicht weiter unterstützt werden!
 
-geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
+geänderte Dateien (ausgehend vom Verzeichnis /web):
   - ../changelog.txt
   - ../cronjob/cronjob.php
+  - ../database/boinc.sql
   - ./assets/css/userstats_layout.css
   - ./assets/js/moment/moment-timezone-with-data-2012-2022.js
   - ./assets/js/moment/moment-with-locales.min.js
@@ -31,8 +35,6 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - ./lang/en.txt.php
   - ./lang/de.datatables.json
   - ./settings/settings.php
-  - ./xml/
-  - ajax_pending.php
   - ajax_wcg_detail.php
   - check_update.php
   - error.php
@@ -40,14 +42,19 @@ geänderte bzw. neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
   - header.php
   - index.php
   - nav.php
-  - pendings.php
   - project.php
   - tasks.php
   - version.php
 
+neu hinzugefügte Dateien (ausgehend vom Verzeichnis /web):
+  - ../database/update_db.sql (Datenbank bereinigen)
+  - ./xml/index.html (für zukünftige Features)
+
 gelöschte Dateien/Verzeichnisse:
   - errordocs/
   - errordocs/db_initial_err.php
+  - ajax_pending.php
+  - pendings.php
 
 
 Version 5.1.1: 

@@ -5,7 +5,6 @@
 	$linkNameOverview = "Project-Overview";
 	$text_hp_title = "Personal Userstats of " .$boinc_username. " from Team " .$boinc_teamname;
 	$text_header_motto = "BOINC-Statistics of";
-	$text_header_pendings = "Pending Credits of";
 	$text_header_tasks = "Running Tasks of";
 	$text_header_update = "Update-Check";
 	$text_update_nocheck = "The update check is not available at the moment.";
@@ -21,7 +20,6 @@
 	$text_header_lu = "last update";
 	$text_boinc_total = "BOINC combined";
 	$text_total = "Total";
-	$text_total_pendings = "TOTAL Pendings";
 	$tr_hp_loadProjectDetails = "Project-Details are loading...";
 	$tr_tb_pr = "active Project";
 	$tr_tb_cr = "Credits";
@@ -38,7 +36,6 @@
 	$tr_tb_12 = "-12h";
 	$tr_tb_to = "today";
 	$tr_tb_ye = "yesterday";
-	$tr_tb_pe = "Pendings";
 	$tr_tb_xml = "XML";
 	$tr_tb_det = "Details";
 	$tr_th2_rp = "Retired Projects";
@@ -47,7 +44,6 @@
 	$tr_ch_pie_ret = "Finished projects";
 	$tr_ch_go_header = "BOINC Total Credits";
 	$tr_ch_go_yaxis = "Total Credits";
-	$tr_ch_pc = "Pending Credits";
 	$tr_ch_gh_header = "BOINC Total Credits per hours";
 	$tr_ch_yaxis_hour = "Credits per hour";
 	$tr_ch_gd_header = "BOINC Total Credits per day";
@@ -69,10 +65,6 @@
 	$tr_ch_pw_header = "Project Credits per week";
 	$tr_ch_pm_header = "Project Credits per month";
 	$tr_ch_py_header = "Project Credits per year";
-	$text_pendings_false = "The option to show pending credits is deactivated!";
-	$tr_hp_pendings_01 = "The Pending-Credits of all the projects marked active will be refreshed...";
-	$tr_hp_pendings_02 = "The Pending-Credits were updated in the database.";
-	$tr_hp_pendings_03 = "Refreshing Pending Credits. Please wait...";
 	$tr_hp_tasks_01 = "running tasks are loading...";
 	$tr_hp_tasks_03 = "Loading running tasks. Please wait...";
 	$tr_hp_index_01 = "projects are loading.";
@@ -138,7 +130,6 @@
 	$text_info_update_inprogress = "<b>Update in progress.</b> This could take up to 2 minutes (or more). The update started at: ";
 	$text_info_project_retired = "<b>This project is marked as retired in the database</b>";
 	$text_info_project_novalues = "<b>This project do not have any data in the database. Please wait for validation of the first workunit.</b>";
-	$zero_pendings = "All other projects do not have any pending credits or the project does not export this value using WebRPC";
 
 	$tooltip_project_noupdate = "This project will not be updated";
 

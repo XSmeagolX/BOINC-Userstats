@@ -2,7 +2,6 @@
 	include "./settings/settings.php";
 
 	$showProjectHeader = false;
-	$showPendingsHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
 	$showErrorHeader = false;
@@ -64,11 +63,7 @@
 	endif; 
 	$row2 = mysqli_fetch_assoc($query_getTotalCredits);
 	$sum_total = $row2["sum_total"];
-	
-	$query_getTotalPendingCredits = mysqli_query($db_conn, "SELECT SUM(pending_credits) AS sum_total FROM boinc_grundwerte");
-	$row2 = mysqli_fetch_assoc($query_getTotalPendingCredits);
-	$sum_pendings = $row2["sum_total"];
-	
+
 	$einsh = mktime(date("H"), 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
 	$zweih = mktime(date("H")-1, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
 	$sechsh = mktime(date("H")-5, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
@@ -88,7 +83,6 @@
 			$shortname = $row["project_shortname"];
 			$table_row["project_name"] = $row["project"];
 			$table_row["total_credits"] = $row["total_credits"];
-			$table_row["pending_credits"] = $row["pending_credits"];
 			$table_row["project_home_link"] = $row["project_homepage_url"];
 			$table_row["user_stats_vorhanden"] = $row["project_status"];
 			if ($hasXML) {
@@ -148,7 +142,6 @@
 			$shortname = $row["project_shortname"];
 			$table_row["project_name"] = $row["project"];
 			$table_row["total_credits"] = $row["total_credits"];
-			$table_row["pending_credits"] = $row["pending_credits"];
 			$table_row["project_home_link"] = $row["project_homepage_url"];
 			$table_row["user_stats_vorhanden"] = $row["project_status"];
 			$table_row["proz_anteil"] = sprintf("%01.2f", $row["total_credits"] * 100 / $sum_total);
@@ -183,8 +176,7 @@
 	$output_html = substr($output_html, 0, -2);
 
 	$output_gesamt_html = "";
-	$output_gesamt_pendings_html = "";
-	$query_getTotalOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits, pending_credits FROM boinc_werte_day WHERE project_shortname = 'gesamt'");
+	$query_getTotalOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits FROM boinc_werte_day WHERE project_shortname = 'gesamt'");
 	if (!$query_getTotalOutputPerDay):
 		$uups_error = true;
 		$uups_error_description = $uups_error_description_no_boinc_werte_day_table;
@@ -194,10 +186,8 @@
 	while ($row2 = mysqli_fetch_assoc($query_getTotalOutputPerDay)) {
 			$timestamp2 = ($row2["time_stamp"] - 3601) * 1000;
 			$output_gesamt_html .= "[" . $timestamp2 . ", " . $row2["total_credits"] . "], ";
-			$output_gesamt_pendings_html .= "[" . $timestamp2 . ", " . $row2["pending_credits"] . "], ";
 	}
 	$output_gesamt_html = substr($output_gesamt_html, 0, -2);
-	$output_gesamt_pendings_html = substr($output_gesamt_pendings_html, 0, -2);
 
 	include("./header.php"); 
 
@@ -267,10 +257,6 @@
 							<b><?php echo number_format($sum_today_total, 0, $dec_point, $thousands_sep) ?></b></th>
 							<th class = "dunkelgelb textgelb d-none d-sm-table-cell align-middle">
 							<b><?php echo number_format($sum_yesterday_total, 0, $dec_point, $thousands_sep) ?></b></th>
-<?php if ($hasPendings): ?>
-							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle">
-							<b><?php echo number_format($sum_pendings, 0, $dec_point, $thousands_sep) ?></b></th>
-<?php endif; ?>
 <?php if ($hasXML): ?>
 							<th class = "dunkelblau textblau d-none d-md-table-cell align-middle"></th>
 <?php endif; ?>
@@ -285,9 +271,6 @@
 							<th class = "dunkelgrau textgrau d-none d-lg-table-cell align-middle"><?php echo $tr_tb_12; ?></th>
 							<th class = "dunkelgruen textgruen d-none d-sm-table-cell align-middle"><?php echo $tr_tb_to; ?></th>
 							<th class = "dunkelgelb textgelb d-none d-sm-table-cell align-middle"><?php echo $tr_tb_ye; ?></th>
-<?php if ($hasPendings): ?>
-							<th class = "dunkelrot textrot d-none d-md-table-cell align-middle"><?php echo $tr_tb_pe; ?></th>
-<?php endif; ?>
 <?php if ($hasXML): ?>
 							<th class = "dunkelblau textblau no-sort d-none d-md-table-cell text-center align-middle"><?php echo $tr_tb_xml; ?></th>
 <?php endif; ?>
@@ -339,13 +322,6 @@
 <?php else: ?>
 							<td class = 'gelb textgelb d-none d-sm-table-cell align-middle'>-</td>
 <?php endif; ?>
-<?php if ($hasPendings): ?>
-<?php if ($table_row["pending_credits"] >> "0"): ?>
-							<td class = 'rot textrot d-none d-md-table-cell align-middle'><b><?=number_format($table_row["pending_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
-<?php else: ?>
-							<td class = 'rot textrot d-none d-md-table-cell align-middle'>-</td>
-<?php endif; ?>
-<?php endif; ?>
 <?php if ($hasXML): ?>
 <?php if ($table_row["xml"] != ""): ?>
 							<td class = 'blau textblau d-none d-md-table-cell text-center align-middle'><a href="./<?=$namesubdirectoryXML?>/<?=$table_row["xml"]?>"><i class="fas fa-download"></i></a></td>
@@ -376,9 +352,6 @@
 							<td class = 'dunkelgrau textgrau d-none d-lg-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
 							<td class = 'dunkelgrau textgrau d-none d-sm-table-cell align-middle'><b></b></td>
-<?php if ($hasPendings): ?>
-							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
-<?php endif; ?>
 <?php if ($hasXML): ?>
 							<td class = 'dunkelgrau textgrau d-none d-md-table-cell align-middle'><b></b></td>
 <?php endif; ?>
@@ -395,9 +368,6 @@
 							<td class = 'text-muted text-sm d-none d-lg-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
 							<td class = 'text-muted text-sm d-none d-sm-table-cell align-middle'></td>
-<?php if ($hasPendings): ?>
-							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
-<?php endif; ?>
 <?php if ($hasXML): ?>
 							<td class = 'text-muted text-sm d-none d-md-table-cell align-middle'></td>
 <?php endif; ?>

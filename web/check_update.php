@@ -2,7 +2,6 @@
     include "./settings/settings.php";
     
 	$showProjectHeader = false;
-	$showPendingsHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = true;
 	$showErrorHeader = false;

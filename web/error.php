@@ -1,6 +1,5 @@
 <?php
 	$showProjectHeader = false;
-	$showPendingsHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
 	$showErrorHeader = true;

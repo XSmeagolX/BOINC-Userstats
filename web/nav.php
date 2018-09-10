@@ -36,11 +36,6 @@
 						<a class = 'nav-link btn btn-neutral btn-simple' href = '<?=$linkBoinctasks ?>'><i class="fas fa-list"></i> <?=$linkNameBoinctasks ?></a>
 					</li>
 <?php endif; ?>
-<?php if ( $hasPendings ): ?>
-					<li class = 'nav-item'>
-						<a class = 'nav-link btn btn-neutral btn-simple' href = '<?=$linkPendings ?>'><i class="fas fa-sync"></i> <?=$linkNamePendings ?></a>
-					</li>
-<?php endif ; ?>
 <?php if ( $hasTeamHp ): ?>
 					<li class = 'nav-item'>
 						<a class = 'nav-link btn btn-neutral btn-simple' href = '<?=$teamHpURL ?>' target = '_new'><i class="fas fa-globe"></i> <?=$teamHpName ?></a>
