@@ -1,7 +1,7 @@
 <?php
 	// Hier den absoluten Pfad zur DB-Verbindungsdatei boinc_db_connect.php eintragen
 	// Set the absolute path to your boinc_db_connect.php file
-	include "/absolute/path/to/boinc_db_connect.php";
+	include "../database/boinc_db_connect.php";
 
 	// Setze hier den Zeitpunkt von Mitternacht. 
 	// Dies wird für die Berechnung der Werte für die Gesamt Credits eines Tages in deiner Zeitzone benötigt, welche in den Gesamt-Charts dargestellt wird
@@ -94,18 +94,24 @@
 		if ($diff1h > 0) {
 			$sql= "INSERT boinc_werte (project_shortname, time_stamp, credits) 
 			VALUES ('" .$row['project_shortname']. "', '" .$timestamp_hour. "','" .$diff1h. "')";
-			mysqli_query($db_conn,$sql);
+			if (!mysqli_query($db_conn,$sql)) {
+				echo("Error description: " . mysqli_error($db_conn));
+			} 
 		}
 		
 		$sql = "UPDATE boinc_grundwerte 
 		SET total_credits='" .$total_credits. "' WHERE project_shortname='" .$row['project_shortname']. "'";
-		mysqli_query($db_conn,$sql);
+		if (!mysqli_query($db_conn,$sql)) {
+			echo("Error description: " . mysqli_error($db_conn));
+		} 
 	}
 
 	if ($total_credits_hour > 0) {
 		$sql= "INSERT boinc_werte (project_shortname, time_stamp, credits) 
 		VALUES ('gesamt', '" .$timestamp_hour. "','" .$total_credits_hour. "')";
-		mysqli_query($db_conn,$sql);
+		if (!mysqli_query($db_conn,$sql)) {
+			echo("Error description: " . mysqli_error($db_conn));
+		}
 	}
 	
 	if ($isMidnight) {

@@ -1,5 +1,11 @@
 Version 5.1.2: (noch nicht veröffentlicht)
 ==============
+
+Beim Update auf diese Version müssen Änderungen an der Datenbank vorgenommen werden.
+Es wird also ausdrücklich empfohlen, zuvor ein Backup der Datenbank und des Webverzeichnisses vorzunehmen.
+Um die Änderungen an der Datenbank vorzunehmen, muss der Inhalt der Datei /database/update_db.sql entweder über die Konsole oder per phpmyadmin (SQL) ausgeführt werden.
+Weitere Infos siehe "Hinweis" weiter unten!
+
 - Wie angekündigt wurden "Pending Credits" aus den Statistiken entfernt
 - Bündelung von CDN auf datatables.net (includiert jquery und bootstrap)
 - Update momentjs auf Version 0.5.17
@@ -16,6 +22,7 @@ Version 5.1.2: (noch nicht veröffentlicht)
 - Das error-Management neu gestaltet
 - Der Tooltip in den WCG-Details auf den Badges aktiviert
 - Ein Fehler in den Spracheinstellungen für DataTables wurde behoben.
+- Ein Fehler bei aktiviertem "strict mode" von mysql bzw. mariadb wurde behoben. Dafür muss der Inhalt der Datei update_db.sql über phpmyadmin oder über die Konsole ausgeführt werden.
 
 Hinweis:
 Im Verzeichnis "database" wurde die Datei "update_db.sql" hinzugefügt.
