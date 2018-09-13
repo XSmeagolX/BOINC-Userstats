@@ -257,8 +257,9 @@
 			$err_en = "Something went wrong!";
 			$err_fr = "Quelque chose s'est mal passé";
 	}
-
-	include("./header.php"); 
+	if (!$no_header) {
+		include("./header.php"); 
+	}
 ?>
 
 	<div class = "container text-center flex1">

@@ -88,8 +88,20 @@
 					<h1 class = "title"><font color = "white"><?=$text_header_motto ?></font></h1>
 <?php endif; ?>
 <?php if (!$showErrorHeader): ?>
+<?php if ($boinc_username !=="" AND $boinc_teamname !==""): ?>
 					<h3><font color = "white"><?=$boinc_username ?><font size = '3'> <?=$text_header_ot ?></font> <?=$boinc_teamname ?></font></h3>
+<?php elseif ($boinc_username !== "" AND $boinc_teamname ===""): ?>
+					<h3><font color = "white"><?=$boinc_username ?></font></h3>
+<?php elseif ($boinc_username === "" ): 
+		$uups_error = true;
+		$uups_error_description = $uups_error_description_no_boinc_username;
+		$no_header = true;
+endif; ?>
 <?php endif; ?>
 				</div>
 			</div>
 		</div>
+<?php if ($no_header) {
+	include "error.php";
+}
+?>

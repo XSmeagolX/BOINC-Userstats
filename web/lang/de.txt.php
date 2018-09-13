@@ -3,7 +3,7 @@
 	$wrong_project = "falscher Projektname";
 	$text_search= "Filter/Suche";
 	$linkNameOverview = "Projekt-Übersicht";
-	$text_hp_title = "Persönliche Userstatistiken von " .$boinc_username. " aus dem Team " .$boinc_teamname;
+	$text_hp_title = "Persönliche Userstatistiken";
 	$text_header_motto = "BOINC-Statistiken von";
 	$text_header_tasks = "aktive Berechnungen von";
 	$text_header_update = "Update-Prüfung";
@@ -138,4 +138,5 @@
 	$uups_error_description_no_boinc_grundwerte_table = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
 	$uups_error_description_no_boinc_werte_table = "Es ist keine Tabelle boinc_werte vorhanden!";
 	$uups_error_description_no_boinc_werte_day_table = "Es ist keine Tabelle boinc_werte_day vorhanden!";
+	$uups_error_description_no_boinc_username = "Es wurde kein Name (boinc_name) in der Tabelle boinc_user eingetragen!"
 ?>
