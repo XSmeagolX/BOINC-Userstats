@@ -71,6 +71,7 @@
 	</head>
 
 	<body>
+<?php $no_header = false; ?>
 <?php if ( $showNavbar ) include("./nav.php"); ?>
 	<div class = "force_min_height">
 		<div class = "jumbotron jumbotron-fluid" style = "background-image: url('<?php echo $header_backround_url; ?>');">
