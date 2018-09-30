@@ -1,6 +1,12 @@
 <?php
 	include "./settings/settings.php";
 
+	if (isset($_GET["lang"])) $lang = $_GET["lang"];
+	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+
+	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
+	else include "./lang/en.txt.php";
+
 	$showProjectHeader = false;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
@@ -47,12 +53,6 @@
 
 	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*60);
 	$lastupdate = date("H:i:s", $datum + $timezoneoffset*60);
-
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
 
 	$query_getTotalCredits = mysqli_query($db_conn, "SELECT SUM(total_credits) AS sum_total FROM boinc_grundwerte");
 	if (!$query_getTotalCredits):

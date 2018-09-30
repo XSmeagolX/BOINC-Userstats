@@ -1,6 +1,12 @@
 <?php
 	include "./settings/settings.php";
 
+	if (isset($_GET["lang"])) $lang = $_GET["lang"];
+	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+
+	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
+	else include "./lang/en.txt.php";
+
 	$showProjectHeader = true;
 	$showTasksHeader = false;
 	$showUpdateHeader = false;
@@ -42,6 +48,7 @@
 	$query_check = mysqli_query($db_conn,"SELECT project_shortname FROM boinc_grundwerte" );
 	if (!$query_check):
 		$uups_error = true;
+		$no_header = false;
 		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
 		include "error.php";
 		exit;
@@ -54,9 +61,9 @@
 	};
 	
 	if ( $goon != 1 ) {
-		$projectname = $wrong_project;
-		$connErrorTitle = "Fehler";
-		$connErrorDescription = "Es wurden keine Werte zurückgegeben.</br>
+		$uups_error = true;
+		$no_header = false;
+		$uups_error_description = "Es wurden keine Werte zurückgegeben.</br>
 								Das Projekt existiert offenbar nicht in der Datenbank.";
 		include "./error.php";
 		exit();
@@ -64,12 +71,6 @@
 
 	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*60);
 	$lastupdate = date("H:i:s", $datum + $timezoneoffset*60);
-
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
 
 	$query_getTotalCredits = mysqli_query($db_conn, "SELECT SUM(total_credits) AS sum_total FROM boinc_grundwerte");
 	$row2 = mysqli_fetch_assoc($query_getTotalCredits);

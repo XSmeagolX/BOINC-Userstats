@@ -1,4 +1,4 @@
-Version 5.1.2: (noch nicht veröffentlicht)
+Version 5.2.0:
 ==============
 
 Beim Update auf diese Version müssen Änderungen an der Datenbank vorgenommen werden.
@@ -19,12 +19,13 @@ Weitere Infos siehe "Hinweis" weiter unten!
   Das Anzeigen der Verfügbarkeit von Updates bei Nutzung dieser dev-Versionen findet bislang nur bei Release-Versionen statt.
 - Das Erkennen von Projekten, die in der Datenbank als inaktiv (project_status = 0) markiert sind, wurde verbessert.
 - Ein Anzeigefehler von beendeten Projekten, die auch keine Credits haben, wurde behoben.
-- Das error-Management neu gestaltet
-- Der Tooltip in den WCG-Details auf den Badges aktiviert
+- Das error-Management wurde neu gestaltet
+- Der Tooltip in den WCG-Details auf den Badges wurde aktiviert
 - Ein Fehler in den Spracheinstellungen für DataTables wurde behoben.
 - Ein Fehler bei aktiviertem "strict mode" von mysql bzw. mariadb wurde behoben. Dafür muss der Inhalt der Datei update_db.sql über phpmyadmin oder über die Konsole ausgeführt werden.
 
 Hinweis:
+========
 Im Verzeichnis "database" wurde die Datei "update_db.sql" hinzugefügt.
 Diese Datei beinhaltet sql-code, welcher per phpmyadmin oder über die Konsole in der Datenbank ausgeführt werden kann.
 Damit werden ungenutzte Spalten in den Tabellen gelöscht.

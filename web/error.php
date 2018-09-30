@@ -12,9 +12,6 @@
 	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
 	else include "./lang/en.txt.php";
 
-	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*3600);
-	$lastupdate = date("H:i:s", $datum + $timezoneoffset*3600);
-
 	if (!isset($_GET['error'])) { $errorcode = ""; } else { $errorcode = $_GET['error'];}
 	if (!isset($_SERVER['HTTP_REFERER'])) { $HTTP_REFERER = ""; } else { $HTTP_REFERER = $_SERVER['HTTP_REFERER'];}
 	if (!isset($_SERVER['REDIRECT_URL'])) { $REDIRECT_URL = ""; } else { $REDIRECT_URL = $_SERVER['REDIRECT_URL'];}
@@ -28,6 +25,8 @@
 
 	switch ($errorcode) {
 		case "400": 
+			$uups_error = false;
+			$no_header = false;
 			$error_description = "400 Bad Request"; 
 			$err_de = "Fehlerhafte Anfrage!</br>".
 			"Ihr Browser (oder Proxy) hat eine ung&uuml;ltige Anfrage gesendet, die vom Server nicht beantwortet werden kann.";
@@ -37,6 +36,8 @@
 			"Votre navigateur (ou votre proxy) a envoy&eacute; une demande que ce serveur n'a pas comprise.";
 			break;
 		case "401": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "401 Unauthorised"; 
 			$err_de = "Authentisierung fehlgeschlagen!</br>".
 			"Der Server konnte nicht verifizieren, ob Sie autorisiert sind, auf den URL ".$REDIRECT_URL." zuzugreifen. Entweder wurden falsche Referenzen (z.B. ein falsches Passwort) angegeben oder ihr Browser versteht nicht, wie die geforderten Referenzen zu &uuml;bermitteln sind.<br>".
@@ -49,9 +50,13 @@
 			"Si vous &ecirc;tes autoris&eacute; &agrave; requ&eacute;rir le document, veuillez v&eacute;rifier votre nom d'utilisateur et votre mot de passe et r&eacute;essayer.";
 			break;
 		case "402": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "402 Payment Required"; 
 			break;
 		case "403": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "403 Forbidden"; 
 			$err_de = "Zugriff verweigert!</br>".
 			(($REDIRECT_URL != "") 
@@ -67,6 +72,8 @@
 			: "Vous n'avez pas le droit d'acc&eacute;der &agrave; l'objet demand&eacute;. Soit celui-ci est prot&eacute;g&eacute;, soit il ne peut &ecirc;tre lu par le serveur.");
 			break;
 		case "404": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "404 Not Found"; 
 			$err_de = "Objekt nicht gefunden!".
 			"</br>Der angeforderte URL konnte auf dem Server nicht gefunden werden.<br>".
@@ -88,6 +95,8 @@
 			: "Si vous avez tap&eacute; l'URL &agrave; la main, veuillez v&eacute;rifier l'orthographe et r&eacute;essayer.");
 			break;
 		case "405": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "405 Das Ende des Internets"; 
 			$err_de = "Du hast das Ende des Internets erreicht!".
 			"</br>Mehr gibt es leider nicht mehr zu finden.<br>".
@@ -107,7 +116,9 @@
 			: "Si vous avez tap&eacute; l'URL &agrave; la main, veuillez v&eacute;rifier l'orthographe et r&eacute;essayer.");
 			break;
 	/*	case "405": 
-			$error_description = "405 Method Not Allowed"; 
+			$uups_error = false;
+			$no_header = false;
+		$error_description = "405 Method Not Allowed"; 
 			$err_de = "Methode nicht erlaubt!</br>".
 			"Die ".$REDIRECT_REQUEST_METHOD."-Methode ist f&uuml;r den angeforderten URL nicht erlaubt.";
 			$err_en = "Method not allowed!</br>".
@@ -117,12 +128,18 @@
 			break;
 	*/
 		case "406": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "406 Not Acceptable"; 
 			break;
 		case "407": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "407 Proxy Authentication Required"; 
 			break;
 		case "408": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "408 Request Time-Out"; 
 			$err_de = "Zeitlimit &uuml;berschritten!</br>".
 			"Der Server konnte nicht mehr l&auml;nger auf die Beendigung der Browseranfrage warten; die Netzwerkverbindung wurde vom Server geschlossen.";
@@ -132,9 +149,13 @@
 			"Le serveur a ferm&eacute; la connection car le navigateur n'a pas fini la requ&ecirc;te dans le temps sp&eacute;cifi&eacute;.";
 			break;
 		case "409": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "409 Conflict"; 
 			break;
 		case "410": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "410 Gone";
 			$err_de = "Objekt nicht mehr verf&uuml;gbar!<br>".
 			"Der angeforderte URL existiert auf dem Server nicht mehr und wurde dauerhaft entfernt. Eine Weiterleitungsadresse ist nicht verf&uuml;gbar.<br>".
@@ -156,6 +177,8 @@
 			: "Si vous avez suivi une r&eacute;f&eacute;rence issue d'une page autre, veuillez contacter l'auteur de cette page.");
 			break;
 		case "411": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "411 Length Required"; 
 			$err_de = "Content-Length-Angabe fehlerhaft!</br>".
 			"Die Anfrage kann nicht beantwortet werden. Bei Verwendung der ".$REDIRECT_REQUEST_METHOD."-Methode mu&szlig; ein korrekter <code>Content-Length</code>-Header angegeben werden. ";
@@ -165,6 +188,8 @@
 			"Une requ&ecirc;te utilisant la m&eacute;thode ".$REDIRECT_REQUEST_METHOD." n&eacute;cessite un en-t&ecirc;te <code>Content-Length</code> (indiquant la longueur) valable.";
 			break;
 		case "412": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "412 Precondition Failed"; 
 			$err_de = "Vorbedingung verfehlt!</br>".
 			"Die f&uuml;r den Abruf der angeforderten URL notwendige Vorbedingung wurde nicht erf&uuml;llt.";
@@ -174,6 +199,8 @@
 			"La pr&eacute;condition pour l'URL demand&eacute; a &eacute;t&eacute; &eacute;valu&eacute;e n&eacute;gativement.";
 			break;
 		case "413": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "413 Request Entity Too Large"; 
 			$err_de = "&Uuml;bergebene Daten zu gro&szlig;!</br>".
 			"Die bei der Anfrage &uuml;bermittelten Daten sind f&uuml;r die ".$REDIRECT_REQUEST_METHOD."-Methode nicht erlaubt oder die Datenmenge hat das Maximum &uuml;berschritten.";
@@ -183,6 +210,8 @@
 			"La m&eacute;thode ".$REDIRECT_REQUEST_METHOD." n'autorise pas le transfert de ces donn&eacute;es ou bien le volume des donn&eacute;es exc&egrave;de la limite de capacit&eacute;.";
 			break;
 		case "414": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "414 Request-URL Too Large"; 
 			$err_de = "&Uuml;bergebener URI zu gro&szlig;!</br>".
 			"Der bei der Anfrage &uuml;bermittelte URI &uuml;berschreitet die maximale L&auml;nge. Die Anfrage kann nicht ausgef&uuml;hrt werden.";
@@ -192,6 +221,8 @@
 			"La longueur de l'URL demand&eacute;e exc&egrave;de la limite de capacit&egrave; pour ce serveur. Nous ne pouvons donner suite &agrave; votre requ&ecirc;te.";
 			break;
 		case "415": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "415 Unsupported Media Type"; 
 			$err_de = "Nicht unterst&uuml;tztes Format!</br>".
 			"Das bei der Anfrage &uuml;bermittelte Format (Media Type) wird vom Server nicht unterst&uuml;tzt.";
@@ -201,6 +232,8 @@
 			"Le serveur ne supporte pas le type de m&eacute;dia utilis&eacute; dans votre requ&ecirc;te.";
 			break;
 		case "500": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "500 Server Error"; 
 			$err_de = "Serverfehler!<br>".
 			(($REDIRECT_ERROR_NOTES != "") 
@@ -216,6 +249,8 @@
 			: "Le serveur a &eacute;t&eacute; victime d'une erreur interne et n'a pas &eacute;t&eacute; capable de faire aboutir votre requ&ecirc;te. Soit le server est surcharg&eacute; soit il s'agit d'une erreur dans le script CGI.");
 			break;
 		case "501": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "501 Not Implemented"; 
 			$err_de = "Anfrage nicht ausf&uuml;hrbar!</br>".
 			"Die vom Browser angeforderte Aktion wird vom Server nicht unterst&uuml;tzt.";
@@ -225,6 +260,8 @@
 			"Le serveur n'est pas en mesure d'effectuer l'action demand&eacute;e par le navigateur.";
 			break;
 		case "502": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "502 Bad Gateway"; 
 			$err_de = "Fehlerhaftes Gateway!<br>".
 			"Der Proxy-Server erhielt eine fehlerhafte Antwort eines &uuml;bergeordneten Servers oder Proxies.<br>".
@@ -237,6 +274,8 @@
 			($REDIRECT_ERROR_NOTES != "") ? $REDIRECT_ERROR_NOTES : "";
 			break;
 		case "503": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "503 Out of Resources"; 
 			$err_de = "Zugriff nicht m&ouml;glich!</br>".
 			"Der Server ist derzeit nicht in der Lage die Anfrage zu bearbeiten. Entweder ist der Server derzeit &uuml;berlastet oder wegen Wartungsarbeiten nicht verf&uuml;gbar. Bitte versuchen Sie es sp&auml;ter wieder. ";
@@ -246,9 +285,13 @@
 			"En raison de travaux de maintenance ou de probl&egrave;mes de capacit&eacute; le serveur n'est pas en mesure de r&eacute;pondre &agrave; votre requ&ecirc;te pour l'instant. Veuillez r&eacute;essayer plus tard.";
 			break;
 		case "504": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "504 Gateway Time-Out"; 
 			break;
 		case "505": 
+		$uups_error = false;
+		$no_header = false;
 			$error_description = "505 HTTP Version not supported"; 
 			break;
 		default: 
@@ -266,7 +309,7 @@
 <?php if (!$uups_error): ?><h1 class = "title text-center"><?php echo $error_description; ?></h1><?php endif; ?>
 		<h5 class = "description text-center">
 			<?php
-			if ($uups_error) echo "<br /><br /><i class='textrot fas fa-exclamation-triangle fa-3x'></i> ".$uups_error_description." <i class='textrot fas fa-exclamation-triangle fa-3x'></i>";
+			if ($uups_error) echo "<br /><br /><table class = 'table table-sm table-responsive-xs table-200' width = '100%''><tr><td><i class='textrot text-center align-middle fas fa-exclamation-triangle fa-3x'></i></td><td class = 'text-center align-middle'>".$uups_error_description."</td><td><i class='textrot text-center align-middle fas fa-exclamation-triangle fa-3x'></i></td></tr></table>";
 			else
 				if ($lang === "de") echo $err_de;
 				elseif ($lang === "fr") echo $err_fr;
