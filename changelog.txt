@@ -247,7 +247,6 @@ Solche Versionen sollten ausschließelich in Test-Umgebungen eingesetzt werden!
 
 ToDo:
 -----
-- Link für pendings stets deaktivieren, falls keine authenticators hinterlegt sind
 - Aktualisierungsintervall in tasks_template per Variable setzen
 - Design error.php verschönern
 - layout Suchfeld von dataTables
