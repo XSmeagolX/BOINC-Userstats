@@ -290,35 +290,35 @@
 								<sup><i class="fas fa-exclamation-circle textgelb" data-toggle="tooltip" data-html="true" title="<?=$tooltip_project_noupdate?>"></i></sup>
 							</td>
 <?php endif; ?>
-							<td class = 'align-middle'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
+							<td class = 'align-middle' data-order = '<?=$table_row["total_credits"] ?>'><b><?=number_format($table_row["total_credits"], 0, $dec_point, $thousands_sep) ?></b></td>
 							<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row["proz_anteil"], 2, $dec_point, $thousands_sep) ?></td>
 <?php if ($table_row["sum1h"] != ""): ?>
-							<td class = 'd-none d-sm-table-cell align-middle'><?=number_format($table_row['sum1h'], 0, $dec_point, $thousands_sep) ?></td>
+							<td class = 'd-none d-sm-table-cell align-middle' data-order = '<?=$table_row["sum1h"] ?>'><?=number_format($table_row['sum1h'], 0, $dec_point, $thousands_sep) ?></td>
 <?php else: ?>
 							<td class = 'd-none d-sm-table-cell align-middle'>-</td>
 <?php endif; ?>
 <?php if ($table_row["sum2h"] != ""): ?>
-							<td class = 'd-none d-lg-table-cell align-middle'><?=number_format($table_row["sum2h"], 0, $dec_point, $thousands_sep) ?></td>
+							<td class = 'd-none d-lg-table-cell align-middle' data-order = '<?=$table_row["sum2h"] ?>'><?=number_format($table_row["sum2h"], 0, $dec_point, $thousands_sep) ?></td>
 <?php else: ?>
 							<td class = 'd-none d-lg-table-cell align-middle'>-</td>
 <?php endif; ?>
 <?php if ($table_row["sum6h"] != ""): ?>
-							<td class = 'd-none d-lg-table-cell align-middle'><?=number_format($table_row["sum6h"], 0, $dec_point, $thousands_sep) ?></td>
+							<td class = 'd-none d-lg-table-cell align-middle' data-order = '<?=$table_row["sum6h"] ?>'><?=number_format($table_row["sum6h"], 0, $dec_point, $thousands_sep) ?></td>
 <?php else: ?>
 							<td class = 'd-none d-lg-table-cell align-middle'>-</td>
 <?php endif; ?>
 <?php if ($table_row["sum12h"] != ""): ?>
-							<td class = 'd-none d-lg-table-cell align-middle'><?=number_format($table_row["sum12h"], 0, $dec_point, $thousands_sep) ?></td>
+							<td class = 'd-none d-lg-table-cell align-middle' data-order = '<?=$table_row["sum12h"] ?>'><?=number_format($table_row["sum12h"], 0, $dec_point, $thousands_sep) ?></td>
 <?php else: ?>
 							<td class = 'd-none d-lg-table-cell align-middle'>-</td>
 <?php endif; ?>
 <?php if ($table_row["sum_today"] != ""): ?>
-							<td class = 'gruen textgruen d-none d-sm-table-cell align-middle'><b><?=number_format($table_row["sum_today"], 0, $dec_point, $thousands_sep) ?></b></td>
+							<td class = 'gruen textgruen d-none d-sm-table-cell align-middle' data-order = '<?=$table_row["sum_today"] ?>'><b><?=number_format($table_row["sum_today"], 0, $dec_point, $thousands_sep) ?></b></td>
 <?php else: ?>
 							<td class = 'gruen textgruen d-none d-sm-table-cell align-middle'>-</td>
 <?php endif; ?>
 <?php if ($table_row["sum_yesterday"] != ""): ?>
-							<td class = 'gelb textgelb d-none d-sm-table-cell align-middle'><b><?=number_format($table_row["sum_yesterday"], 0, $dec_point, $thousands_sep) ?></b></td>
+							<td class = 'gelb textgelb d-none d-sm-table-cell align-middle' data-order = '<?=$table_row["sum_yesterday"] ?>'><b><?=number_format($table_row["sum_yesterday"], 0, $dec_point, $thousands_sep) ?></b></td>
 <?php else: ?>
 							<td class = 'gelb textgelb d-none d-sm-table-cell align-middle'>-</td>
 <?php endif; ?>
