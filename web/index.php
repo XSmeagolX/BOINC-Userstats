@@ -1,11 +1,6 @@
 <?php
 	include "./settings/settings.php";
-
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
+	include "./functions/get_lang.php";
 
 	$showProjectHeader = false;
 	$showTasksHeader = false;
@@ -27,23 +22,7 @@
 	$hasactiveProject = false;
 	$hasretiredProject = false;
 
-	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
-
-	if (!$query_getUserData):
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_user_table;
-		include "error.php";
-		exit;
-	endif; 
-
-	while ($row = mysqli_fetch_assoc($query_getUserData)) {
-		$boinc_username = $row["boinc_name"];
-		$boinc_wcgname = $row["wcg_name"];
-		$boinc_teamname = $row["team_name"];
-		$cpid = $row["cpid"];
-		$datum_start = $row["lastupdate_start"];
-		$datum = $row["lastupdate"];
-	}
+	include "./functions/get_userdata.php";
 
 	if ($cpid === "") {
 		$showFreeDCBadges = false;
@@ -51,33 +30,17 @@
 		$linkFreeDCBadges = $linkFreeDCBadges.$cpid;
 	}
 
-	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*60);
-	$lastupdate = date("H:i:s", $datum + $timezoneoffset*60);
+	include "./functions/get_lastupdateTimestamps.php";
 
-	$query_getTotalCredits = mysqli_query($db_conn, "SELECT SUM(total_credits) AS sum_total FROM boinc_grundwerte");
-	if (!$query_getTotalCredits):
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
-		include "error.php";
-		exit;
-	endif; 
-	$row2 = mysqli_fetch_assoc($query_getTotalCredits);
-	$sum_total = $row2["sum_total"];
-
-	$einsh = mktime(date("H"), 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
-	$zweih = mktime(date("H")-1, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
-	$sechsh = mktime(date("H")-5, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
-	$zwoelfh = mktime(date("H")-11, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
+	$einsh = mktime(date("H"), 0, 0, date("m"), date("d"), date("Y"));
+	$zweih = mktime(date("H")-1, 0, 0, date("m"), date("d"), date("Y"));
+	$sechsh = mktime(date("H")-5, 0, 0, date("m"), date("d"), date("Y"));
+	$zwoelfh = mktime(date("H")-11, 0, 0, date("m"), date("d"), date("Y"));
 	
+	include "./functions/get_TotalCredits.php";
+
 	$query_getAllProjects = mysqli_query($db_conn, "SELECT * FROM boinc_grundwerte ORDER BY project ASC");
-	if (!$query_getAllProjects):
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
-		include "error.php";
-		exit;
-	endif; 
 	while ($row = mysqli_fetch_assoc($query_getAllProjects)) {
-		
 		if ($row["project_status"] <= 1) {
 			$hasactiveProject = true;			
 			$shortname = $row["project_shortname"];
@@ -89,12 +52,6 @@
 				$table_row["xml"] = $row["xml"];
 			}
 			$query_getOutput1h = mysqli_query($db_conn,"SELECT sum(credits) AS sum1h FROM boinc_werte WHERE project_shortname = '" . $shortname . "' AND time_stamp>'" . $einsh . "'");
-			if (!$query_getOutput1h):
-				$uups_error = true;
-				$uups_error_description = $uups_error_description_no_boinc_werte_table;
-				include "error.php";
-				exit;
-			endif; 
 			$row2 = mysqli_fetch_assoc($query_getOutput1h);
 			$table_row["sum1h"] = $row2["sum1h"];
 			$sum1h_total += $table_row["sum1h"];
@@ -114,15 +71,15 @@
 			$table_row["sum12h"] = $row2["sum12h"];
 			$sum12h_total += $table_row["sum12h"];
 			
-			$tagesanfang = mktime(1, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
+			$tagesanfang = mktime(1, 0, 0, date("m"), date("d"), date("Y"));
 			
 			$query_getOutputToday = mysqli_query($db_conn,"SELECT sum(credits) AS sum_today FROM boinc_werte WHERE project_shortname = '" . $shortname . "' AND time_stamp > '" . $tagesanfang . "'");
 			$row2 = mysqli_fetch_assoc($query_getOutputToday);
 			$table_row["sum_today"] = $row2["sum_today"];
 			$sum_today_total += $table_row["sum_today"];
 			
-			$gestern_anfang = mktime(1, 0 + $timezoneoffset, 0, date("m"), date("d") - 1, date("Y"));
-			$gestern_ende = mktime(2, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
+			$gestern_anfang = mktime(1, 0, 0, date("m"), date("d") - 1, date("Y"));
+			$gestern_ende = mktime(2, 0, 0, date("m"), date("d"), date("Y"));
 			
 			$query_getOutputYesterday = mysqli_query($db_conn,"SELECT sum(credits) AS sum_yesterday FROM boinc_werte WHERE project_shortname = '" . $shortname . "' AND time_stamp > '" . $gestern_anfang . "' AND time_stamp < '" . $gestern_ende . "'");
 			$row2 = mysqli_fetch_assoc($query_getOutputYesterday);
@@ -167,32 +124,10 @@
 		$pie_html .= "	['" . $tr_ch_pie_ret . "',	 " . round($pie_other_retired, 2) . "]\n";
 	}
 
-	$output_html = "";
-	$query_getTotalOutputPerHour = mysqli_query($db_conn,"SELECT time_stamp, credits FROM boinc_werte WHERE project_shortname = 'gesamt'");
-	while ($row = mysqli_fetch_assoc($query_getTotalOutputPerHour)) {
-			$timestamp = ($row["time_stamp"] - 3601) * 1000;
-			$output_html .= "[" . $timestamp . ", " . $row["credits"] . "], ";
-	}
-	$output_html = substr($output_html, 0, -2);
-
-	$output_gesamt_html = "";
-	$query_getTotalOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits FROM boinc_werte_day WHERE project_shortname = 'gesamt'");
-	if (!$query_getTotalOutputPerDay):
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_werte_day_table;
-		include "error.php";
-		exit;
-	endif; 
-	while ($row2 = mysqli_fetch_assoc($query_getTotalOutputPerDay)) {
-			$timestamp2 = ($row2["time_stamp"] - 3601) * 1000;
-			$output_gesamt_html .= "[" . $timestamp2 . ", " . $row2["total_credits"] . "], ";
-	}
-	$output_gesamt_html = substr($output_gesamt_html, 0, -2);
+	include("./functions/get_output_html.php");
+	include("./functions/get_output_gesamt_html.php"); 
 
 	include("./header.php"); 
-
-	if (file_exists("./lang/" . $lang . ".highstock.js")) include "./lang/" . $lang . ".highstock.js";
-	else include "./lang/en.highstock.js";
 
 	include("./assets/js/highcharts/global_settings.php");
 	include("./assets/js/highcharts/highcharts_color.php");
@@ -204,24 +139,18 @@
 	include("./assets/js/highcharts/output_gesamt_month.js");
 	include("./assets/js/highcharts/output_gesamt_year.js");
 
-	if ($datum < $datum_start) {
-		echo '
+if ($datum < $datum_start): ?>
 		<div class = "alert warning-lastupdate" role = "alert">
-			<div class = "container">
-				' . $text_info_update_inprogress . $lastupdate_start .' (' . $my_timezone . ')
-			</div>
+			<div class = "container"><?=$text_info_update_inprogress?><?=$lastupdate_start?> (<?=$my_timezone?>)</div>
 		</div>
-		';
-	} else {
-		echo '
+<?php else: ?>
 		<div class = "alert info-lastupdate" role = "alert">
 			<div class = "container">
-				<b>' . $text_header_lu . ':</b> ' . $lastupdate_start . ' - ' . $lastupdate . ' (' . $my_timezone . ')
+				<b><?=$text_header_lu?>:</b> <?=$lastupdate_start?> - <?=$lastupdate?> (<?=$my_timezone?>)
 			</div>
 		</div>
-		';
-	}
-?>
+<?php endif; ?>
+
 		<nav>
 			<div class = "nav nav-tabs nav-space justify-content-center nav-tabs-userstats">
 				<a class = "nav-item nav-link active" id = "projekte-tab" data-toggle = "tab" href = "#projekte" role = "tab" aria-controls = "projekte" aria-selected = "true"><i class="fas fa-list"></i> <?php echo "$tabs_projects" ?></a>

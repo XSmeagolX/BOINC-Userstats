@@ -1,11 +1,6 @@
 <?php
 	include "./settings/settings.php";
-
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
+	include "./functions/get_lang.php";
 
 	$showProjectHeader = true;
 	$showTasksHeader = false;
@@ -20,22 +15,7 @@
 	$sum_yesterday_total = 0;
 	$novalues = false;
 
-	$query_getUserData = mysqli_query($db_conn,"SELECT * FROM boinc_user");
-	if (!$query_getUserData):
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_user_table;
-		include "error.php";
-		exit;
-	endif;
-	while($row = mysqli_fetch_assoc($query_getUserData)){
-		$boinc_username = $row["boinc_name"];
-		$boinc_wcgname = $row["wcg_name"];
-		$wcg_verification = $row["wcg_verificationkey"];
-		$boinc_teamname = $row["team_name"];
-		$cpid = $row["cpid"];
-		$datum_start = $row["lastupdate_start"];
-		$datum = $row["lastupdate"];
-	}
+	include "./functions/get_userdata.php";
 
 	if ($cpid === "") {
 		$showFreeDCBadges = false;
@@ -69,12 +49,9 @@
 		exit();
 	} 
 
-	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*60);
-	$lastupdate = date("H:i:s", $datum + $timezoneoffset*60);
+	include "./functions/get_lastupdateTimestamps.php";
 
-	$query_getTotalCredits = mysqli_query($db_conn, "SELECT SUM(total_credits) AS sum_total FROM boinc_grundwerte");
-	$row2 = mysqli_fetch_assoc($query_getTotalCredits);
-	$sum_total = $row2["sum_total"];
+	include "./functions/get_TotalCredits.php";
 
 	$query_getProjectData = mysqli_query($db_conn,"SELECT * FROM boinc_grundwerte WHERE project_shortname = '$projectid'") or die(mysqli_error());
 	$row = mysqli_fetch_assoc($query_getProjectData);
@@ -113,10 +90,10 @@
 		}
 		$output_project_gesamt_html = substr($output_project_gesamt_html,0,-2);
 		
-		$einsh = mktime(date("H"), 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
-		$zweih = mktime(date("H")-1, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
-		$sechsh = mktime(date("H")-5, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
-		$zwoelfh = mktime(date("H")-11, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
+		$einsh = mktime(date("H"), 0, 0, date("m"), date ("d"), date("Y"));
+		$zweih = mktime(date("H")-1, 0, 0, date("m"), date ("d"), date("Y"));
+		$sechsh = mktime(date("H")-5, 0, 0, date("m"), date ("d"), date("Y"));
+		$zwoelfh = mktime(date("H")-11, 0, 0, date("m"), date ("d"), date("Y"));
 	} else {
 		$output_project_html = "";
 		$output_project_gesamt_html = "";
@@ -157,15 +134,15 @@
 			$table_row["sum12h"] = $row2["sum12h"];
 			$sum12h_total += $table_row["sum12h"];
 
-			$tagesanfang = mktime(1, 0 + $timezoneoffset, 0, date("m"), date ("d"), date("Y"));
+			$tagesanfang = mktime(1, 0, 0, date("m"), date ("d"), date("Y"));
 			
 			$query_getProjectOutputToday = mysqli_query($db_conn,"SELECT sum(credits) AS sum_today FROM boinc_werte WHERE project_shortname = '" .$shortname. "' and time_stamp > '" .$tagesanfang. "'");
 			$row2 = mysqli_fetch_assoc($query_getProjectOutputToday);
 			$table_row["sum_today"] = $row2["sum_today"];
 			$sum_today_total += $table_row["sum_today"];
 			
-			$gestern_anfang = mktime(1, 0 + $timezoneoffset, 0, date("m"), date("d") - 1, date("Y"));
-			$gestern_ende = mktime(2, 0 + $timezoneoffset, 0, date("m"), date("d"), date("Y"));
+			$gestern_anfang = mktime(1, 0, 0, date("m"), date("d") - 1, date("Y"));
+			$gestern_ende = mktime(2, 0, 0, date("m"), date("d"), date("Y"));
 
 			$query_getProjectOutputYesterday = mysqli_query($db_conn,"SELECT sum(credits) AS sum_yesterday FROM boinc_werte WHERE project_shortname = '" .$shortname. "' AND time_stamp > '" .$gestern_anfang. "' AND time_stamp < '" .$gestern_ende. "'");
 			$row2 = mysqli_fetch_assoc($query_getProjectOutputYesterday);
@@ -190,9 +167,6 @@
 
 <?php
 	include("./header.php"); 
-
-	if (file_exists("./lang/" . $lang . ".highstock.js")) include "./lang/" . $lang . ".highstock.js";
-	else include "./lang/en.highstock.js";
 
 	$showWCGDetails = false;
 	if ($table_row["project_name"] == "World Community Grid" || $table_row["project_name"] == "WCG" || $table_row["project_name"] == "WCGrid") {

@@ -1,6 +1,7 @@
 <?php
 	include "./settings/settings.php";
-
+	include "./functions/get_lang.php";
+	
 	$showProjectHeader = false;
 	$showTasksHeader = true;
 	$showUpdateHeader = false;
@@ -22,14 +23,8 @@
 		$datum = $row["lastupdate"];
 	}
 
-	if (isset($_GET["lang"])) $lang = $_GET["lang"];
-	else $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-
-	if (file_exists("./lang/" . $lang . ".txt.php")) include "./lang/" . $lang . ".txt.php";
-	else include "./lang/en.txt.php";
-
-	$lastupdate_start = date("d.m.Y H:i:s", $datum_start + $timezoneoffset*3600);
-	$lastupdate = date("H:i:s", $datum + $timezoneoffset*3600);
+	$lastupdate_start = date("d.m.Y H:i:s", $datum_start);
+	$lastupdate = date("H:i:s", $datum);
 
 	include("./header.php"); 
 ?>

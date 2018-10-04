@@ -170,8 +170,4 @@
 	// 1 für Projekte ab 1% Gesamtanteil
 	// 0 für alle Projekte
 	$separat = 0.9;
-
-	// Nur für Testzwecke in der Entwicklung erfoderlich
-	// Only for testing in development
-	$timezoneoffset = 0; // DO NOT CHANGE!!!
 ?>
