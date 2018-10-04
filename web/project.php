@@ -49,7 +49,7 @@
 		exit();
 	} 
 
-	include "./functions/get_lastupdateTimestamps.php";
+	include "./functions/get_Timestamps.php";
 
 	include "./functions/get_TotalCredits.php";
 
