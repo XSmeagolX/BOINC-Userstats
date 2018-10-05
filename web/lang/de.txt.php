@@ -134,9 +134,9 @@
 
 	$tooltip_project_noupdate = "Von diesem Projekt werden aktuell keine Daten erhoben!";
 
-	$uups_error_description_no_boinc_user_table = "Es ist keine Tabelle boinc_user vorhanden!";
-	$uups_error_description_no_boinc_grundwerte_table = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
-	$uups_error_description_no_boinc_werte_table = "Es ist keine Tabelle boinc_werte vorhanden!";
-	$uups_error_description_no_boinc_werte_day_table = "Es ist keine Tabelle boinc_werte_day vorhanden!";
-	$uups_error_description_no_boinc_username = "Es wurde kein Name (boinc_name) in der Tabelle boinc_user eingetragen!"
+	$has_error_description_no_boinc_user_table = "Es ist keine Tabelle boinc_user vorhanden!";
+	$has_error_description_no_boinc_grundwerte_table = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
+	$has_error_description_no_boinc_werte_table = "Es ist keine Tabelle boinc_werte vorhanden!";
+	$has_error_description_no_boinc_werte_day_table = "Es ist keine Tabelle boinc_werte_day vorhanden!";
+	$has_error_description_no_boinc_username = "Es wurde kein Name (boinc_name) in der Tabelle boinc_user eingetragen!"
 ?>

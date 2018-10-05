@@ -133,10 +133,10 @@
 
 	$tooltip_project_noupdate = "This project will not be updated";
 
-	$uups_error_description_no_boinc_user_table = "Table boinc_user does not exist!";
-	$uups_error_description_no_boinc_grundwerte_table = "Table boinc_grundwerte does not exist!";
-	$uups_error_description_no_boinc_werte_table = "Table boinc_werte does not exist!";
-	$uups_error_description_no_boinc_werte_day_table = "Table boinc_werte_day does not exist!";
-	$uups_error_description_no_boinc_username = "No value for boinc_name is set in table boinc_user!"
+	$has_error_description_no_boinc_user_table = "Table boinc_user does not exist!";
+	$has_error_description_no_boinc_grundwerte_table = "Table boinc_grundwerte does not exist!";
+	$has_error_description_no_boinc_werte_table = "Table boinc_werte does not exist!";
+	$has_error_description_no_boinc_werte_day_table = "Table boinc_werte_day does not exist!";
+	$has_error_description_no_boinc_username = "No value for boinc_name is set in table boinc_user!"
 
 ?>

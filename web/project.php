@@ -7,12 +7,8 @@
 	$showUpdateHeader = false;
 	$showErrorHeader = false;
 
-	$sum1h_total = 0;
-	$sum2h_total = 0;
-	$sum6h_total = 0;
-	$sum12h_total = 0;
-	$sum_today_total = 0;
-	$sum_yesterday_total = 0;
+	include "./functions/initialize_variables.php";
+
 	$novalues = false;
 
 	include "./functions/get_userdata.php";
@@ -26,13 +22,6 @@
 	$goon = 0;
 	$projectid = addslashes($_GET["projectid"]);
 	$query_check = mysqli_query($db_conn,"SELECT project_shortname FROM boinc_grundwerte" );
-	if (!$query_check):
-		$uups_error = true;
-		$no_header = false;
-		$uups_error_description = $uups_error_description_no_boinc_grundwerte_table;
-		include "error.php";
-		exit;
-	endif;
 	while ( $row = mysqli_fetch_assoc($query_check) ) {
 		$project_check = $row["project_shortname"];
 		if ( $project_check === $projectid ) { 
@@ -41,9 +30,9 @@
 	};
 	
 	if ( $goon != 1 ) {
-		$uups_error = true;
+		$has_error = true;
 		$no_header = false;
-		$uups_error_description = "Es wurden keine Werte zurückgegeben.</br>
+		$has_error_description = "Es wurden keine Werte zurückgegeben.</br>
 								Das Projekt existiert offenbar nicht in der Datenbank.";
 		include "./error.php";
 		exit();
@@ -65,8 +54,8 @@
 		$output_project_html = "";
 		$query_getProjectOutputPerHour = mysqli_query($db_conn,"SELECT time_stamp, credits FROM boinc_werte WHERE project_shortname = '" .$projectid. "'");
 		if (!$query_getProjectOutputPerHour):
-			$uups_error = true;
-			$uups_error_description = $uups_error_description_no_boinc_werte_table;
+			$has_error = true;
+			$has_error_description = $has_error_description_no_boinc_werte_table;
 			include "error.php";
 			exit;
 		endif;
@@ -79,8 +68,8 @@
 		$output_project_gesamt_html = "";
 		$query_getProjectOutputPerDay = mysqli_query($db_conn,"SELECT time_stamp, total_credits FROM boinc_werte_day WHERE project_shortname = '" .$projectid. "'");
 		if (!$query_getProjectOutputPerDay):
-			$uups_error = true;
-			$uups_error_description = $uups_error_description_no_boinc_werte_day_table;
+			$has_error = true;
+			$has_error_description = $has_error_description_no_boinc_werte_day_table;
 			include "error.php";
 			exit;
 		endif;

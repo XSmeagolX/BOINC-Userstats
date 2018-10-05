@@ -9,8 +9,8 @@
 
 	$query_getUserData = mysqli_query($db_conn, "SELECT * FROM boinc_user");
 	if (!$query_getUserData):
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_user_table;
+		$has_error = true;
+		$has_error_description = $has_error_description_no_boinc_user_table;
 		include "error.php";
 		exit;
 	endif; 

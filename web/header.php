@@ -94,8 +94,8 @@
 <?php elseif ($boinc_username !== "" AND $boinc_teamname ===""): ?>
 					<h3><font color = "white"><?=$boinc_username ?></font></h3>
 <?php elseif ($boinc_username === "" ): 
-		$uups_error = true;
-		$uups_error_description = $uups_error_description_no_boinc_username;
+		$has_error = true;
+		$has_error_description = $has_error_description_no_boinc_username;
 		$no_header = true;
 endif; ?>
 <?php endif; ?>
