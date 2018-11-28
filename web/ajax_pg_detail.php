@@ -6,17 +6,20 @@
 	$row = mysqli_fetch_assoc($query_getProjectData);
 	$projectkey = $row['authenticator'];
 
-
-
 	$xml_string = false;
 
-	$url= "https://www.primegrid.com/home.php?format=xml%26weak=";
+#	$url= "https://www.primegrid.com/home.php?format=xml%26weak=";
+	$url= "https://www.primegrid.com/home.php?format=xml&weak=";
 	$DownloadLink = $url . $projectkey;
-	$xml_string = exec("wget ".$DownloadLink);
+
+#	$cmd = "wget -q '$DownloadLink'";
+#	$xml_string = exec($cmd);
+	$xml_string = @file_get_contents ($DownloadLink);
+
 	print_r($xml_string);
 	exit;
 	$xml = @simplexml_load_string($xml_string);
-	if($xml_string == false) echo "<div class = 'alert alert-danger'><strong>FEHLER!</strong> Die Liste der Projekte ist derzeit nicht verfügbar!</div>";
+	if($xml_string === "" OR $xml_string == false) echo "<div class = 'alert alert-danger'><strong>FEHLER!</strong> Die Liste der Projekte ist derzeit nicht verfügbar!</div>";
 
 	$timestamp = date('Y-m-d H'). ':00:00';
 	foreach ($xml->subproject as $project_values)

@@ -12,5 +12,6 @@
 		$boinc_wcgname = $row["wcg_name"];
 		$boinc_teamname = $row["team_name"];
 		$cpid = $row["cpid"];
+		$wcg_verification = $row["wcg_verificationkey"];
 	}
 ?>
