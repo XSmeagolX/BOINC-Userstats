@@ -6,7 +6,7 @@
 								<a href = "#" data-toggle = "modal" data-target = "#modalImpressum">Impressum</a> | 
 								<a href = "#" data-toggle = "modal" data-target = "#modalDisclaimer">Disclaimer</a> | 
 								<a href = "#" data-toggle = "modal" data-target = "#modalDatenschutz">Datenschutz</a> | 
-								<a href = "https://github.com/XSmeagolX/Pers-nliche-BOINC-Userstats/blob/Version-5/LICENSE" target = "_new">License</a> 
+								<a href = "https://github.com/XSmeagolX/Pers-nliche-BOINC-Userstats/blob/Version-6/LICENSE" target = "_new">License</a> 
 							</div>
 							<div class = "col-12 col-md-6 mx-auto texthellgrau text-center align-self-center order-first">
 								<a href = "https://boinc-userstats.de" target = "_blank">BOINC Userstats</a> - Version 
