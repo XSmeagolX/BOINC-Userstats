@@ -1,1 +1,4 @@
 Dieser Branch ist noch in Entwicklung und noch nicht für den produktiven Einsatz geeignet!!
+
+dev05:
+ - PG Detail-Statistiken hinzugefügt

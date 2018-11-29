@@ -81,6 +81,10 @@
 	$showSgWcgBadges = false; // true - wenn angezeigt werden soll, ansonsten auf false setzen. Standard ist false
 	$linkSgWcgBadges = "https://seti-germany.de/wcg/badge_XSmeagolX_0.png"; // WCG-Badges von XSmeagolX, alle in einer Reihe
 
+	// Zeige PG-Detail-Statistiken an
+	// Show detail PG Statistics
+	$pg_weak_accountkey = "";
+
 	// User BOINC-Badges
 	// Die Badge-Grafik kann man auch per cronjob 1x täglich in sein Webverzeichnis kopieren und dann hier relativ verlinken.
 	// Dafür ist die Einrichtung der Badges über die Registrierung auf der Homepage von http://signature.statseb.fr notwendig.

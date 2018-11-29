@@ -158,13 +158,17 @@
 	include("./header.php"); 
 
 	$showWCGDetails = false;
-	if ($table_row["project_name"] == "World Community Grid" || $table_row["project_name"] == "WCG" || $table_row["project_name"] == "WCGrid") {
+	if ($table_row["project_name"] == "World Community Grid" || $table_row["project_name"] == "WCG" || $table_row["project_name"] == "WCGrid" || $table_row["project_name"] == "WCGrid") {
 		if ($wcg_verification === NULL || $wcg_verification === "") {
 			$showWCGDetails = false; 
 		} else {
 			$showWCGDetails = true;
 		}
-	} 
+	}
+
+	if ($table_row["project_name"] == "Primegrid" || $table_row["project_name"] == "PG" || $table_row["project_name"] == "PrimeGrid") {
+		$showPGDetails = true;
+	}
 
 	include("./assets/js/highcharts/global_settings.php");
 	include("./assets/js/highcharts/highcharts_color.php");
@@ -208,6 +212,9 @@
 				<a class = "nav-item nav-link active" id = "projekte-tab" data-toggle = "tab" href = "#projekte" role = "tab" aria-controls = "projekte" aria-selected = "true"><i class="fas fa-list"></i> <?php echo "$tabs_project" ?></a>
 <?php if ($showWCGDetails): ?>
 				<a class = "nav-item nav-link" id = "wcgdetails-tab" data-toggle = "tab" href = "#wcgdetails" role = "tab" aria-controls = "wcgdetails" aria-selected = "false"><i class="fas fa-info-circle"></i> Details</a>
+<?php endif; ?>
+<?php if ($showPGDetails): ?>
+				<a class = "nav-item nav-link" id = "pgdetails-tab" data-toggle = "tab" href = "#pgdetails" role = "tab" aria-controls = "pgdetails" aria-selected = "false"><i class="fas fa-info-circle"></i> Details</a>
 <?php endif; ?>
 				<a class = "nav-item nav-link" id = "gesamt-tab" data-toggle = "tab" href = "#gesamt" role = "tab" aria-controls = "gesamt" aria-selected = "false"><i class="fas fa-chart-area"></i> <?php echo "$tabs_total" ?></a>
 				<a class = "nav-item nav-link" id = "stunde-tab" data-toggle = "tab" href = "#stunde" role = "tab" aria-controls = "stunde" aria-selected = "false"><i class="fas fa-chart-bar"></i> <?php echo "$tabs_hour" ?></a>
@@ -271,6 +278,19 @@
 
 <?php if ($showWCGDetails): ?>
 			<div id = "wcgdetails" class = "tab-pane fade" role = "tabpanel" aria-labelledby = "wcgdetails-tab">
+				<div class = "container">
+					<div class = "row justify-content-md-center">
+						<?=$tr_hp_loadProjectDetails ?>
+					</div>
+					<div class = "row justify-content-md-center">
+						<i class="fas fa-spinner fa-spin fa-3x"></i> 
+					</div>
+				</div>
+			</div>
+<?php endif; ?>
+
+<?php if ($showPGDetails): ?>
+			<div id = "pgdetails" class = "tab-pane fade" role = "tabpanel" aria-labelledby = "pgdetails-tab">
 				<div class = "container">
 					<div class = "row justify-content-md-center">
 						<?=$tr_hp_loadProjectDetails ?>
@@ -358,6 +378,38 @@
 					}
 				};
 				xhttp.open("GET", "./ajax_wcg_detail.php", true);
+				xhttp.send(); 
+			} );
+		</script>
+
+		<script>
+			$(document).on('click','#pgdetails-tab',function(){
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("pgdetails").innerHTML =
+							this.responseText;
+							$('#table_pg').DataTable( {
+								fixedHeader: {
+											headerOffset: 56
+										},
+								language: {
+									decimal: "<?php echo $dec_point; ?>",
+									thousands: "<?php echo $thousands_sep; ?>",
+									search:	"<?php echo $text_search; ?>"
+								},
+								columnDefs: [ {
+									targets: 'no-sort',
+									orderable: false,
+								}],
+								order: [ 0, "asc" ],
+								paging: false,
+								info: false,
+								searching: false
+							} );
+					}
+				};
+				xhttp.open("GET", "./ajax_pg_detail.php", true);
 				xhttp.send(); 
 			} );
 		</script>
