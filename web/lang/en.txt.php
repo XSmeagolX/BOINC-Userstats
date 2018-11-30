@@ -108,6 +108,13 @@
 	$wcg_detail_fehler_text01 = "Project status could not be initialized!<br>The servers may be down.";
 	$wcg_detail_fehler_text02 = "Project status could not be initialized!<br>The values were not valid.";
 
+	$pg_detail_credits = "Credits";
+	$pg_detail_workunits = "Workunits";
+	$pg_detail_factors = "Factors";
+	$pg_detail_prime = "Primes found";
+	$pg_detail_no_prime = "Sorry... No prime found";
+	$pg_detail_hits = "hits";
+
 	$project_of = "of";
 	$project_project = "Project";
 	$project_wcg_detail_link = "WCG-Detail-Statistics";

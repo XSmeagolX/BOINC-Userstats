@@ -108,7 +108,14 @@
 	$wcg_detail_dbfehler_text02 = "Es wurden keine Werte zurückgegeben.";
 	$wcg_detail_fehler_text01 = "Der Status der einzelnen Projekte konnte nicht ermittelt werden!<br>Der Projektserver ist derzeit nicht erreichbar.";
 	$wcg_detail_fehler_text02 = "Der Status der einzelnen Projekte konnte nicht ermittelt werden!<br>Die erhaltenen Werte sind nicht gültig.";
-	
+
+	$pg_detail_credits = "Punkte";
+	$pg_detail_workunits = "Berechnungen";
+	$pg_detail_factors = "Faktoren";
+	$pg_detail_prime = "gefundene Primzahlen";
+	$pg_detail_no_prime = "Leider bisher noch keine Primzahl gefunden";
+	$pg_detail_hits = "Treffer";
+
 	$project_of = "von";
 	$project_project = "Projekt";
 	$project_wcg_detail_link = "WCG-Detail-Statistik";
