@@ -3,5 +3,5 @@ Dieser Branch ist noch in Entwicklung und noch nicht für den produktiven Einsat
 dev05:
  - PG Detail-Statistiken hinzugefügt
 
- dev06:
+ dev06/07:
   - Optik der PG Detail-Statistiken angepasst

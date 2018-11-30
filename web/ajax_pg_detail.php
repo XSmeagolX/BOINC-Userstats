@@ -40,91 +40,99 @@
 <?php foreach($table as $table_row): ?>
 <?php if ($table_row["name"] === "AP26"): ?>
 		<div class = "rounded row w-100 mb-3">
-			<div class="col-6 text-right">
+			<div class="col-1">
+			</div>
+			<div class="col-5 text-left">
 				<h4><?=$table_row["name"] ?></h4>
 			</div>
-			<div class="col-6">
+			<div class="col-5">
 				<div class="container">
-					<div class="row">
-						<div class ="col-5 d-none d-lg-block align-text-bottom text-right">
-							<font size="1" class="textblau align-text-bottom"><?=$pg_detail_credits?>: </h6>
+					<div class="row align-items-baseline">
+						<div class ="col-5 mr-1 pr-0 d-none d-lg-block text-right text-muted">
+							<font size="1"><?=$pg_detail_credits?>:</font>
 						</div>
-						<div class="top text-left align-text-bottom">
-							<font size="4" class="textblau align-text-bottom"><?=number_format($table_row["credit"],0,$dec_point,$thousands_sep) ?></font>
+						<div class="ml-0 pl-0 text-left align-baseline textblau">
+							<font size="6"><?=number_format($table_row["credit"],0,$dec_point,$thousands_sep) ?></font>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-5 d-none d-lg-block align-text-bottom align-text-bottom text-right">
-							<font size="1" class="textrot align-text-bottom"><?=$pg_detail_workunits?>: </font>
+					<div class="row align-items-baseline">
+						<div class="col-5 mr-1 pr-0 d-none d-lg-block text-right text-muted">
+							<font size="1"><?=$pg_detail_workunits?>: </font>
 						</div>
-						<div class="top align-text-bottom text-left">
-							<font size="3" class="textrot align-text-bottom"><?=number_format($table_row["workunits"],0,$dec_point,$thousands_sep) ?></font>
+						<div class="ml-0 pl-0 align-baseline text-left textrot">
+							<font size="3"><?=number_format($table_row["workunits"],0,$dec_point,$thousands_sep) ?><//font>
 						</div>
 					</div>
 <?php foreach($table_hits as $table_row_hits): ?>
-					<div class="row">
-						<div class="col-5 align-text-bottom text-right">
-							<font size="1" class="textgruen align-text-bottom">AP<?=$table_row_hits["length"] ?>:
+					<div class="row align-items-baseline">
+						<div class="col-5 mr-1 pr-0 text-right text-muted">
+							<font size="1">AP<?=$table_row_hits["length"] ?>:</font>
 						</div>
-						<div class="align-text-bottom text-left">
-							<font size="2" class="textgruen align-text-bottom"><?=$table_row_hits["hits"] ?> <?=$pg_detail_hits?></font>
+						<div class="ml-0 pl-0 text-left textgrau">
+							<font size="3"><?=$table_row_hits["hits"] ?></font>
 						</div>
 					</div>
 <?php endforeach; ?>
 				</div>
 			</div>
+			<div class="col-1">
+			</div>
 		</div>
 		<hr>
 <?php else: ?>
 		<div class = "rounded row w-100 mb-3">
-			<div class="col-6 text-right">
+			<div class="col-1">
+			</div>
+			<div class="col-5 text-left">
 				<h4><?=$table_row["name"] ?></h4>
 			</div>
-			<div class="col-6">
+			<div class="col-5">
 				<div class="container">
-					<div class="row">
-						<div class ="col-5 d-none d-lg-block bottom align-text-bottom text-right">
-							<font size="1" class="textblau"><?=$pg_detail_credits?>: </font>
+					<div class="row align-items-baseline">
+						<div class ="col-5 mr-1 pr-0 d-none d-lg-block text-right text-muted">
+							<font size="1"><?=$pg_detail_credits?>: </font>
 						</div>
-						<div class="top text-left">
-							<font size="4" class="textblau"><?=number_format($table_row["credit"],0,$dec_point,$thousands_sep) ?></font>
+						<div class="ml-0 pl-0 text-left textblau">
+							<font size="6"><?=number_format($table_row["credit"],0,$dec_point,$thousands_sep) ?></font>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-5 d-none d-lg-block bottom align-text-bottom text-right">
-							<font size="1" class="textrot"><?=$pg_detail_workunits?>: </font>
+					<div class="row align-items-baseline">
+						<div class="col-5 mr-1 pr-0 d-none d-lg-block text-right text-muted">
+							<font size="1"><?=$pg_detail_workunits?>: </font>
 						</div>
-						<div class="top text-left">
-							<font size="3" class="textrot"><?=number_format($table_row["workunits"],0,$dec_point,$thousands_sep) ?></font>
+						<div class="ml-0 pl-0 text-left textrot">
+							<font size="3"><?=number_format($table_row["workunits"],0,$dec_point,$thousands_sep) ?></font>
 						</div>
 					</div>
 <?php if ($table_row["primes"] === "0"): ?>
-					<div class="row">
-						<div class="col-12 bottom align-text-bottom text-left">
-							<font class="textrot" size="1"><?=$pg_detail_no_prime?></font>
-						</div>
-					</div>
-<?php elseif ($table_row["primes"] > "0"): ?>
-					<div class="row">
-						<div class="col-5 d-none d-lg-block bottom align-text-bottom text-right">
-							<font size="1" class="textgruen"><?=$pg_detail_prime?>: </font>
-						</div>
-						<div class="top text-left">
-							<font size="3" class="textgruen"><?=number_format($table_row["primes"],0,$dec_point,$thousands_sep) ?></font>
+					<div class="row align-items-baseline">
+						<div class="col-12 text-center textrot">
+							<font size="1"><b><?=$pg_detail_no_prime?></b></font>
 						</div>
 					</div>
 <?php endif;?>
-<?php if ($table_row["factors"] >= "0"):?>
-					<div class="row">
-						<div class="col-5 d-none d-lg-block bottom align-text-bottom text-right">
-							<font size="1" class="textgruen"><?=$pg_detail_factors?>: </font>
+<?php if ($table_row["primes"] > "0"): ?>
+					<div class="row align-items-baseline">
+						<div class="col-5 mr-1 pr-0 d-none d-lg-block text-right textgruen">
+							<font size="1"><b><?=$pg_detail_prime?>: </b></font>
 						</div>
-						<div class="top text-left">
-							<font size="3" class="textgruen"><?=number_format($table_row["factors"],0,$dec_point,$thousands_sep) ?></font>
+						<div class="ml-0 pl-0 text-left textgruen">
+							<font size="6"><b><?=number_format($table_row["primes"],0,$dec_point,$thousands_sep) ?></b><//font>
+						</div>
+					</div>
+<?php elseif ($table_row["factors"] >= "0"):?>
+					<div class="row align-items-baseline">
+						<div class="col-5 mr-1 pr-0 d-none d-lg-block text-right text-muted">
+							<font size="1"><?=$pg_detail_factors?>: </font>
+						</div>
+						<div class="ml-0 pl-0 top text-left textgruen">
+							<font size="3"><?=number_format($table_row["factors"],0,$dec_point,$thousands_sep) ?><//font>
 						</div>
 					</div>
 <?php endif;?>
 				</div>
+			</div>
+			<div class="col-1">
 			</div>
 		</div>
 		<hr>
