@@ -103,7 +103,13 @@
 		SET total_credits='" .$total_credits. "' WHERE project_shortname='" .$row['project_shortname']. "'";
 		if (!mysqli_query($db_conn,$sql)) {
 			echo("Error description: " . mysqli_error($db_conn));
-		} 
+		}
+
+		if ($isMidnight) {
+			$sql= "INSERT INTO boinc_werte_day (project_shortname, time_stamp, total_credits) 
+			VALUES ('" .$row['project_shortname']. "', '" .$timestamp_hour. "', ".$total_credits.")";
+			mysqli_query($db_conn,$sql);
+		}
 	}
 
 	if ($total_credits_hour > 0) {
