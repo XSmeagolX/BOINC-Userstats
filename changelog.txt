@@ -1,3 +1,15 @@
+Version 5.2.2:
+==============
+
+ - Ein Fehler im cronjob wurde behoben, der dazu führte dass keine Gesamtcredits der Projekte in die boinc_werte_day-Tabelle mehr geschrieben wurden.
+
+ geänderte Dateien (ausgehend vom Verzeichnis /web):
+   - ../changelog.txt
+   - ../cronjob/cronjob.php
+   - version.php
+
+
+
 Version 5.2.1:
 ==============
 
