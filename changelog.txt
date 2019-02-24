@@ -1,7 +1,10 @@
 Dieser Branch ist noch in Entwicklung und noch nicht für den produktiven Einsatz geeignet!!
 
 dev05:
- - PG Detail-Statistiken hinzugefügt
+    - PG Detail-Statistiken hinzugefügt
 
  dev06/07:
-  - Optik der PG Detail-Statistiken angepasst
+    - Optik der PG Detail-Statistiken angepasst
+
+dev08:
+    - padding in Footer verringert, so dass keine unnötigen Scrollbalken erscheinen
