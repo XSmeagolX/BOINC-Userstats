@@ -73,6 +73,7 @@
 						<div class = "dropdown-menu dropdown-menu-right" aria-labelledby = "dropdownId">
 							<a class = "dropdown-item" href = "https://github.com/XSmeagolX" target = "_new"><i class="fab fa-github"></i> Userstats on GitHub</a>
 							<a class = "dropdown-item" href = "https://boinc-userstats.de" target = "_new"><i class="fas fa-home"></i> Userstats Website</a>
+							<a class = "dropdown-item" href = "https://www.seti-germany.de/forum/threads/5077-Persönliche-BOINC-Userstats" target = "_new"><i class="fas fa-home"></i> Hilfe im SG-Forum</a>
 							<div class = "dropdown-divider"></div>
 							<a class = "dropdown-item" href = "https://www.seti-germany.de" target = "_new"><i class="fas fa-globe"></i> SETI.Germany</a>
 							<a class = "dropdown-item" href = "https://join.worldcommunitygrid.org/?recruiterId=653215&teamId=4VVG5BDPP1" target = "_new"><i class="fas fa-globe"></i> World Community Grid</a>

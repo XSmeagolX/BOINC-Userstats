@@ -8,3 +8,6 @@ dev05:
 
 dev08:
     - padding in Footer verringert, so dass keine unnötigen Scrollbalken erscheinen
+
+dev09:
+    - Link zum Hilfe-Thread im SG-Forum in der Navbar eingefügt
