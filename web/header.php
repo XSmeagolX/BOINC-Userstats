@@ -42,17 +42,22 @@
 		<meta charset = "utf-8">
 		<meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Popper for Tooltips styling -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<!-- Bootstrap & Datatables from CDN@datatablees.net-->
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.18/fh-3.1.4/r-2.2.2/datatables.min.css"/>
-		<script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.18/fh-3.1.4/r-2.2.2/datatables.min.js"></script>
-		<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.18/dataRender/ellipsis.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"/>
+    	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.dataTables.min.css"/>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"/>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
 		<!--  Fonts and icons  -->
-		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-		<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Montserrat">
-		<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Open+Sans:400,300">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+		<link rel="stylesheet" href = "https://fonts.googleapis.com/css?family=Montserrat"/>
 
 		<!--  Highcharts -->
 		<script src = "https://code.highcharts.com/stock/highstock.js"></script>
@@ -66,8 +71,8 @@
 		<script src = "./assets/js/moment/moment-timezone-with-data-2012-2022.js"></script>
 
 		<!-- Layout CSS for Userstats-->
-		<link rel = "stylesheet" href = "./assets/css/userstats_layout.css">
-		<link rel = "stylesheet" href = "./assets/css/userstats_style.css"> 
+		<link rel = "stylesheet" href = "./assets/css/userstats_layout.css"/>
+		<link rel = "stylesheet" href = "./assets/css/userstats_style.css"/> 
 	</head>
 
 	<body>

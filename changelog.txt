@@ -11,3 +11,7 @@ dev08:
 
 dev09:
     - Link zum Hilfe-Thread im SG-Forum in der Navbar eingefügt
+
+dev10:
+    - Nutzung von aktuellem bootstrap, datatables und fontawesome
+    - Darstellung der Tabellen nun mit Datatables und jquery anstelle von bootstrap

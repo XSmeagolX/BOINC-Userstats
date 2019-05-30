@@ -143,7 +143,7 @@ if ($datum < $datum_start): ?>
 
 		<div class = "tab-content flex1" id = "myTabContent">
 
-			<div id = "projekte" class = "tab-pane fade show active" role = "tabpanel" aria-labelledby = "projekte-tab">
+			<div id = "projekte" class = "container-fluid tab-pane fade show active" role = "tabpanel" aria-labelledby = "projekte-tab">
 				<table id = "table_projects" class = "table table-sm table-striped table-hover table-responsive-xs table-200" width = "100%">					
 					<thead>
 						<tr>
