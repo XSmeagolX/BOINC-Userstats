@@ -147,5 +147,6 @@
 	$has_error_description_no_boinc_username = "No value for boinc_name is set in table boinc_user!";
 
 	$nav_help_sgforum = "get Help (SG-Forum)";
+	$showMoreLinksName = "more Links"; 
 
 ?>

@@ -66,8 +66,7 @@
 	// Dies sind Info-Links zur HP der Userstats, SETI.Germany, GitHub-Projekt-Seite
 	// show the Links to the Developer Sites
 	$showMoreLinks = true; // true - wenn Links zu Seiten des Programmierers (XSmeagolX) angezeigt werden sollen, Standard ist true
-	$showMoreLinksName = "weitere Links";
-
+	
 	// Header Hintergrund
 	// Header Background
 	$header_backround_url = "./assets/images/header_background.jpg"; //Hier den Link zu deiner Header-Hintergrundgrafik einfuegen

@@ -148,4 +148,5 @@
 	$has_error_description_no_boinc_username = "Es wurde kein Name (boinc_name) in der Tabelle boinc_user eingetragen!";
 
 	$nav_help_sgforum = "Hilfe im SG-Forum";
+	$showMoreLinksName = "weitere Links"; 
 ?>

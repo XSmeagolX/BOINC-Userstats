@@ -17,4 +17,4 @@ dev10:
     - Darstellung der Tabellen nun mit Datatables und jquery anstelle von bootstrap
 
 dev11:
-    - Link zum Hilfe-Thread im SG-Forum in der Navbar internationlisiert
+    - Link in der Navbar internationlisiert
