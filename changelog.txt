@@ -10,8 +10,11 @@ dev08:
     - padding in Footer verringert, so dass keine unnötigen Scrollbalken erscheinen
 
 dev09:
-    - Link zum Hilfe-Thread im SG-Forum in der Navbar eingefügt
+    - Link zum Hilfe-Thread im SG-Forum in der Navbar eingefügt und internationlisiert
 
 dev10:
     - Nutzung von aktuellem bootstrap, datatables und fontawesome
     - Darstellung der Tabellen nun mit Datatables und jquery anstelle von bootstrap
+
+dev11:
+    - Link zum Hilfe-Thread im SG-Forum in der Navbar internationlisiert

@@ -145,5 +145,7 @@
 	$has_error_description_no_boinc_grundwerte_table = "Es ist keine Tabelle boinc_grundwerte vorhanden!";
 	$has_error_description_no_boinc_werte_table = "Es ist keine Tabelle boinc_werte vorhanden!";
 	$has_error_description_no_boinc_werte_day_table = "Es ist keine Tabelle boinc_werte_day vorhanden!";
-	$has_error_description_no_boinc_username = "Es wurde kein Name (boinc_name) in der Tabelle boinc_user eingetragen!"
+	$has_error_description_no_boinc_username = "Es wurde kein Name (boinc_name) in der Tabelle boinc_user eingetragen!";
+
+	$nav_help_sgforum = "Hilfe im SG-Forum";
 ?>
