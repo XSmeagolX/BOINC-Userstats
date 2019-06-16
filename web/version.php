@@ -5,6 +5,6 @@
 	# Nur true, wenn kein Release
 	# is true, wenn not release
 	$dev = true;
-	$devNr = "11";
+	$devNr = "12";
 	$dev_version = "6.0.0-dev".$devNr;
 ?>

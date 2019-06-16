@@ -17,4 +17,7 @@ dev10:
     - Darstellung der Tabellen nun mit Datatables und jquery anstelle von bootstrap
 
 dev11:
-    - Link in der Navbar internationlisiert
+    - Links in der Navbar internationlisiert
+
+dev12:
+    - Tabellen werden nun wieder mit bootstrap dargestellt
