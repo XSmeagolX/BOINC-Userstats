@@ -100,7 +100,7 @@ Ende: ".date(('Y-m-d H:i:s'), $updateendtime)."</ br>";
 	{
 		if ($set_logging) {
 			echo "
- Projekt: ".$row[project]."</ br>";
+ Projekt: ".$row['project']."</ br>";
 		}
 		$xml_string = false;
 		$xml_string = @file_get_contents ($row['url'] . "show_user.php?userid=" . $row['project_userid'] . "&format=xml", 0, $ctx);
